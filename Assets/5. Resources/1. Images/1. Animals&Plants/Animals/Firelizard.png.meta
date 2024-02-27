@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -108,7 +108,427 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Firelizard_0
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 153
+        width: 63
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea464eba684506d4cab5c32f5851526a
+      internalID: -1285196791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Firelizard_1
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 153
+        width: 63
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54e62102acdbcd54f8b3c21fb6b1518e
+      internalID: 216835883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Firelizard_2
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 153
+        width: 63
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6c17e4fd18c51a459750705996379f6
+      internalID: -725146098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Firelizard_3
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 153
+        width: 63
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97d13ba58cd13b844a4736379728e499
+      internalID: -1026896848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Firelizard_4
+      rect:
+        serializedVersion: 2
+        x: 430
+        y: 153
+        width: 63
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe14f660578a7f14e9929698664e331f
+      internalID: -396864986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Firelizard_5
+      rect:
+        serializedVersion: 2
+        x: 535
+        y: 153
+        width: 63
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ae776a2b8f533240838c7864273035f
+      internalID: 2011080170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Firelizard_6
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 102
+        width: 63
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a2fdbae96531af41b9ba783a417294d
+      internalID: -2050086415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Firelizard_7
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 102
+        width: 65
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ebe932ca69763f41be36c935e4b2869
+      internalID: 716378638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Firelizard_8
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 102
+        width: 63
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83fa2dea021705c4a987bc78141af1c4
+      internalID: -2076036517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Firelizard_9
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 102
+        width: 63
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a744736e0ac07bb449ac9d0ab81a8c1f
+      internalID: -100882579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Firelizard_10
+      rect:
+        serializedVersion: 2
+        x: 430
+        y: 102
+        width: 63
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6175fada8f000e14d969969556a5d560
+      internalID: 894268530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Firelizard_11
+      rect:
+        serializedVersion: 2
+        x: 535
+        y: 102
+        width: 60
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a781adb803d9a41449a538322fb4f3f2
+      internalID: -528518460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Firelizard_12
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 2
+        width: 60
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d490288df7c87b24fb05f0420c50b9d3
+      internalID: -567761299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Firelizard_13
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 2
+        width: 94
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9797d41795fcc9d439554f514f8de5df
+      internalID: -1041250393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Firelizard_14
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 51
+        width: 92
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fbedec42cb653f4cb63278346b00cff
+      internalID: -2144532335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Firelizard_15
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 51
+        width: 59
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bb0209d50a01da4dabc310139e14749
+      internalID: 134252567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Firelizard_16
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 51
+        width: 58
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ef70d51a9dc7954d8dcdeabf3457ff7
+      internalID: -1700605376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Firelizard_17
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 52
+        width: 53
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c22f29a8f43e4df4f9badcaa6d9d952a
+      internalID: 1268572158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Firelizard_18
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 1
+        width: 50
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06a1570a9897ebb4a80429af34244e36
+      internalID: 586302992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Firelizard_19
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 0
+        width: 72
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 556920a3ff95a824683144f3db9de95f
+      internalID: 1106822957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -119,7 +539,27 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Firelizard_0: -1285196791
+      Firelizard_1: 216835883
+      Firelizard_10: 894268530
+      Firelizard_11: -528518460
+      Firelizard_12: -567761299
+      Firelizard_13: -1041250393
+      Firelizard_14: -2144532335
+      Firelizard_15: 134252567
+      Firelizard_16: -1700605376
+      Firelizard_17: 1268572158
+      Firelizard_18: 586302992
+      Firelizard_19: 1106822957
+      Firelizard_2: -725146098
+      Firelizard_3: -1026896848
+      Firelizard_4: -396864986
+      Firelizard_5: 2011080170
+      Firelizard_6: -2050086415
+      Firelizard_7: 716378638
+      Firelizard_8: -2076036517
+      Firelizard_9: -100882579
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
