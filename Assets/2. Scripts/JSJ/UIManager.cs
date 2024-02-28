@@ -7,6 +7,7 @@ using TMPro;
 public class UIManager : MonoBehaviour
 {
     public TMP_Text Info;
+    public GameObject StartUI;
 
     private bool isMinColor = false;
 
