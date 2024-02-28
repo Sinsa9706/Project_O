@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2454626565181636403}
+  - component: {fileID: 2445705513904321158}
   m_Layer: 0
   m_Name: Mob_Mushroom
   m_TagString: Untagged
@@ -30,8 +31,20 @@ Transform:
   m_Children:
   - {fileID: 8941144979784322252}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2445705513904321158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2753123829675322237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcdf63073a0a44a438fdba0c14815826, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4819892503778738155
 GameObject:
   m_ObjectHideFlags: 0
@@ -42,6 +55,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8941144979784322252}
   - component: {fileID: 2411263845775858425}
+  - component: {fileID: 222684520205357724}
   m_Layer: 0
   m_Name: MainSprite
   m_TagString: Untagged
@@ -116,3 +130,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &222684520205357724
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4819892503778738155}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 777cd4f18367abf4187b1dc2c683144b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
