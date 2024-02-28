@@ -43,12 +43,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 50
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -108,7 +108,490 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Man-EatingFlower_0
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 255
+        width: 59
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55865e086ec705744bc29e4285a3bfe0
+      internalID: 768351531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Man-EatingFlower_1
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 255
+        width: 59
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e9ecc2e9ef588a49bfa670efd420b38
+      internalID: -659029502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Man-EatingFlower_2
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 255
+        width: 59
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65cc7898b8e06894b889c929ffe0a59b
+      internalID: -456602131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Man-EatingFlower_3
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 255
+        width: 59
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2704bf6d133c89c49baa41971eab2b0c
+      internalID: 956315439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Man-EatingFlower_4
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 255
+        width: 60
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9914080d37f445e4eb7cfe360ca649fb
+      internalID: -1786950208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Man-EatingFlower_5
+      rect:
+        serializedVersion: 2
+        x: 705
+        y: 255
+        width: 60
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4d614b8f328deb4aacda47f6620aa01
+      internalID: 402437256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Man-EatingFlower_6
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 170
+        width: 48
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92b8051662aad2346a4fa46e222d2df9
+      internalID: -536226081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Man-EatingFlower_7
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 85
+        width: 67
+        height: 166
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14eeaf7a11a3c734395fd1b3a7dab7a1
+      internalID: 1329833289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Man-EatingFlower_8
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 170
+        width: 53
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbd7c0f70b59a6d4c95d564b2f1f27c1
+      internalID: 1365738887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Man-EatingFlower_9
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 170
+        width: 59
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83cbca421e890044b9c5cb53e8d2e8ca
+      internalID: -855160216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Man-EatingFlower_10
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 170
+        width: 105
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3490113007824bf4a9864ab3948aa582
+      internalID: 1309878324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Man-EatingFlower_11
+      rect:
+        serializedVersion: 2
+        x: 705
+        y: 170
+        width: 102
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04a9f10d0b32e8740ad1f1cac84076b4
+      internalID: 169453276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Man-EatingFlower_12
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 85
+        width: 64
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f275eee2b7a25a24a9f3f8e26b7f2e6d
+      internalID: 1164902412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Man-EatingFlower_13
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 85
+        width: 68
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32bb9e07cea210246a091c5fa6cd78bd
+      internalID: 1483222047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Man-EatingFlower_14
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 85
+        width: 59
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c454e77647c0164bb9a359105bbe25c
+      internalID: -2141475653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Man-EatingFlower_15
+      rect:
+        serializedVersion: 2
+        x: 565
+        y: 85
+        width: 51
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1eb2acab07c70cb42bf78d68e460547c
+      internalID: -2100248191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Man-EatingFlower_16
+      rect:
+        serializedVersion: 2
+        x: 694
+        y: 85
+        width: 49
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 465fb0ee95dbf2145aa27f614d05cc22
+      internalID: 716329608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Man-EatingFlower_17
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 0
+        width: 51
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c12ae9aa76583546842b00baff41d21
+      internalID: -753529590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Man-EatingFlower_18
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 0
+        width: 45
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fc868fc30241cc49ae3c25998850edd
+      internalID: -1796876604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Man-EatingFlower_19
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 0
+        width: 45
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e2c8b50511c64340ad1ab66da5dd606
+      internalID: -1651415085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Man-EatingFlower_20
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 1
+        width: 62
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 678de7cd3d2bce44086d8b7857b68661
+      internalID: 2128627520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Man-EatingFlower_21
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 0
+        width: 67
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f45acbae51d80e41aa06e2ea1c13d87
+      internalID: 1594463168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Man-EatingFlower_22
+      rect:
+        serializedVersion: 2
+        x: 703
+        y: 0
+        width: 69
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b329736fd72c34846a69771c775e0c63
+      internalID: 236662523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -119,7 +602,30 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Man-EatingFlower_0: 768351531
+      Man-EatingFlower_1: -659029502
+      Man-EatingFlower_10: 1309878324
+      Man-EatingFlower_11: 169453276
+      Man-EatingFlower_12: 1164902412
+      Man-EatingFlower_13: 1483222047
+      Man-EatingFlower_14: -2141475653
+      Man-EatingFlower_15: -2100248191
+      Man-EatingFlower_16: 716329608
+      Man-EatingFlower_17: -753529590
+      Man-EatingFlower_18: -1796876604
+      Man-EatingFlower_19: -1651415085
+      Man-EatingFlower_2: -456602131
+      Man-EatingFlower_20: 2128627520
+      Man-EatingFlower_21: 1594463168
+      Man-EatingFlower_22: 236662523
+      Man-EatingFlower_3: 956315439
+      Man-EatingFlower_4: -1786950208
+      Man-EatingFlower_5: 402437256
+      Man-EatingFlower_6: -536226081
+      Man-EatingFlower_7: 1329833289
+      Man-EatingFlower_8: 1365738887
+      Man-EatingFlower_9: -855160216
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
