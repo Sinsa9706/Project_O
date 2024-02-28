@@ -8,6 +8,7 @@ namespace Constants
     {
         Equip,
         Material,
-        Consume
+        Consume,
+        Combination
     }
 }
