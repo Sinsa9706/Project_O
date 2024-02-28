@@ -5,7 +5,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
 
-public class UIManager : MonoBehaviour
+public class StartSceneUIController : MonoBehaviour
 {
     public GameObject SoundManagerObj;
 
@@ -31,7 +31,7 @@ public class UIManager : MonoBehaviour
 
         if (Input.anyKeyDown)
         {
-            if(soundManager.effectSoundVolume == true)
+            if (soundManager.effectSoundVolume == true)
                 soundManager.AudioClipPlay(0);
 
             if (SelectUI.activeSelf == true || Info.gameObject.activeSelf == true)
