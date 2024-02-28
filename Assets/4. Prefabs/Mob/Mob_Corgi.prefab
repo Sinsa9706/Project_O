@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7655181739744455279}
+  - component: {fileID: 7259955372737725454}
   m_Layer: 0
   m_Name: Mob_Corgi
   m_TagString: Untagged
@@ -30,8 +31,20 @@ Transform:
   m_Children:
   - {fileID: 3337385903668735974}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7259955372737725454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1483637974053246890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcdf63073a0a44a438fdba0c14815826, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1809155653811705993
 GameObject:
   m_ObjectHideFlags: 0
@@ -42,6 +55,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3337385903668735974}
   - component: {fileID: 7353423129755341070}
+  - component: {fileID: 1405746383242902726}
   m_Layer: 0
   m_Name: MainSprite
   m_TagString: Untagged
@@ -116,3 +130,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1405746383242902726
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1809155653811705993}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: aad309d1cd9ce324fb833627080ac77b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 8
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3638a96359562004a8d34f56eb9b26c4, type: 3}
+  m_Name: RecipeDBSheet
+  m_EditorClassIdentifier: 
+  Recipes:
+  - _id: 10000001
+    _mat1: 10010004
+    _mat2: 10020001
+    _mat3: 0
+    _resultItem: 20010001
+  - _id: 10000002
+    _mat1: 10010003
+    _mat2: 10020004
+    _mat3: 0
+    _resultItem: 20010002
+  - _id: 10000003
+    _mat1: 10010002
+    _mat2: 10020006
+    _mat3: 0
+    _resultItem: 20010003
+  - _id: 10000004
+    _mat1: 10010001
+    _mat2: 10020003
+    _mat3: 0
+    _resultItem: 20010004
+  - _id: 10000005
+    _mat1: 10010005
+    _mat2: 10020005
+    _mat3: 0
+    _resultItem: 20010005
+  - _id: 10000006
+    _mat1: 10010006
+    _mat2: 10020002
+    _mat3: 0
+    _resultItem: 20010006
