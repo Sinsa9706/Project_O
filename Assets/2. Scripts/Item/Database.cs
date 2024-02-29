@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Database : MonoBehaviour  // ½Ì±ÛÅæ
+public class Database : MonoBehaviour  // ï¿½Ì±ï¿½ï¿½ï¿½
 {
     private static ItemDB _item;
     public static ItemDB Item
