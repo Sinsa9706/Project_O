@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class UIManager : MonoBehaviour
 {
@@ -19,5 +20,7 @@ public class UIManager : MonoBehaviour
     public void UIOff(GameObject ui)
     {
         ui.SetActive(false);
+        Time.timeScale = 1.0f;
     }
+
 }
