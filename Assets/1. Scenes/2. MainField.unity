@@ -513,10 +513,6 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 400272224333737593, guid: fff2289cdb6293140bc86c42c4c7e20d, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 400272224333737593, guid: fff2289cdb6293140bc86c42c4c7e20d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.152
       objectReference: {fileID: 0}
@@ -555,18 +551,6 @@ PrefabInstance:
     - target: {fileID: 400272224333737593, guid: fff2289cdb6293140bc86c42c4c7e20d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3978070037730991239, guid: fff2289cdb6293140bc86c42c4c7e20d, type: 3}
-      propertyPath: m_FlipX
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3978070037730991239, guid: fff2289cdb6293140bc86c42c4c7e20d, type: 3}
-      propertyPath: m_FlipY
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4485690840171305874, guid: fff2289cdb6293140bc86c42c4c7e20d, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5263152399769024989, guid: fff2289cdb6293140bc86c42c4c7e20d, type: 3}
       propertyPath: playerInteraction
