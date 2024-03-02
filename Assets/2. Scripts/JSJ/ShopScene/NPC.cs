@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class NPC : MonoBehaviour
@@ -49,4 +50,6 @@ public class NPC : MonoBehaviour
         _UIManager.UIOn(QuestUI);
         Time.timeScale = 0.0f;
     }
+
+
 }
