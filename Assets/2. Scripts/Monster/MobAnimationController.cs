@@ -2,10 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MonsterAnimationController : MonoBehaviour
+public class MobAnimationController : MonoBehaviour
 {
     private Animator animator;
-
 
     private static readonly int IsMoving = Animator.StringToHash("IsMoving");
     private static readonly int IsAttacking = Animator.StringToHash("IsAttacking");
