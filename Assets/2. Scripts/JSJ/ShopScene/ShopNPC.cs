@@ -24,5 +24,6 @@ public class ShopNPC : MonoBehaviour
     {
         Debug.Log("ShopOpen");
         _UIManager.UIOn(ShopUI);
+        Time.timeScale = 0.0f;
     }
 }

@@ -10,6 +10,7 @@ public class Trigger : MonoBehaviour
     private UIManager _UIManager;
 
     public GameObject InteractionUI;
+    public GameObject BoxInteractionUI;
 
     public static bool inShop = false;
 
@@ -25,6 +26,10 @@ public class Trigger : MonoBehaviour
             _UIManager.UIOn(InteractionUI);
             inShop = true;
         }
+        if (collision.tag == "Box")
+        {
+            _UIManager.UIOn(BoxInteractionUI);
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -33,6 +38,10 @@ public class Trigger : MonoBehaviour
         {
             _UIManager.UIOff(InteractionUI);
             inShop = false;
+        }
+        if (collision.tag == "Box")
+        {
+            _UIManager.UIOff(BoxInteractionUI);
         }
     }
 }
