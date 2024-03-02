@@ -2,14 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MonsterAnimationController : MonoBehaviour
+public class MobAnimationController : MonoBehaviour
 {
     private Animator animator;
 
-
     private static readonly int IsMoving = Animator.StringToHash("IsMoving");
-    private static readonly int IsAttacking = Animator.StringToHash("IsAttacking");
-    private static readonly int IsDead = Animator.StringToHash("IsDead");
+    private static readonly int IsAttacking = Animator.StringToHash("IsSearching");
+    private static readonly int IsAway = Animator.StringToHash("IsAway");
 
     void Awake()
     {
@@ -26,8 +25,8 @@ public class MonsterAnimationController : MonoBehaviour
         animator.SetTrigger(IsAttacking);
     }
 
-    public void Dead() 
+    public void Away() 
     {
-        animator.SetTrigger(IsDead);
+        animator.SetTrigger(IsAway);
     }
 }

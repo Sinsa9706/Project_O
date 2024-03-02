@@ -46,7 +46,7 @@ public partial class @PlayerInputActione: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Interact"",
+                    ""name"": ""Interaction"",
                     ""type"": ""Button"",
                     ""id"": ""14eb0ce3-b4da-48e7-962f-b07526e8f934"",
                     ""expectedControlType"": ""Button"",
@@ -138,7 +138,7 @@ public partial class @PlayerInputActione: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Interact"",
+                    ""action"": ""Interaction"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -162,7 +162,7 @@ public partial class @PlayerInputActione: IInputActionCollection2, IDisposable
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
         m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
         m_Player_Inventory = m_Player.FindAction("Inventory", throwIfNotFound: true);
-        m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
+        m_Player_Interaction = m_Player.FindAction("Interaction", throwIfNotFound: true);
         m_Player_Encyclopedia = m_Player.FindAction("Encyclopedia", throwIfNotFound: true);
     }
 
@@ -227,7 +227,7 @@ public partial class @PlayerInputActione: IInputActionCollection2, IDisposable
     private List<IPlayerActions> m_PlayerActionsCallbackInterfaces = new List<IPlayerActions>();
     private readonly InputAction m_Player_Move;
     private readonly InputAction m_Player_Inventory;
-    private readonly InputAction m_Player_Interact;
+    private readonly InputAction m_Player_Interaction;
     private readonly InputAction m_Player_Encyclopedia;
     public struct PlayerActions
     {
@@ -235,7 +235,7 @@ public partial class @PlayerInputActione: IInputActionCollection2, IDisposable
         public PlayerActions(@PlayerInputActione wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_Player_Move;
         public InputAction @Inventory => m_Wrapper.m_Player_Inventory;
-        public InputAction @Interact => m_Wrapper.m_Player_Interact;
+        public InputAction @Interaction => m_Wrapper.m_Player_Interaction;
         public InputAction @Encyclopedia => m_Wrapper.m_Player_Encyclopedia;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
@@ -252,9 +252,9 @@ public partial class @PlayerInputActione: IInputActionCollection2, IDisposable
             @Inventory.started += instance.OnInventory;
             @Inventory.performed += instance.OnInventory;
             @Inventory.canceled += instance.OnInventory;
-            @Interact.started += instance.OnInteract;
-            @Interact.performed += instance.OnInteract;
-            @Interact.canceled += instance.OnInteract;
+            @Interaction.started += instance.OnInteraction;
+            @Interaction.performed += instance.OnInteraction;
+            @Interaction.canceled += instance.OnInteraction;
             @Encyclopedia.started += instance.OnEncyclopedia;
             @Encyclopedia.performed += instance.OnEncyclopedia;
             @Encyclopedia.canceled += instance.OnEncyclopedia;
@@ -268,9 +268,9 @@ public partial class @PlayerInputActione: IInputActionCollection2, IDisposable
             @Inventory.started -= instance.OnInventory;
             @Inventory.performed -= instance.OnInventory;
             @Inventory.canceled -= instance.OnInventory;
-            @Interact.started -= instance.OnInteract;
-            @Interact.performed -= instance.OnInteract;
-            @Interact.canceled -= instance.OnInteract;
+            @Interaction.started -= instance.OnInteraction;
+            @Interaction.performed -= instance.OnInteraction;
+            @Interaction.canceled -= instance.OnInteraction;
             @Encyclopedia.started -= instance.OnEncyclopedia;
             @Encyclopedia.performed -= instance.OnEncyclopedia;
             @Encyclopedia.canceled -= instance.OnEncyclopedia;
@@ -295,7 +295,7 @@ public partial class @PlayerInputActione: IInputActionCollection2, IDisposable
     {
         void OnMove(InputAction.CallbackContext context);
         void OnInventory(InputAction.CallbackContext context);
-        void OnInteract(InputAction.CallbackContext context);
+        void OnInteraction(InputAction.CallbackContext context);
         void OnEncyclopedia(InputAction.CallbackContext context);
     }
 }

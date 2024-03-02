@@ -1,51 +1,33 @@
 {
-    "name": "PlayerInputActione",
+    "name": "New Controls",
     "maps": [
         {
             "name": "Player",
-            "id": "7537af6a-a6d0-432e-a9a5-e6b20bc9e7f8",
+            "id": "a8a437dc-2b6c-43cf-9d70-e875d540a38b",
             "actions": [
                 {
                     "name": "Move",
                     "type": "Value",
-                    "id": "53902161-4aab-4494-8b69-2ac45fc3d1e1",
+                    "id": "ee05d6fe-96d7-41e6-9fec-9ce9614780a7",
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Inventory",
+                    "name": "Interraction",
                     "type": "Button",
-                    "id": "9034ae29-ad13-413c-9f6c-32287513a2eb",
+                    "id": "bb46d4d6-7638-4b61-93e4-c529c9da6a57",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Interaction",
-                    "type": "Button",
-                    "id": "14eb0ce3-b4da-48e7-962f-b07526e8f934",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Encyclopedia",
-                    "type": "Button",
-                    "id": "24614053-60d3-44df-8010-095d211a55a2",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
                 {
                     "name": "2D Vector",
-                    "id": "2306814e-4573-4685-8240-507aad23b9c1",
+                    "id": "3ca892f5-2a9c-4b30-be29-cb405bf0f028",
                     "path": "2DVector",
                     "interactions": "",
                     "processors": "",
@@ -56,8 +38,8 @@
                 },
                 {
                     "name": "up",
-                    "id": "c4c60106-3b95-44ad-a7d5-ec6cfdd3fdde",
-                    "path": "<Keyboard>/upArrow",
+                    "id": "72f13e79-4a36-4d4f-be51-5a90ecda1338",
+                    "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -67,8 +49,8 @@
                 },
                 {
                     "name": "down",
-                    "id": "73756677-9a5b-4910-af4d-c4d2d5a0df36",
-                    "path": "<Keyboard>/downArrow",
+                    "id": "940e254b-571b-465e-9b8d-c6dc2d1e4d49",
+                    "path": "<Keyboard>/s",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -78,8 +60,8 @@
                 },
                 {
                     "name": "left",
-                    "id": "ede8b38b-b2ea-4864-ab60-3107f91ca484",
-                    "path": "<Keyboard>/leftArrow",
+                    "id": "e499e42d-1eaa-4271-a2cf-cb8a0bd44a77",
+                    "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -89,8 +71,8 @@
                 },
                 {
                     "name": "right",
-                    "id": "8ef7d07d-51f8-4971-9d25-6a9f8c34753e",
-                    "path": "<Keyboard>/rightArrow",
+                    "id": "2644467e-f58d-4293-b203-a171ac10c581",
+                    "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -100,39 +82,34 @@
                 },
                 {
                     "name": "",
-                    "id": "636d09f9-bd4e-4ad0-822b-d54e53d1add6",
-                    "path": "<Keyboard>/s",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Inventory",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "119c5310-a1b1-4628-ae05-70ae27c18ec8",
+                    "id": "84ebe9ae-8eff-455d-85bf-27d550d65e1b",
                     "path": "<Keyboard>/z",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Interaction",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "e7f07f6f-ccd5-4b87-b076-67fe58c65f61",
-                    "path": "<Keyboard>/d",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Encyclopedia",
+                    "action": "Interraction",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
             ]
         }
     ],
-    "controlSchemes": []
+    "controlSchemes": [
+        {
+            "name": "New control scheme",
+            "bindingGroup": "New control scheme",
+            "devices": [
+                {
+                    "devicePath": "<Keyboard>",
+                    "isOptional": false,
+                    "isOR": false
+                },
+                {
+                    "devicePath": "<Mouse>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
 }
