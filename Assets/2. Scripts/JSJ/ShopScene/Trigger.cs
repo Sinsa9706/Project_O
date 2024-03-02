@@ -13,6 +13,7 @@ public class Trigger : MonoBehaviour
     public GameObject BoxInteractionUI;
 
     public static bool inShop = false;
+    public static bool inBox = false;
 
     private void Awake()
     {
@@ -29,6 +30,7 @@ public class Trigger : MonoBehaviour
         if (collision.tag == "Box")
         {
             _UIManager.UIOn(BoxInteractionUI);
+            inBox = true;
         }
     }
 
@@ -42,6 +44,7 @@ public class Trigger : MonoBehaviour
         if (collision.tag == "Box")
         {
             _UIManager.UIOff(BoxInteractionUI);
+            inBox = false;
         }
     }
 }
