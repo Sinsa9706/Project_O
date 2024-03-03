@@ -564,6 +564,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mob_Corgi
       objectReference: {fileID: 0}
+    - target: {fileID: 9119255396482887099, guid: fff2289cdb6293140bc86c42c4c7e20d, type: 3}
+      propertyPath: m_SortingOrder
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
