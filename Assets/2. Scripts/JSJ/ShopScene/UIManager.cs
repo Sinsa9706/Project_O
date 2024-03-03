@@ -50,4 +50,6 @@ public class UIManager : MonoBehaviour
         Count = 0;
         text.text = Count.ToString();
     }
+
+
 }

@@ -7,10 +7,11 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
+    public static int PlayerGold = 500;
+
     public TMP_Text TimeText;
     public GameObject Image;
 
-    [HideInInspector] public int Gold = 500;
 
     private float time;
     private float realTime = 1;//실제시간몇초당 10분
@@ -43,8 +44,6 @@ public class GameManager : MonoBehaviour
         }
         else
             TimeCheck();
-
-
     }
 
     public void TimeCheck()
@@ -66,11 +65,11 @@ public class GameManager : MonoBehaviour
         string text;
 
         if (gameTime >= 1440)
-            text = "오전 ";
+            text = "오전  ";
         else if (gameTime >= 720)
-            text = "오후 ";
+            text = "오후  ";
         else
-            text = "오전 ";
+            text = "오전  ";
 
         string hour;
         hour = (gameTime / 60).ToString("D2");
@@ -109,7 +108,6 @@ public class GameManager : MonoBehaviour
 
         Image.GetComponent<SpriteRenderer>().color = color;
     }
-
 
     //0~255 /200 25.5 = 0.1
 }

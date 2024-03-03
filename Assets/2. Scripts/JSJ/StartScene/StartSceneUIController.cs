@@ -61,6 +61,7 @@ public class StartSceneUIController : MonoBehaviour
 
     public void SelectUIOpen()
     {
+        StartUI.SetActive(true);
         Info.gameObject.SetActive(false);
         SettingUI.SetActive(false);
         SelectUI.SetActive(true);

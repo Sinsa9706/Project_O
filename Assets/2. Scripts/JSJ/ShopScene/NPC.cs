@@ -15,7 +15,8 @@ public class NPC : MonoBehaviour
     public GameObject QuestUI;
 
     [Header("Shop UI Object")]
-    public TMP_Text PlayerGold;
+    public TMP_Text PlayerGoldText;
+    public GameObject NoGoldUI;
 
 
     private void Awake()
@@ -66,8 +67,19 @@ public class NPC : MonoBehaviour
         priceText.text = price.ToString();
     }
 
+    public void PlayerGoldChange(TMP_Text priceText)
+    {
+        if (GameManager.PlayerGold < int.Parse(priceText.text))
+        {
+            NoGoldUI.SetActive(true);
+            return;
+        }
+
+        GameManager.PlayerGold -= int.Parse(priceText.text);
+    }
+
     public void PlayerGoldUpdate()
     {
-        PlayerGold.text = GameManager.Instance.Gold.ToString();
+        PlayerGoldText.text = GameManager.PlayerGold.ToString();
     }
 }
