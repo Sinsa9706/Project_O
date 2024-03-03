@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class NPC : MonoBehaviour
@@ -13,9 +14,18 @@ public class NPC : MonoBehaviour
     public GameObject BoxUI;
     public GameObject QuestUI;
 
+    [Header("Shop UI Object")]
+    public TMP_Text PlayerGold;
+
+
     private void Awake()
     {
         _UIManager = UIManagerObj.GetComponent<UIManager>();
+    }
+
+    private void Start()
+    {
+        PlayerGoldUpdate();
     }
 
     public void OnInteraction()//Trigger가 활성화 된 상태로 z를 눌렀을때
@@ -48,5 +58,16 @@ public class NPC : MonoBehaviour
         Debug.Log("QuestOpen");
         _UIManager.UIOn(QuestUI);
         Time.timeScale = 0.0f;
+    }
+
+    public void PriceText(TMP_Text priceText)
+    {
+        int price = 50 * UIManager.Count;//50은 인벤
+        priceText.text = price.ToString();
+    }
+
+    public void PlayerGoldUpdate()
+    {
+        PlayerGold.text = GameManager.Instance.Gold.ToString();
     }
 }

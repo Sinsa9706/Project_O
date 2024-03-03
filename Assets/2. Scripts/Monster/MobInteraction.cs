@@ -4,28 +4,28 @@ using UnityEngine;
 
 public class MobInteraction : MonoBehaviour
 {
-    public string mobType; // ¸ó½ºÅÍÀÇ À¯ÇüÀ» ½Äº°ÇÏ´Â ¹®ÀÚ¿­
-    public bool CanInteractWithPlayer { get; private set; } // ÇÃ·¹ÀÌ¾î¿ÍÀÇ Ãæµ¹ »óÅÂ(»óÈ£ ÀÛ¿ë °¡´ÉÇÑÁö) ÃßÀû
-    public ColliderMark colliderMark; // °¢ ¸ó½ºÅÍ¸¶´Ù ÇÒ´çµÈ ColliderMark ÂüÁ¶
+    public string mobType; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Äºï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½Ú¿ï¿½
+    public bool CanInteractWithPlayer { get; private set; } // ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ï¿½ï¿½ï¿½ ï¿½æµ¹ ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½È£ ï¿½Û¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½) ï¿½ï¿½ï¿½ï¿½
+    public ColliderMark colliderMark; // ï¿½ï¿½ ï¿½ï¿½ï¿½Í¸ï¿½ï¿½ï¿½ ï¿½Ò´ï¿½ï¿½ ColliderMark ï¿½ï¿½ï¿½ï¿½
     private PlayerInteraction playerInteraction;
-    private MobMovement mobMovement; // MobMovement ½ºÅ©¸³Æ® ÂüÁ¶
+    private MobMovement mobMovement; // MobMovement ï¿½ï¿½Å©ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½
 
-    public GameObject uiText; // »óÈ£ÀÛ¿ë UI Text ¿ÀºêÁ§Æ®
+    public GameObject uiText; // ï¿½ï¿½È£ï¿½Û¿ï¿½ UI Text ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®
 
-    public Animator animator; // Dead ¾Ö´Ï¸ÞÀÌ¼Ç Ã³¸®¿ë
+    public Animator animator; // Dead ï¿½Ö´Ï¸ï¿½ï¿½Ì¼ï¿½ Ã³ï¿½ï¿½ï¿½ï¿½
 
     private void Start()
     {
         uiText.SetActive(false);
         playerInteraction = FindObjectOfType<PlayerInteraction>();
-        mobMovement = GetComponent<MobMovement>(); // MobMovement ÄÄÆ÷³ÍÆ®
+        mobMovement = GetComponent<MobMovement>(); // MobMovement ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®
         if (playerInteraction != null)
         {
             playerInteraction.onInteraction.AddListener(HandleInteractionComplete);
         }
         else
         {
-            Debug.LogError("PlayerInteraction ÄÄÆ÷³ÍÆ®¸¦ Ã£À» ¼ö ¾ø½À´Ï´Ù.");
+            Debug.LogError("PlayerInteraction ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ Ã£ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
         }
     }
     private void OnDestroy()
@@ -34,42 +34,42 @@ public class MobInteraction : MonoBehaviour
         playerInteraction.onInteraction.RemoveListener(HandleInteractionComplete);
     }
 
-    public void HandleInteractionComplete() // ¸ó½ºÅÍÀÇ »óÈ£ÀÛ¿ëÀÌ ¿Ï·á µÈ ÈÄ Çàµ¿&ÀÛµ¿ ÇÚµé·¯
+    public void HandleInteractionComplete() // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È£ï¿½Û¿ï¿½ï¿½ï¿½ ï¿½Ï·ï¿½ ï¿½ï¿½ ï¿½ï¿½ ï¿½àµ¿&ï¿½Ûµï¿½ ï¿½Úµé·¯
                                             
 
-        // ¸ó½ºÅÍÀÇ »óÈ£ÀÛ¿ëÀ» ½Äº°ÇÏ°í, ¹®ÀÚ¿­ Æ÷ÇÔ À¯Çü¿¡ µû¶ó ´Ù¸¥ ¸Þ¼­µå¸¦ ÀÛµ¿
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È£ï¿½Û¿ï¿½ï¿½ï¿½ ï¿½Äºï¿½ï¿½Ï°ï¿½, ï¿½ï¿½ï¿½Ú¿ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ù¸ï¿½ ï¿½Þ¼ï¿½ï¿½å¸¦ ï¿½Ûµï¿½
     {
-        // ÇöÀç ¸ó½ºÅÍ°¡ »óÈ£ÀÛ¿ë °¡´ÉÇÑ »óÅÂÀÎÁö È®ÀÎ
+        // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Í°ï¿½ ï¿½ï¿½È£ï¿½Û¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½
         if (CanInteractWithPlayer && colliderMark != null)
         {
-            if (mobType.Contains("Corgi") || mobType.Contains("Mushroom") || mobType.Contains("Kirby")) // Æ¯Á¤ ¸ó½ºÅÍÀÇ ¹®ÀÚ¿­ 
+            if (mobType.Contains("Corgi") || mobType.Contains("Mushroom") || mobType.Contains("Kirby")) // Æ¯ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¿ï¿½ 
             {
-                colliderMark.ActiveLoveMark(); // ÇöÀç ¸ó½ºÅÍÀÇ ColliderMark¿¡ ÀÖ´Â ActiveLoveMark ¸Þ¼­µå È£Ãâ
+                colliderMark.ActiveLoveMark(); // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ColliderMarkï¿½ï¿½ ï¿½Ö´ï¿½ ActiveLoveMark ï¿½Þ¼ï¿½ï¿½ï¿½ È£ï¿½ï¿½
             }
             else if (mobType.Contains("Turtle") || mobType.Contains("Man-Eating"))
             {
 
-                colliderMark.ActiveExclamationMark(); // ³î¶÷ ¸¶Å© È°¼ºÈ­
-                StartCoroutine(HandleDeath()); ;  // Á×À½ Ã³¸® ¸Þ¼­µå È£Ãâ
+                colliderMark.ActiveExclamationMark(); // ï¿½ï¿½ï¿½ ï¿½ï¿½Å© È°ï¿½ï¿½È­
+                StartCoroutine(HandleDeath()); ;  // ï¿½ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½ È£ï¿½ï¿½
             }
             else if (mobType.Contains("Flower") || mobType.Contains("Grape") || mobType.Contains("Herb") || mobType.Contains("Tree"))
             {
-                // ½Ä¹° È¹µæ ÆÄÆ¼Å¬
-                // ½Ä¹° È¹µæ ·ÎÁ÷
+                // ï¿½Ä¹ï¿½ È¹ï¿½ï¿½ ï¿½ï¿½Æ¼Å¬
+                // ï¿½Ä¹ï¿½ È¹ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
             }
             else
             {
-                //³ª¸ÓÁö ¸ó½ºÅÍ Ã³¸®
-                colliderMark.ActiveExclamationMark(); // ³î¶÷ ¸¶Å© È°¼ºÈ­
-                mobMovement.StartSurprisedMovement(); // ³î¶÷ »óÅÂ ÀÌµ¿ È°¼ºÈ­
+                //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½
+                colliderMark.ActiveExclamationMark(); // ï¿½ï¿½ï¿½ ï¿½ï¿½Å© È°ï¿½ï¿½È­
+                mobMovement.StartSurprisedMovement(); // ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ È°ï¿½ï¿½È­
             }
         }
     }
 
     private IEnumerator HandleDeath() // 
     {
-        animator.SetBool("IsDead", true); // Á×À½ ¾Ö´Ï¸ÞÀÌ¼Ç È°¼ºÈ­
-        float fadeDuration = 1f; // nÃÊ µ¿¾È fade out
+        animator.SetBool("IsDead", true); // ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´Ï¸ï¿½ï¿½Ì¼ï¿½ È°ï¿½ï¿½È­
+        float fadeDuration = 1f; // nï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ fade out
         float fadeSpeed = 1f / fadeDuration;
         SpriteRenderer spriteRenderer = GetComponentInChildren<SpriteRenderer>();
 
@@ -81,17 +81,17 @@ public class MobInteraction : MonoBehaviour
             yield return null;
         }
 
-        Destroy(gameObject); // ¿ÀºêÁ§Æ® ÆÄ±«
+        Destroy(gameObject); // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® ï¿½Ä±ï¿½
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            uiText.SetActive(true); // UI Text È°¼ºÈ­
-            CanInteractWithPlayer = true; // »óÈ£ÀÛ¿ë °¡´É »óÅÂ
+            uiText.SetActive(true); // UI Text È°ï¿½ï¿½È­
+            CanInteractWithPlayer = true; // ï¿½ï¿½È£ï¿½Û¿ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
-            // Ãæµ¹ÇÑ ÇÃ·¹ÀÌ¾îÀÇ ½ºÅ©¸³Æ®, CanInteract ¸Þ¼­µå¿¡ Ãæµ¹ »óÅÂ Àü´Þ.
+            // ï¿½æµ¹ï¿½ï¿½ ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ï¿½ï¿½ ï¿½ï¿½Å©ï¿½ï¿½Æ®, CanInteract ï¿½Þ¼ï¿½ï¿½å¿¡ ï¿½æµ¹ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½.
             collision.GetComponent<PlayerInteraction>().CanInteract(this, true);
 
         }
@@ -101,10 +101,10 @@ public class MobInteraction : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            uiText.SetActive(false); // UI Text¸¦ ºñÈ°¼ºÈ­
-            CanInteractWithPlayer = false; // »óÈ£ ÀÛ¿ë ºÒ°¡´É
+            uiText.SetActive(false); // UI Textï¿½ï¿½ ï¿½ï¿½È°ï¿½ï¿½È­
+            CanInteractWithPlayer = false; // ï¿½ï¿½È£ ï¿½Û¿ï¿½ ï¿½Ò°ï¿½ï¿½ï¿½
 
-            // ÇÃ·¹ÀÌ¾î¿¡°Ô Ãæµ¹ÀÌ ³¡³µ´Ù°í Àü´Þ
+            // ï¿½Ã·ï¿½ï¿½Ì¾î¿¡ï¿½ï¿½ ï¿½æµ¹ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ù°ï¿½ ï¿½ï¿½ï¿½ï¿½
             collision.GetComponent<PlayerInteraction>().CanInteract(this, false);
         }
     }
