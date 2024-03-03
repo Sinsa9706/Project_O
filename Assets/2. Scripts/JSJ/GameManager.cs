@@ -12,12 +12,11 @@ public class GameManager : MonoBehaviour
     public TMP_Text TimeText;
     public GameObject Image;
 
-
-    private float time;
     private float realTime = 1;//실제시간몇초당 10분
+    private float time;
     private int gameTime = 360;
 
-    private bool isSleep = false;//자는버튼
+    public static bool isNight = false;//자는버튼
 
     private void Awake()
     {
@@ -34,13 +33,13 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (isSleep == true)
+        if (isNight == true)
         {
             time = 0;
             gameTime = 360;
-            isSleep = false;
-            TimeCheck();
+            isNight = false;
             AlphaReset();
+            TimeCheck();
         }
         else
             TimeCheck();
@@ -60,7 +59,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void TimeTextChange()
+    public void TimeTextChange(bool isDay = false)
     {
         string text;
 
@@ -80,8 +79,10 @@ public class GameManager : MonoBehaviour
         string minute;
         minute = (gameTime % 60).ToString("D2");
 
-
         TimeText.text = text + hour + " : " + minute;
+
+        if (isDay == true)
+            TimeText.text = "오전  06 : 00";
     }
 
     public void AlphaChange()
