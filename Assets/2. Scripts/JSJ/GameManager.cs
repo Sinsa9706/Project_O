@@ -54,13 +54,8 @@ public class GameManager : MonoBehaviour
         {
             gameTime += 10;
             time = 0;
+
             AlphaChange();
-
-
-
-            if (gameTime >= 1440)
-                gameTime = 0;
-
             TimeTextChange();
         }
 
@@ -78,11 +73,24 @@ public class GameManager : MonoBehaviour
         else
             text = "오전 ";
 
-        TimeText.text = text + (gameTime / 60).ToString("D2") + " : " + (gameTime % 60).ToString("D2");
+        string hour;
+        hour = (gameTime / 60).ToString("D2");
+
+        if (gameTime / 60 >= 13)
+            hour = ((gameTime / 60) % 12).ToString("D2");
+
+        string minute;
+        minute = (gameTime % 60).ToString("D2");
+
+
+        TimeText.text = text + hour + " : " + minute;
     }
 
     public void AlphaChange()
     {
+        if (gameTime <= 1140)
+            return;
+
         if (Image.GetComponent<SpriteRenderer>().color.a >= 0.78)
             return;
 
