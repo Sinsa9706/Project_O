@@ -1,0 +1,46 @@
+{
+    "name": "NPC",
+    "maps": [
+        {
+            "name": "NPC",
+            "id": "23dba1e1-c8a9-432b-bc9d-fec2d42fc5cb",
+            "actions": [
+                {
+                    "name": "Interaction",
+                    "type": "Button",
+                    "id": "8cef6acf-77ae-4fe3-a943-bffaf82ce133",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "202223f0-4ea0-4216-ae01-ac7c92239153",
+                    "path": "<Keyboard>/z",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "NPC",
+                    "action": "Interaction",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "NPC",
+            "bindingGroup": "NPC",
+            "devices": [
+                {
+                    "devicePath": "<Keyboard>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
+}
