@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/1. Scenes/3. HouseField.unity
     guid: f7654f2ce192d544488a3c74e89914a3
+  - enabled: 1
+    path: Assets/1. Scenes/shop.unity
+    guid: 65321e8af37ae4d4ea6b82008bc6db13
   m_configObjects: {}

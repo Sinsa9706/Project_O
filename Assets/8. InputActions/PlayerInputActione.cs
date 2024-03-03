@@ -62,6 +62,15 @@ public partial class @PlayerInputActione: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Runing"",
+                    ""type"": ""Button"",
+                    ""id"": ""c383d955-2593-456c-b971-926f14c3c357"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -152,6 +161,17 @@ public partial class @PlayerInputActione: IInputActionCollection2, IDisposable
                     ""action"": ""Encyclopedia"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a69db3fd-8b3a-4606-b50d-1e33eabb4a84"",
+                    ""path"": ""<Keyboard>/shift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Runing"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -164,6 +184,7 @@ public partial class @PlayerInputActione: IInputActionCollection2, IDisposable
         m_Player_Inventory = m_Player.FindAction("Inventory", throwIfNotFound: true);
         m_Player_Interaction = m_Player.FindAction("Interaction", throwIfNotFound: true);
         m_Player_Encyclopedia = m_Player.FindAction("Encyclopedia", throwIfNotFound: true);
+        m_Player_Runing = m_Player.FindAction("Runing", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -229,6 +250,7 @@ public partial class @PlayerInputActione: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Inventory;
     private readonly InputAction m_Player_Interaction;
     private readonly InputAction m_Player_Encyclopedia;
+    private readonly InputAction m_Player_Runing;
     public struct PlayerActions
     {
         private @PlayerInputActione m_Wrapper;
@@ -237,6 +259,7 @@ public partial class @PlayerInputActione: IInputActionCollection2, IDisposable
         public InputAction @Inventory => m_Wrapper.m_Player_Inventory;
         public InputAction @Interaction => m_Wrapper.m_Player_Interaction;
         public InputAction @Encyclopedia => m_Wrapper.m_Player_Encyclopedia;
+        public InputAction @Runing => m_Wrapper.m_Player_Runing;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -258,6 +281,9 @@ public partial class @PlayerInputActione: IInputActionCollection2, IDisposable
             @Encyclopedia.started += instance.OnEncyclopedia;
             @Encyclopedia.performed += instance.OnEncyclopedia;
             @Encyclopedia.canceled += instance.OnEncyclopedia;
+            @Runing.started += instance.OnRuning;
+            @Runing.performed += instance.OnRuning;
+            @Runing.canceled += instance.OnRuning;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -274,6 +300,9 @@ public partial class @PlayerInputActione: IInputActionCollection2, IDisposable
             @Encyclopedia.started -= instance.OnEncyclopedia;
             @Encyclopedia.performed -= instance.OnEncyclopedia;
             @Encyclopedia.canceled -= instance.OnEncyclopedia;
+            @Runing.started -= instance.OnRuning;
+            @Runing.performed -= instance.OnRuning;
+            @Runing.canceled -= instance.OnRuning;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -297,5 +326,6 @@ public partial class @PlayerInputActione: IInputActionCollection2, IDisposable
         void OnInventory(InputAction.CallbackContext context);
         void OnInteraction(InputAction.CallbackContext context);
         void OnEncyclopedia(InputAction.CallbackContext context);
+        void OnRuning(InputAction.CallbackContext context);
     }
 }
