@@ -108,6 +108,8 @@ public class PlayerInteraction : MonoBehaviour
                     
         if (isInteracting) // 상호작용이 여전히 진행 중인 경우 완료 처리
         {
+
+
             // 상호작용 완료 시, 특정 몬스터에 대해서만 이벤트를 발생
             if (interactedMob != null)
             {

@@ -42,7 +42,7 @@ public class MobInteraction : MonoBehaviour
         // 현재 몬스터가 상호작용 가능한 상태인지 확인
         if (CanInteractWithPlayer && colliderMark != null)
         {
-            if (mobType.Contains("Corgi") || mobType.Contains("Mushroom") || mobType.Contains("Kirby")) // 특정 몬스터의 문자열
+            if (mobType.Contains("Corgi") || mobType.Contains("Mushroom") || mobType.Contains("Kirby")) // 특정 몬스터의 문자열 
             {
                 colliderMark.ActiveLoveMark(); // 현재 몬스터의 ColliderMark에 있는 ActiveLoveMark 메서드 호출
             }
@@ -53,8 +53,7 @@ public class MobInteraction : MonoBehaviour
                 StartCoroutine(HandleDeath()); ;  // 죽음 처리 메서드 호출
             }
             else if (mobType.Contains("Flower") || mobType.Contains("Grape") || mobType.Contains("Herb") || mobType.Contains("Tree"))
-            {// 식물이면 작동
-
+            {
                 // 식물 획득 파티클
                 // 식물 획득 로직
             }
