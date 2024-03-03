@@ -39,6 +39,7 @@ public class GameManager : MonoBehaviour
             gameTime = 360;
             isSleep = false;
             TimeCheck();
+            AlphaReset();
         }
         else
             TimeCheck();
@@ -58,8 +59,6 @@ public class GameManager : MonoBehaviour
             AlphaChange();
             TimeTextChange();
         }
-
-
     }
 
     public void TimeTextChange()
@@ -87,17 +86,28 @@ public class GameManager : MonoBehaviour
     }
 
     public void AlphaChange()
-    {
+    {   
+        Color color = new Color(0, 0, 0);
+        color.a = 0.05f;
+
         if (gameTime <= 1140)
             return;
 
         if (Image.GetComponent<SpriteRenderer>().color.a >= 0.78)
             return;
 
-        Color color = new Color(0, 0, 0);
-        color.a = 0.05f;
-
         Image.GetComponent<SpriteRenderer>().color += color;
+    }
+    public void AlphaReset()
+    {
+        Color color = new Color(0, 0, 0);
+
+        color.r = Image.GetComponent<SpriteRenderer>().color.r;
+        color.g = Image.GetComponent<SpriteRenderer>().color.g;
+        color.b = Image.GetComponent<SpriteRenderer>().color.b;
+        color.a = 0;
+
+        Image.GetComponent<SpriteRenderer>().color = color;
     }
 
 
