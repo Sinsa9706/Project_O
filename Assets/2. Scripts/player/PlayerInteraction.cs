@@ -13,11 +13,12 @@ public class PlayerInteraction : MonoBehaviour
 
     private List<MobInteraction> interactableMobs = new List<MobInteraction>();  // 상호작용 몬스터 리스트, 임시
 
-    // 상호작용 완료 이벤트를 non-static으로 변경
+   
     public UnityEvent onInteraction = new UnityEvent();
 
     private bool isInteracting = false;  // 상호작용 중인지 여부
     private bool isPressingInteractKey = false; // 상호작용 키를 누르고 있는지 여부
+
 
 
     void Start()

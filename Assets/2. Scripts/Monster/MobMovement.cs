@@ -7,11 +7,17 @@ using System;
 public class MobMovement : MonoBehaviour
 {
     private float speed = 3.0f;
-    private Vector3 pos; // 몬스터 목적지
+    private float RunSpeed = 5.0f; 
+    private Vector3 startPos; // 몬스터가 처음 생성된 위치
+    private Vector3 randomPos; // 몬스터가 랜덤하게 이동할 위치
+    public float mobRadius = 10f; // 몬스터가 이동할 수 있는 최대 범위
+
     private Animator animator; // 몹에 연결된 애니메이터  컴포넌트
     private bool isWalking = false; // 몬스터가 현재 걷고 있는지 여부, 기본은 정지 상태(false)
     public bool isDead = false; // 몹이 죽었는지 여부를 추적하는 변수
     private MobInteraction mobInteraction; // MobInteraction 컴포넌트 참조
+
+
 
 
     void Start()
@@ -23,7 +29,8 @@ public class MobMovement : MonoBehaviour
             Debug.LogError("MobInteraction 컴포넌트 없음");
             return;
         }
-
+       
+        startPos = transform.position; // 초기 위치 설정
         StartCoroutine(Roaming());
     }
 
@@ -44,7 +51,7 @@ public class MobMovement : MonoBehaviour
             if (!isWalking) // 멈춤 상태
             {
                 // 이동할 새로운 목적지 랜덤 설정
-                pos = new Vector3(UnityEngine.Random.Range(-3f, 3f), UnityEngine.Random.Range(-3f, 3f), transform.position.z);
+                randomPos = startPos + (Vector3)(UnityEngine.Random.insideUnitCircle * mobRadius);
                 isWalking = true; // 걷는 상태로 설정
                 animator.SetBool("IsWalking", true); // 애니메이터에 걷는 상태임을 알림
             }
@@ -52,9 +59,9 @@ public class MobMovement : MonoBehaviour
             if (isWalking) // 걷는 상태
             {
                 // 몬스터를 목적지 쪽으로 이동
-                MoveTowards(pos);
+                MoveTowards(randomPos);
             }
-            if (Vector3.Distance(transform.position, pos) <= 0.1f) // 목적지에 도달했다면
+            if (Vector3.Distance(transform.position, randomPos) <= 0.1f) // 목적지에 도달했다면
             {
                 isWalking = false; // 멈춤 상태로 설정
                 animator.SetBool("IsWalking", false); // 애니메이터에 멈춤 상태임을 알림
@@ -104,13 +111,18 @@ public class MobMovement : MonoBehaviour
     {
         if (!isWalking && !isDead) // 걷고 있지 않음 + 안 죽었을 때
         {
-            // 놀란 상태에서의 랜덤한 목적지 설정
-            pos = new Vector3(UnityEngine.Random.Range(-3f, 3f), UnityEngine.Random.Range(-3f, 3f), transform.position.z);
+            // startPos를 중심으로 roamRadius 내에서 랜덤한 목적지 설정
+            Vector3 randomPos = startPos + new Vector3(
+            UnityEngine.Random.Range(-mobRadius, mobRadius), 
+            UnityEngine.Random.Range(-mobRadius, mobRadius), 
+            0f
+        );
+
             isWalking = true;
             animator.SetBool("IsSurprised", true); // 놀란 상태 애니메이션 활성화
 
             // 목적지로 이동 시작, 이동이 완료되면 콜백 함수를 호출
-            StartCoroutine(MoveToPosition(pos, () =>
+            StartCoroutine(MoveToPosition(randomPos, () =>
             {
                 // 이동이 끝났을 때 콜백
                 animator.SetBool("IsSurprised", false);
@@ -119,21 +131,21 @@ public class MobMovement : MonoBehaviour
         }
     }
 
-    IEnumerator MoveToPosition(Vector3 target, Action action)
+    IEnumerator MoveToPosition(Vector3 target, Action onComplete)
     {
         while (Vector3.Distance(transform.position, target) > 0.1f)
         {
             // 방향 계산 및 이동
             Vector3 direction = (target - transform.position).normalized;
-            transform.position += direction * speed * Time.deltaTime;
+            transform.position += direction * RunSpeed * Time.deltaTime;
 
-            // 스프라이트의 방향을 이동 방향에 맞추어 뒤집음 (오른쪽은 기본상태이며 이미 구현됨)
+            // 스프라이트의 방향을 이동 방향에 맞추어 뒤집음
             SpriteRenderer spriteRenderer = GetComponentInChildren<SpriteRenderer>();
             spriteRenderer.flipX = direction.x < 0; // 왼쪽 갈 때 플립
 
             yield return null;
         }
-        action?.Invoke();
+        onComplete?.Invoke();
     }
 }
 
