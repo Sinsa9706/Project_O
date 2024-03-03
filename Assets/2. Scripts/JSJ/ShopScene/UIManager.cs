@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System.Diagnostics;
 
 public class UIManager : MonoBehaviour
 {
     [HideInInspector]
-    public static int Count = 0;
-    
+    public static int Count;
+
     //ON OFF Change
     public void UIOnOff(GameObject ui)
     {
@@ -34,7 +35,6 @@ public class UIManager : MonoBehaviour
         Count = int.Parse(text.text);
         Count++;
         text.text = Count.ToString();
-        PriceText();
     }
     public void CountMinus(TMP_Text text)
     {
@@ -43,7 +43,6 @@ public class UIManager : MonoBehaviour
             return;
         Count--;
         text.text = Count.ToString();
-        PriceText();//Text연결하기
 
     }
     public void CountReset(TMP_Text text)
@@ -51,12 +50,4 @@ public class UIManager : MonoBehaviour
         Count = 0;
         text.text = Count.ToString();
     }
-
-    public void PriceText()
-    {
-        int price = 50 * Count;//50은 인벤
-    }
-
-
-
 }
