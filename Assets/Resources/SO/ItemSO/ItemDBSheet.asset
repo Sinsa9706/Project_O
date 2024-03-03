@@ -19,7 +19,8 @@ MonoBehaviour:
       \uAC10\uAE30\uC5D0 \uC88B\uB2E4\uACE0 \uD55C\uB2E4. \uBBF8\uCE5C\uB4EF\uC774
       \uC4F4 \uB9DB\uC740 \uB364."
     _type: 1
-    _stack: 20
+    _stack: 1
+    _maxstack: 20
     _price: 0
     _spritePath: Items/Flower_Item
   - _id: 10010002
@@ -27,7 +28,8 @@ MonoBehaviour:
     _description: "\uC0AC\uD0D5 \uB098\uBB34\uC5D0\uC11C \uB5A8\uC5B4\uC9C4 \uC0AC\uD0D5.
       \uB2E4\uC591\uD55C \uACFC\uC77C \uB9DB\uC774 \uB09C\uB2E4."
     _type: 1
-    _stack: 20
+    _stack: 1
+    _maxstack: 20
     _price: 0
     _spritePath: 
   - _id: 10010003
@@ -35,7 +37,8 @@ MonoBehaviour:
     _description: "\uBD89\uC740 \uBE5B\uC774 \uB098\uB294 \uAF43\uC78E. \uBB34\uC5B8\uAC00
       \uC624\uC2F9\uD55C \uB0C4\uC0C8\uAC00 \uB098\uB294 \uAC83 \uAC19\uAE30\uB3C4.."
     _type: 1
-    _stack: 20
+    _stack: 1
+    _maxstack: 20
     _price: 0
     _spritePath: 
   - _id: 10010004
@@ -44,7 +47,8 @@ MonoBehaviour:
       \uD5C8\uBE0C\uC758 \uC78E. \uD2B9\uC720\uC758 \uD5A5 \uB54C\uBB38\uC5D0 \uACE0\uAE30\uC5D0
       \uC2F8\uC11C \uBA39\uB294 \uC0AC\uB78C\uB4E4\uB3C4 \uC788\uB2E4\uACE0 \uD55C\uB2E4."
     _type: 1
-    _stack: 20
+    _stack: 1
+    _maxstack: 20
     _price: 0
     _spritePath: 
   - _id: 10010005
@@ -56,7 +60,8 @@ MonoBehaviour:
       \uC0AC\uC7A5\uB2D8 \uAC10\uC0AC\uD569\uB2C8\uB2E4\"\uB77C\uACE0 \uB9D0\uD574\uC57C
       \uD558\uB294 \uD48D\uC2B5\uC774 \uC788\uB2E4."
     _type: 1
-    _stack: 20
+    _stack: 1
+    _maxstack: 20
     _price: 0
     _spritePath: 
   - _id: 10010006
@@ -64,7 +69,8 @@ MonoBehaviour:
     _description: "\uC774\uACF3 \uC800\uACF3\uC5D0 \uC4F0\uC774\uB294 \uB9C8\uB978
       \uBC84\uC12F\uC774\uB2E4. \uAC10\uCE60\uB9DB\uC744 \uB0B4\uB294 \uB370 \uD0C1\uC6D4\uD558\uB2E4."
     _type: 1
-    _stack: 20
+    _stack: 1
+    _maxstack: 20
     _price: 0
     _spritePath: 
   - _id: 10020001
@@ -73,7 +79,8 @@ MonoBehaviour:
       \uB0A0\uAC1C. \uCAC4\uAE43\uCAC4\uAE43\uD55C \uC2DD\uAC10\uC744 \uAC00\uC9C4
       \uC88B\uC740 \uB2E8\uBC31\uC9C8 \uACF5\uAE09\uC6D0\uC774\uB2E4."
     _type: 1
-    _stack: 20
+    _stack: 1
+    _maxstack: 20
     _price: 0
     _spritePath: 
   - _id: 10020002
@@ -83,7 +90,8 @@ MonoBehaviour:
       \uC720\uC0AC \uAF2C\uBD80\uAE30\uB97C \uBD88\uBC95 \uBC00\uB835\uD558\uACE0
       \uC788\uB2E4."
     _type: 1
-    _stack: 20
+    _stack: 1
+    _maxstack: 20
     _price: 0
     _spritePath: 
   - _id: 10020003
@@ -92,7 +100,8 @@ MonoBehaviour:
       \uD53C\uB85C \uD68C\uBCF5\uC5D0 \uC88B\uB2E4\uACE0 \uD55C\uB2E4. \uC758\uC678\uB85C
       \uD488\uACA9\uC788\uB294 \uACE0\uC18C\uD55C \uB9DB\uC774 \uB09C\uB2E4."
     _type: 1
-    _stack: 20
+    _stack: 1
+    _maxstack: 20
     _price: 0
     _spritePath: 
   - _id: 10020004
@@ -101,7 +110,8 @@ MonoBehaviour:
       \uBD88\uB3C4\uB9C8\uBC40\uC758 \uAF2C\uB9AC. \uD2B9\uD788 \uB0A8\uC790\uD55C\uD14C
       \uC88B\uB2E4\uB294 \uC18C\uBB38\uB3C4..?"
     _type: 1
-    _stack: 20
+    _stack: 1
+    _maxstack: 20
     _price: 0
     _spritePath: 
   - _id: 10020005
@@ -110,7 +120,8 @@ MonoBehaviour:
       \uBD84\uBE44\uBB3C. \uC5F0\uACE0\uC5D0 \uC4F0\uC774\uAE30\uB3C4 \uD55C\uB2E4\uB294\uB370..
       \uBA39\uC744 \uC21C \uC788\uB294\uAC78\uAE4C..?"
     _type: 1
-    _stack: 20
+    _stack: 1
+    _maxstack: 20
     _price: 0
     _spritePath: 
   - _id: 10020006
@@ -120,38 +131,33 @@ MonoBehaviour:
       \uBAA8\uB4E0 \uC2A4\uD2B8\uB808\uC2A4\uAC00 \uC0AC\uB77C\uC9C8 \uC815\uB3C4\uB85C
       \uD589\uBCF5\uD574\uC9C4\uB2E4."
     _type: 1
-    _stack: 20
+    _stack: 1
+    _maxstack: 20
     _price: 0
     _spritePath: 
   - _id: 10030001
-    _name: "\uC791\uC740 \uD3EC\uC158\uBCD1"
-    _description: "\uC791\uC740 \uD3EC\uC158\uC744 \uB9CC\uB4E4 \uB54C \uC0AC\uC6A9\uD558\uB294
-      \uBCD1\uC774\uB2E4."
+    _name: "\uBE48\uBCD1 \uD3EC\uC158"
+    _description: "\uD3EC\uC158\uC744 \uB2F4\uB294 \uB370 \uC4F0\uB294 \uBCD1."
     _type: 1
-    _stack: 20
-    _price: 30
+    _stack: 1
+    _maxstack: 99
+    _price: 50
     _spritePath: 
   - _id: 10030002
-    _name: "\uD070 \uD3EC\uC158\uBCD1"
-    _description: "\uD070 \uD3EC\uC158\uC744 \uB9CC\uB4E4 \uB54C \uC0AC\uC6A9\uD558\uB294
-      \uBCD1\uC774\uB2E4."
+    _name: "\uC0AC\uD0D5 \uD3EC\uC7A5\uC9C0"
+    _description: "\uC0AC\uD0D5\uC744 \uD3EC\uC7A5\uD560 \uB54C \uC4F0\uB294 \uD3EC\uC7A5\uC9C0."
     _type: 1
-    _stack: 20
+    _stack: 1
+    _maxstack: 99
     _price: 50
     _spritePath: 
   - _id: 10030003
     _name: "\uC7BC \uBCD1"
-    _description: "\uC7BC\uC744 \uB2F4\uC544\uC11C \uBCF4\uAD00\uD558\uB294 \uBCD1\uC774\uB2E4."
+    _description: "\uC7BC\uC744 \uB2F4\uB294 \uB370 \uC4F0\uB294 \uBCD1."
     _type: 1
-    _stack: 20
+    _stack: 1
+    _maxstack: 99
     _price: 50
-    _spritePath: 
-  - _id: 10030004
-    _name: "\uC0AC\uD0D5 \uD3EC\uC7A5\uC9C0"
-    _description: "\uC0AC\uD0D5\uC744 \uB9CC\uB4E4 \uB54C \uC0AC\uC6A9\uB41C\uB2E4."
-    _type: 1
-    _stack: 20
-    _price: 10
     _spritePath: 
   - _id: 20010001
     _name: "\uC5D0\uBA54\uB784\uB4DC \uC5D0\uC13C\uC2A4"
@@ -159,7 +165,8 @@ MonoBehaviour:
       \uD5C8\uBE0C\uD5A5\uC774 \uB098\uB294 \uAFB8\uB355\uD55C \uB290\uB08C\uC758
       \uD5A5\uC2E0\uB8CC\uC774\uB2E4."
     _type: 3
-    _stack: 20
+    _stack: 1
+    _maxstack: 20
     _price: 100
     _spritePath: 
   - _id: 20010002
@@ -168,7 +175,8 @@ MonoBehaviour:
       \uAC15\uB82C\uD55C \uD5A5\uC774 \uB098\uB294 \uBB3C\uC57D\uC73C\uB85C \uB0A8\uC790\uB4E4\uC774
       \uC8FC\uB85C \uB9CE\uC774 \uCC3E\uB294\uB2E4."
     _type: 3
-    _stack: 20
+    _stack: 1
+    _maxstack: 20
     _price: 200
     _spritePath: 
   - _id: 20010003
@@ -178,7 +186,8 @@ MonoBehaviour:
       \uD3ED\uC8FD\uC774 \uD130\uC9C0\uBA74\uC11C \uBA39\uC740 \uC774\uB4E4\uC758
       \uD589\uBCF5\uC744 \uCC3E\uC544\uC900\uB2E4."
     _type: 3
-    _stack: 20
+    _stack: 1
+    _maxstack: 20
     _price: 300
     _spritePath: 
   - _id: 20010004
@@ -187,7 +196,8 @@ MonoBehaviour:
       \uD504\uB85C\uD2F4 \uC250\uC774\uD06C. \uB9E4\uC77C \uC544\uCE68 \uCC59\uACA8
       \uBA39\uC73C\uBA74 \uAC74\uAC15\uD574 \uC9C8 \uAC83 \uAC19\uB2E4."
     _type: 3
-    _stack: 20
+    _stack: 1
+    _maxstack: 20
     _price: 400
     _spritePath: 
   - _id: 20010005
@@ -197,7 +207,8 @@ MonoBehaviour:
       \uC911\uB3C5\uC131 \uC788\uB294 \uD5A5\uC774 \uB098\uB294 \uB9DB\uC788\uB294
       \uC7BC\uC774\uB2E4."
     _type: 3
-    _stack: 20
+    _stack: 1
+    _maxstack: 20
     _price: 500
     _spritePath: 
   - _id: 20010006
@@ -206,6 +217,7 @@ MonoBehaviour:
       \uD48D\uBD80\uD55C \uAC10\uCE60\uB9DB\uACFC \uD5A5\uAE0B\uD55C \uBBFC\uD2B8\uD5A5\uC73C\uB85C
       \uC8FC\uBD80\uB4E4\uC5D0\uAC8C \uC778\uAE30\uAC00 \uB9CE\uB2E4."
     _type: 3
-    _stack: 20
+    _stack: 1
+    _maxstack: 20
     _price: 600
     _spritePath: 

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Data.Common;
 using UnityEngine;
 
 public class ItemDB : MonoBehaviour
@@ -8,7 +9,7 @@ public class ItemDB : MonoBehaviour
 
     public ItemDB()
     {
-        var res = Resources.Load<ItemDBSheet>(path: "SO/ItemSO");
+        var res = Resources.Load<ItemDBSheet>("SO/ItemSO/ItemDBSheet");
         var itemSO = Object.Instantiate(res);
         var entities = itemSO.Items;
 
@@ -27,11 +28,16 @@ public class ItemDB : MonoBehaviour
         }
     }
 
+    public Dictionary<int, ItemData> Get()
+    {
+        return _items;
+    }
+
     public ItemData Get(int id)
     {
         if(_items.ContainsKey(id))
             return _items[id];
-
+        
         return null;
     }
 
