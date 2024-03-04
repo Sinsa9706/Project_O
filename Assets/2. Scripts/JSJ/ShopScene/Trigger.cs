@@ -12,10 +12,12 @@ public class Trigger : MonoBehaviour
     public GameObject InteractionUI;
     public GameObject BoxInteractionUI;
     public GameObject QuestInteractionUI;
+    public GameObject SleepInteractionUI;
 
     public static bool inShop = false;
     public static bool inBox = false;
     public static bool inQuest = false;
+    public static bool isSleep = false;
 
     private void Awake()
     {
@@ -39,6 +41,11 @@ public class Trigger : MonoBehaviour
             _UIManager.UIOn(QuestInteractionUI);
             inQuest = true;
         }
+        if (collision.tag == "Bed")
+        {
+            _UIManager.UIOn(SleepInteractionUI);
+            isSleep = true;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -57,6 +64,11 @@ public class Trigger : MonoBehaviour
         {
             _UIManager.UIOff(QuestInteractionUI);
             inQuest = false;
+        }
+        if (collision.tag == "Bed")
+        {
+            _UIManager.UIOff(SleepInteractionUI);
+            isSleep = false;
         }
     }
 }

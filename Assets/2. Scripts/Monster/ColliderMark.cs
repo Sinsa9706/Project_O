@@ -13,34 +13,39 @@ public class ColliderMark : MonoBehaviour
     public Image loveMark; // 러브 이미지
     public Animator loveMarkAnimator; // 러브 애니메이터
 
+    public Image exclamationMark; // 느낌표 이미지
+    public Animator exclamationMarkAnimator; // 느낌표 애니메이터
+
     public PlayerInteraction playerInteraction; // 플레이어 상호작용 스크립트 참조
+
+
 
     void Start()
     {
-        //if (playerInteraction == null)
-        //{
-        //    Debug.LogError("ColliderMark: PlayerInteraction 컴포넌트가 할당되지 않았습니다.", this);
-        //    return; // PlayerInteraction 컴포넌트가 없으면, 오류 메시지를 출력하고 초기화를 중단합니다.
-        //}
+
+        if (exclamationMark != null)
+        {
+            exclamationMark.enabled = false; // 느낌표 이미지 숨김
+        }
 
         if (questionMark != null)
         {
-            questionMark.enabled = false; // 물음표 이미지 비활성화
+            questionMark.enabled = false; // 물음표 이미지 숨김
         }
         if (loveMark != null)
         {
-            loveMark.enabled = false; // 러브 이미지 비활성화
+            loveMark.enabled = false; // 러브 이미지 숨김
         }
         playerInteraction.onInteraction.AddListener(ActiveLoveMark); // 이벤트 리스너 추가
 
     }
-    public void ActiveLoveMark() // 인스펙터 이벤트 리스너에 연결하려면 public으로 바꿔줘야함 (완료)
+    public void ActiveLoveMark() // Love 마크 
     {
         if (loveMark != null)
         {
             loveMark.enabled = true;
 
-            if(loveMarkAnimator != null)
+            if (loveMarkAnimator != null)
             {
                 loveMarkAnimator.Rebind(); // 애니메이터 초기화
                 loveMarkAnimator.Play("Love", -1, 0f); // 해당 애니메이션 재생
@@ -48,6 +53,22 @@ public class ColliderMark : MonoBehaviour
             StartCoroutine(DeactivateImage(loveMark, loveMarkAnimator, 2.0f)); // 2초후 비활성화
         }
     }
+    public void ActiveExclamationMark() // 느낌표 마크
+    {
+
+        if (exclamationMark != null)
+        {
+            exclamationMark.enabled = true;
+
+            if (exclamationMarkAnimator != null)
+            {
+                exclamationMarkAnimator.Rebind(); // 애니메이터 초기화
+                exclamationMarkAnimator.Play("Exclamation", -1, 0f); // 해당 애니메이션 재생
+            }
+            StartCoroutine(DeactivateImage(exclamationMark, exclamationMarkAnimator, 2.0f)); // 2초후 비활성화
+        }
+    }
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
