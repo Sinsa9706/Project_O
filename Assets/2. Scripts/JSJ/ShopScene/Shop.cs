@@ -56,9 +56,12 @@ public class Shop : MonoBehaviour
         DescSprite.SetNativeSize();
     }
 
-    public void BuyItem()
+    public void BuyItem(TMP_Text priceText)
     {
-        for(int i = 0; i < UIManager.Count; ++i)
+        if (GameManager.PlayerGold < int.Parse(priceText.text))
+            return;
+
+        for (int i = 0; i < UIManager.Count; ++i)
         {
             Inventory.Instance.AddItem(clickItemId);
         }

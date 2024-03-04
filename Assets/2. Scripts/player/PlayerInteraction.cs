@@ -105,7 +105,7 @@ public class PlayerInteraction : MonoBehaviour
             }
             yield return null;
         }
-                    
+
         if (isInteracting) // 상호작용이 여전히 진행 중인 경우 완료 처리
         {
 
@@ -124,9 +124,76 @@ public class PlayerInteraction : MonoBehaviour
             isInteracting = false;
             interactionSlider.gameObject.SetActive(false);  // 충전 완료시 슬라이더 숨김
             interactionSlider.value = 0;  // 슬라이더 값 초기화
+
+
+
+            switch (true)
+            {
+                case bool _ when interactedMob.mobType.Contains("Corgi"):
+                    Inventory.Instance.AddItem(10020005);
+                    Debug.Log("Item1 추가 10020005");
+                    // 인벤토리에 코기 분비물 추가
+                    break;
+                case bool _ when interactedMob.mobType.StartsWith("Mushroom"):
+                    Inventory.Instance.AddItem(10010006);
+                    Debug.Log("Item2 추가 10010006");
+                    // 인벤토리에 마른 버섯 추가
+                    break;
+                case bool _ when interactedMob.mobType.Contains("Kirby"):
+                    Inventory.Instance.AddItem(10020006);
+                    Debug.Log("Item3 추가 10020006");
+                    // 인벤토리에 커비의 별가루 추가
+                    break;
+                case bool _ when interactedMob.mobType.StartsWith("Turtle"):
+                    Inventory.Instance.AddItem(10020002);
+                    Debug.Log("Item4 추가 10020002");
+                    // 인벤토리에 유사-꼬부기 등껍질 추가 
+                    break;
+                case bool _ when interactedMob.mobType.Contains("Salamander"):
+                    Inventory.Instance.AddItem(10020001);
+                    Debug.Log("Item5 추가 10020001");
+                    // 인벤토리에 날도롱뇽 날개 추가 로직
+                    break;
+                case bool _ when interactedMob.mobType.StartsWith("Grasshopper"):
+                    Inventory.Instance.AddItem(10020003);
+                    Debug.Log("Item6 추가 10020003");
+                    // 인벤토리에 여치 더듬이 추가 로직
+                    break;
+                case bool _ when interactedMob.mobType.Contains("Lizard"):
+                    Inventory.Instance.AddItem(10020004);
+                    Debug.Log("Item7 추가 10020004");
+                    // 인벤토리에 불도마뱀 꼬리 추가 로직
+                    break;
+                case bool _ when interactedMob.mobType.StartsWith("Man-Eating"):
+                    Inventory.Instance.AddItem(10010003);
+                    Debug.Log("Item8 추가 10010003");
+                    // 인벤토리에 식인꽃 꽃잎 추가 로직
+                    break;
+                case bool _ when interactedMob.mobType.Contains("Tree"):
+                    Inventory.Instance.AddItem(10010002);
+                    Debug.Log("Item9 추가 10010002");
+                    // 인벤토리에 사탕 추가 로직
+                    break;
+                case bool _ when interactedMob.mobType.StartsWith("Grape"):
+                    Inventory.Instance.AddItem(10010005);
+                    Debug.Log("Item10 추가 10010005");
+                    // 인벤토리에 오스틴-포도 추가 로직
+                    break;
+                case bool _ when interactedMob.mobType.Contains("Herb"):
+                    Inventory.Instance.AddItem(10010004);
+                    Debug.Log("Item11 추가 10010004");
+                    // 인벤토리에 야자 허브 추가 로직
+                    break;
+                case bool _ when interactedMob.mobType.StartsWith("Flower"):
+                    Inventory.Instance.AddItem(10010001);
+                    Debug.Log("Item12 : 추가 10010001");
+                    // 인벤토리에 백일홍 꽃잎 추가 로직
+                    break;
+                default:
+                    Debug.Log("아이템을 획득 할 수 없습니다.");
+                    break;
+            }
         }
-        // TODO: 아이템 획득 이미지 표시 로직
-        // TODO: 인벤토리 아이템 추가 로직
     }
 
     private void StopInteraction()
@@ -143,45 +210,4 @@ public class PlayerInteraction : MonoBehaviour
 
 
 
-
-
-
-
-
-
-
-    //public void CanInteract(MobInteraction mob, bool canInteract)  // Unity Event액션 용
-    //{
-    //    if (canInteract)
-    //    {
-    //        // TODO: 추후 몬스터 종류 추가
-    //        if (!interactableMobs.Contains(mob))
-    //        {
-    //            interactableMobs.Add(mob);
-    //        }
-    //    }
-    //    else
-    //    {
-    //        interactableMobs.Remove(mob);
-    //    }
-    //}
-
-    //public void OnInteraction(InputAction.CallbackContext context) // Unity 이벤트액션 용
-    //{
-    //    // 상호작용 가능한 몬스터가 있을 때만 상호작용 시작
-    //    if (interactableMobs.Count > 0)
-    //    {
-    //        if (context.started)
-    //        {
-    //            interactionSlider.gameObject.SetActive(true);
-    //            interactionCoroutine = StartCoroutine(FillSliderOverTime(1.0f)); // 코루틴 시작, 충전시간 1초
-    //        }
-    //        else if (context.canceled)
-    //        {
-    //            interactionSlider.gameObject.SetActive(false);
-    //            StopCoroutine(interactionCoroutine); // 코루틴 중지
-    //            interactionSlider.value = 0; // 슬라이더 값 초기화
-    //        }
-    //    }
-    //}
 }
