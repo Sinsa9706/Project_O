@@ -40,7 +40,10 @@ public class ItemData
         get
         {
             if (_sprite == null)
+            {
                 Resources.Load<Sprite>(SpritePath);
+                Debug.Log("읽음");
+            }
             return _sprite;
         }
     }
