@@ -247,8 +247,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TimeText: {fileID: 1156672226}
-  Image: {fileID: 1765567610}
-  Gold: 500
+  DarkImage: {fileID: 0}
+  PlayerGoldText: {fileID: 0}
 --- !u!4 &456583108
 Transform:
   m_ObjectHideFlags: 0
