@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
@@ -39,6 +40,7 @@ public class Inventory : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
+            Init();
             DontDestroyOnLoad(gameObject);
         }
         else
@@ -50,7 +52,7 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    private void Start()
+    private void Init()
     {
         inventoryWindow.SetActive(false);
         slots = new ItemSlot[uiSlots.Length];
@@ -67,7 +69,7 @@ public class Inventory : MonoBehaviour
 
     public void OnInventoryButton(InputAction.CallbackContext callbackContext)
     {
-        if(callbackContext.phase == InputActionPhase.Started)
+        if (callbackContext.phase == InputActionPhase.Started)
         {
             Toggle();
         }
@@ -98,27 +100,32 @@ public class Inventory : MonoBehaviour
     // 몬스터를 상호작용 했을 때, 다음 순서에 이 메서드를 사용하면 인벤토리에 아이템이 들어가진다.
     public void AddItem(int id)
     {
-        if (HaveItem.ContainsKey(id))
+        // 1. ContainsKey로 haveitem을 찾는게 아니라 slots에 동일한 아이템이 존재하는지 찾아야 함. 찾으면 그 슬롯의 quantity를 높여라 근데 max를 넘으면, 반환 받은 만큼 아이템 추가 생성
+        for (int i = 0; i < slots.Length; i++)
         {
-            ItemData itemData = HaveItem[id];
-            itemData.Stack++;
-            UpdateUI();
-            return;
-            // Slot에서 MaxStack 활용해서 20개씩 소분시키기
-        }
-        ItemData findItemData = Database.Item.Get(id);
-        HaveItem.Add(id, findItemData);
+            if (slots[i].item == Database.Item.Get(id))
+            {
+                if (slots[i].quantity < Database.Item.Get(id).MaxStack)
+                {
+                    slots[i].quantity++;
+                    UpdateUI();
+                    Debug.Log("a"+i);
+                    return;
+                }
+            }
 
-        ItemSlot emptySlot = GetEmptySlot();
+            ItemSlot emptySlot = GetEmptySlot();
 
-        if (emptySlot != null)
-        {
-            emptySlot.item = HaveItem[id];
-            emptySlot.quantity = HaveItem[id].Stack;
-            UpdateUI();
+            if (emptySlot != null)
+            {
+                emptySlot.item = Database.Item.Get(id);
+                emptySlot.quantity = 1;
+                UpdateUI();
+                Debug.Log("b" + id);
+                return;
+            }
             return;
         }
-        return;
     }
 
     // 아이템이 사라지는 메서드 (사용했을 때)
@@ -132,9 +139,10 @@ public class Inventory : MonoBehaviour
 
     }
 
-    public ItemData GetItem(int id)
+    public ItemSlot GetItem(int i)
     {
-        return HaveItem[id];
+        Debug.Log(slots.Length);
+        return slots[i];
     }
 
     void UpdateUI()
@@ -159,6 +167,17 @@ public class Inventory : MonoBehaviour
         return null;
     }
 
+    ItemData GetItemStack(int id)
+    {
+        for (int i = 0; i < slots.Length; i++)
+        {
+            if (slots[i].item == HaveItem[id] && slots[i].quantity <= HaveItem[id].MaxStack)
+                return slots[i].item;
+        }
+
+        return null;
+    }
+
     public void SelectItem(int index)
     {
         if (slots[index].item == null)
@@ -168,7 +187,7 @@ public class Inventory : MonoBehaviour
         selectedItemIndex = index;
 
         selectedItemName.text = selectedItem.item.Name;
-        selectedItemPrice.text = selectedItem.item.Price.ToString();
+        selectedItemPrice.text = selectedItem.item.Price == 0 ? "-" : selectedItem.item.Price.ToString();
         selectedItemDescription.text = selectedItem.item.Desciption;
 
         //for(int i = 0; i < selectedItem.item.)

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Data.Common;
 using UnityEngine;
 
-public class ItemDB : MonoBehaviour
+public class ItemDB
 {
     private Dictionary<int, ItemData> _items = new();
 

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditorInternal.Profiling.Memory.Experimental;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -24,21 +25,8 @@ public class ItemSlotUI : MonoBehaviour
         curSlot = slot;
         icon.gameObject.SetActive(true);
         icon.sprite = Resources.Load<Sprite>(slot.item.SpritePath);
-        quantityText.text = slot.quantity >= slot.item.Stack ? slot.quantity.ToString() : string.Empty;
-        // 비어있는 슬롯에 새롭게 표시
-        if (slot.quantity >= slot.item.MaxStack)
-        {
-            index++;
-
-            if(slot != null)
-            {
-                while(slot == null)
-                {
-                    index++;
-                }
-                return;
-            }
-        }
+        quantityText.text = slot.quantity >= 1 ? slot.quantity.ToString() : string.Empty;
+        // Stack이 MaxStack을 넘어가면 새로운 슬롯에 표시
     }
 
     public void Clear()
@@ -50,6 +38,6 @@ public class ItemSlotUI : MonoBehaviour
 
     public void OnButtonClick()
     {
-
+        Inventory.Instance.SelectItem(index);
     }
 }

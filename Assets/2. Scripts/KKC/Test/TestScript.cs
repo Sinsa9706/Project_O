@@ -8,10 +8,13 @@ public class TestScript : MonoBehaviour
 
     private void Start()
     {
-        itemData = Database.Item.Get(10010001);
-        Debug.Log(itemData.Name);
-
         Inventory.Instance.AddItem(10010001);
-        Debug.Log(Inventory.Instance.GetItem(10010001).Name);
+        for(int i = 0; i < 20; i++)
+        {
+            Inventory.Instance.AddItem(10010001);
+        }
+        Inventory.Instance.AddItem(10010002);
+        Inventory.Instance.AddItem(10030004);
+        Debug.Log(Inventory.Instance.GetItem(0).item.Name);
     }
 }
