@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class Shop : MonoBehaviour
 {
     [Header("Shop Item")]
@@ -13,6 +14,9 @@ public class Shop : MonoBehaviour
     public TMP_Text DescName;
     public TMP_Text Desc;
     public Image DescSprite;
+
+    [Header("Sprite")]
+    public List<Sprite> Sprites;
 
     public static int ItemGold;
 
@@ -40,18 +44,24 @@ public class Shop : MonoBehaviour
 
     private void ItemUIChange(int num)
     {
+        DescSprite.enabled = true;
+
         string name = Items[num].Name;
         string description = Items[num].Desciption;
-        //Sprite sprite = Items[num].Sprite;
+        Sprite sprite = Sprites[num];
 
         DescName.text = name;
         Desc.text = description;
-        //DescSprite.sprite = sprite;
+        DescSprite.sprite = sprite;
+        DescSprite.SetNativeSize();
     }
 
     public void BuyItem()
     {
-        for(int i = 0; i <= UIManager.Count; ++i)
+        for(int i = 0; i < UIManager.Count; ++i)
+        {
             Inventory.Instance.AddItem(clickItemId);
+
+        }
     }
 }

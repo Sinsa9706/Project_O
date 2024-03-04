@@ -52,6 +52,9 @@ public class Inventory : MonoBehaviour
         }
     }
 
+
+
+
     private void Init()
     {
         inventoryWindow.SetActive(false);
@@ -74,7 +77,7 @@ public class Inventory : MonoBehaviour
             Toggle();
         }
     }
-
+    
     public void Toggle()
     {
         if (inventoryWindow.activeInHierarchy)
@@ -109,11 +112,11 @@ public class Inventory : MonoBehaviour
                 {
                     slots[i].quantity++;
                     UpdateUI();
-                    Debug.Log("a"+i);
+                    Debug.Log("a" + i);
                     return;
                 }
             }
-
+        }
             ItemSlot emptySlot = GetEmptySlot();
 
             if (emptySlot != null)
@@ -122,10 +125,10 @@ public class Inventory : MonoBehaviour
                 emptySlot.quantity = 1;
                 UpdateUI();
                 Debug.Log("b" + id);
-                return;
+                
             }
-            return;
-        }
+            
+        
     }
 
     public void RemoveItem(int id)
