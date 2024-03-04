@@ -125,7 +125,7 @@ public class NPC : MonoBehaviour
             isLightCoroutineEnd = false;
 
             Color color = SleepUI.GetComponent<Image>().color;
-            color.a = color.a - 0.002f;
+            color.a = color.a - 0.005f;
             SleepUI.GetComponent<Image>().color = color;
 
             if (SleepUI.GetComponent<Image>().color.a <= 0)
