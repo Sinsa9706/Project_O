@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
@@ -104,7 +105,7 @@ public class Inventory : MonoBehaviour
                 {
                     slots[i].quantity++;
                     UpdateUI();
-                    Debug.Log("a"+i);
+                    Debug.Log("a" + i);
                     return;
                 }
             }
@@ -125,7 +126,7 @@ public class Inventory : MonoBehaviour
 
     public void RemoveItem(int id)
     {
-        for(int i = 0; i < slots.Length; i++)
+        for (int i = 0; i < slots.Length; i++)
         {
             if (slots[i].item.Id == Database.Item.Get(id).Id)
             {
@@ -167,32 +168,27 @@ public class Inventory : MonoBehaviour
         return null;
     }
 
-    ItemData GetItemStack(int id)
-    {
-        for (int i = 0; i < slots.Length; i++)
-        {
-            if (slots[i].item == HaveItem[id] && slots[i].quantity <= HaveItem[id].MaxStack)
-                return slots[i].item;
-        }
-
-        return null;
-    }
-
     public void SelectItem(int index)
     {
         if (slots[index].item == null)
+        {
+            itemInfo.SetActive(false);
             return;
+        }
+        else
+        {
+            selectedItem = slots[index];
+            selectedItemIndex = index;
 
-        selectedItem = slots[index];
-        selectedItemIndex = index;
+            selectedItemName.text = selectedItem.item.Name;
+            selectedItemPrice.text = selectedItem.item.Price == 0 ? "-" : selectedItem.item.Price.ToString();
+            selectedItemDescription.text = selectedItem.item.Desciption;
 
-        selectedItemName.text = selectedItem.item.Name;
-        selectedItemPrice.text = selectedItem.item.Price == 0 ? "-" : selectedItem.item.Price.ToString();
-        selectedItemDescription.text = selectedItem.item.Desciption;
+            //for(int i = 0; i < selectedItem.item.)
 
-        //for(int i = 0; i < selectedItem.item.)
+            itemInfo.SetActive(true);
+        }
 
-        itemInfo.SetActive(true);
     }
 
     private void ClearSelectItemWindow()
