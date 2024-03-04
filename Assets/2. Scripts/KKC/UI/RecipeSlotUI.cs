@@ -23,12 +23,6 @@ public class RecipeSlotUI : MonoBehaviour
         recipeName.text = slot.item.Name;
     }
 
-    public void UpdateRecipeSlotUI()
-    {
-        RecipeDB recipeDB = new RecipeDB();
-        Dictionary<int, RecipeData> _recipes = recipeDB.Get();
-    }
-
     public void OnButtonClick()
     {
         CraftSystem.Instance.SelectRecipe();
