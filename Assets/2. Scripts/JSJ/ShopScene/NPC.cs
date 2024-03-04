@@ -109,6 +109,7 @@ public class NPC : MonoBehaviour
 
     private void SleepOpen()
     {
+        MainSoundManager.instance.PlaySFX(6);
         Debug.Log("SleepOpen");
         _UIManager.UIOn(SleepUI);
         Time.timeScale = 0.0f;
