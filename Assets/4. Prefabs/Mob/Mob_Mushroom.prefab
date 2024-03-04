@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6022308489814569932}
   - component: {fileID: 3849225446571407361}
   - component: {fileID: 2664426507287777941}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MobCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,7 +43,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0.7}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 3, y: 3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &4457916479945082478
 Canvas:
@@ -126,7 +126,6 @@ MonoBehaviour:
   loveMarkAnimator: {fileID: 8172386717970715647}
   exclamationMark: {fileID: 7433867068885671497}
   exclamationMarkAnimator: {fileID: 8983809150145249535}
-  playerInteraction: {fileID: 0}
 --- !u!61 &2664426507287777941
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -184,7 +183,7 @@ GameObject:
   - component: {fileID: 7433867068885671497}
   - component: {fileID: 5360494340251150362}
   - component: {fileID: 8983809150145249535}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ExclamationMark
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -282,7 +281,7 @@ GameObject:
   - component: {fileID: 8607970592254072439}
   - component: {fileID: 6180665789528278390}
   - component: {fileID: 8172386717970715647}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: LoveMark
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -379,7 +378,7 @@ GameObject:
   - component: {fileID: 6136587876098074004}
   - component: {fileID: 8599499772269801674}
   - component: {fileID: 1466775782549938190}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MainSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -485,7 +484,7 @@ GameObject:
   - component: {fileID: 8898425011395172587}
   - component: {fileID: 6046545782777026822}
   - component: {fileID: 6342117408592929980}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: InteractionTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -622,7 +621,8 @@ GameObject:
   - component: {fileID: 752457388380531581}
   - component: {fileID: 2507268979466363259}
   - component: {fileID: 3795661189678564652}
-  m_Layer: 0
+  - component: {fileID: -1809172199035708603}
+  m_Layer: 7
   m_Name: Mob_Mushroom
   m_TagString: Monster
   m_Icon: {fileID: 0}
@@ -636,7 +636,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5361328341838445022}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.18, y: 10.12, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -644,7 +644,7 @@ Transform:
   - {fileID: 6136587876098074004}
   - {fileID: 3605106596446578198}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6371716274483995617
 MonoBehaviour:
@@ -674,6 +674,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a779a4f00f98ff548bf47d91c0575fea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mobRadius: 10
   isDead: 0
 --- !u!61 &2507268979466363259
 BoxCollider2D:
@@ -765,6 +766,33 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0.2
+--- !u!50 &-1809172199035708603
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5361328341838445022}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &7880575428190762253
 GameObject:
   m_ObjectHideFlags: 0
@@ -777,7 +805,7 @@ GameObject:
   - component: {fileID: 2501041970232041991}
   - component: {fileID: 8395497180698861508}
   - component: {fileID: 7807863153619512794}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: QuestionMark
   m_TagString: Untagged
   m_Icon: {fileID: 0}

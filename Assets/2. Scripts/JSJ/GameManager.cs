@@ -44,6 +44,14 @@ public class GameManager : MonoBehaviour
         else
             TimeCheck();
 
+        // 모든 MobSpawnManager에 대해 몬스터를 리스폰
+        if (IsMorning())
+        {
+            foreach (var spawnManager in FindObjectsOfType<MobSpawnManager>())
+            {
+                spawnManager.SpawnMonsters();
+            }
+        }
 
     }
 
@@ -112,4 +120,10 @@ public class GameManager : MonoBehaviour
 
 
     //0~255 /200 25.5 = 0.1
+
+    public bool IsMorning() // 오전 7시부터 아침, 몬스터 리스폰 용
+    {
+       
+        return gameTime >= 420 && gameTime < 430;
+    }
 }

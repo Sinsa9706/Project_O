@@ -4,30 +4,40 @@ using UnityEngine;
 
 public class MobSpawnManager : MonoBehaviour
 {
-    public GameObject[] monsterPrefabs; // 스폰할 몬스터 프리팹 배열
-    public BoxCollider2D spawnArea; // 스폰 지역을 정의하는 박스 콜라이더
-    public int spawnCount = 5; // 스폰할 몬스터 수
+    public GameObject[] monsterPrefabs; // 스폰할 몬스터 프리팹 종류
+    public BoxCollider2D spawnArea; // 콜라이더 범위가 몬스터 스폰 범위
+    public int spawnCount = 5; // 스폰할 몬스터 숫자
+    private List<GameObject> spawnedMonsters = new List<GameObject>();
 
     private void Start()
     {
+        spawnArea = GetComponent<BoxCollider2D>(); 
         SpawnMonsters();
     }
 
-    void SpawnMonsters()
+    public void SpawnMonsters()
     {
+        ClearMonsters(); // 기존 몬스터 삭제
+
         for (int i = 0; i < spawnCount; i++)
         {
-            // 스폰 지역 내에서 랜덤한 위치 생성
             Vector2 spawnPos = new Vector2(
                 Random.Range(spawnArea.bounds.min.x, spawnArea.bounds.max.x),
                 Random.Range(spawnArea.bounds.min.y, spawnArea.bounds.max.y)
             );
 
-            // 랜덤한 몬스터 프리팹 선택
             GameObject monsterPrefab = monsterPrefabs[Random.Range(0, monsterPrefabs.Length)];
-
-            // 몬스터 인스턴스화
-            Instantiate(monsterPrefab, spawnPos, Quaternion.identity);
+            GameObject spawnedMonster = Instantiate(monsterPrefab, spawnPos, Quaternion.identity);
+            spawnedMonsters.Add(spawnedMonster);
         }
+    }
+
+    public void ClearMonsters()
+    {
+        foreach (var monster in spawnedMonsters)
+        {
+            Destroy(monster);
+        }
+        spawnedMonsters.Clear();
     }
 }

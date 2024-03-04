@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 7407901428145075954}
   - component: {fileID: 3303850371391428440}
   - component: {fileID: 4781923935962135745}
-  m_Layer: 0
+  - component: {fileID: 1637430166780202342}
+  m_Layer: 7
   m_Name: Mob_Tree
   m_TagString: Monster
   m_Icon: {fileID: 0}
@@ -35,7 +36,7 @@ Transform:
   - {fileID: 6204727184244071200}
   - {fileID: 551728595779285027}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &6870638511882265399
 BoxCollider2D:
@@ -155,7 +156,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a779a4f00f98ff548bf47d91c0575fea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mobRadius: 10
   isDead: 0
+--- !u!50 &1637430166780202342
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 144204826149734663}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &2791598284127737675
 GameObject:
   m_ObjectHideFlags: 0
@@ -167,7 +196,7 @@ GameObject:
   - component: {fileID: 1648024235697759659}
   - component: {fileID: 7071465993561844391}
   - component: {fileID: 1081183065988226208}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: InteractionTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -303,7 +332,7 @@ GameObject:
   - component: {fileID: 475681296977317246}
   - component: {fileID: 520118460960859697}
   - component: {fileID: 8705933280057260737}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: LoveMark
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -401,7 +430,7 @@ GameObject:
   - component: {fileID: 4259276013091779020}
   - component: {fileID: 6002249445510355254}
   - component: {fileID: 2988483294901104263}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ExclamationMark
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -501,7 +530,7 @@ GameObject:
   - component: {fileID: 2704204221756722139}
   - component: {fileID: 8693003646028115523}
   - component: {fileID: 8182023788955732117}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MobCanvas (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -530,7 +559,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0.8}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 3, y: 3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &9174480247648926178
 Canvas:
@@ -613,7 +642,6 @@ MonoBehaviour:
   loveMarkAnimator: {fileID: 8705933280057260737}
   exclamationMark: {fileID: 4259276013091779020}
   exclamationMarkAnimator: {fileID: 2988483294901104263}
-  playerInteraction: {fileID: 0}
 --- !u!61 &8182023788955732117
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -670,7 +698,7 @@ GameObject:
   - component: {fileID: 6204727184244071200}
   - component: {fileID: 5126802840727604977}
   - component: {fileID: 3469962090590978164}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MainSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -777,7 +805,7 @@ GameObject:
   - component: {fileID: 3383167890699669871}
   - component: {fileID: 1802031903251636805}
   - component: {fileID: 7993990620729129612}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: QuestionMark
   m_TagString: Untagged
   m_Icon: {fileID: 0}

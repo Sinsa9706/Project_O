@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8619999340575318787}
   - component: {fileID: 3820411775662915530}
   - component: {fileID: 5952093724527265042}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: InteractionTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -147,7 +147,7 @@ GameObject:
   - component: {fileID: 8422784003749743900}
   - component: {fileID: 3204684600918470977}
   - component: {fileID: 8209236897311384908}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: QuestionMark
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -246,7 +246,8 @@ GameObject:
   - component: {fileID: 6882368232066621709}
   - component: {fileID: 4133834231618988226}
   - component: {fileID: 1159894587112892641}
-  m_Layer: 0
+  - component: {fileID: -2733247434330037572}
+  m_Layer: 7
   m_Name: Mob_Corgi
   m_TagString: Monster
   m_Icon: {fileID: 0}
@@ -268,7 +269,7 @@ Transform:
   - {fileID: 3149060569314136255}
   - {fileID: 1635168927106349233}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2249884268184107397
 MonoBehaviour:
@@ -298,6 +299,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a779a4f00f98ff548bf47d91c0575fea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mobRadius: 10
   isDead: 0
 --- !u!61 &4133834231618988226
 BoxCollider2D:
@@ -389,6 +391,33 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0.2
+--- !u!50 &-2733247434330037572
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1913008535528240213}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &4289320363434557600
 GameObject:
   m_ObjectHideFlags: 0
@@ -403,7 +432,7 @@ GameObject:
   - component: {fileID: 5512500564244353512}
   - component: {fileID: 3722122890374491416}
   - component: {fileID: 5236288146336097874}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MobCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -432,7 +461,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0.7}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 3, y: 3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &3407592008041845624
 Canvas:
@@ -515,7 +544,6 @@ MonoBehaviour:
   loveMarkAnimator: {fileID: 8241369698348125457}
   exclamationMark: {fileID: 1531603052237721396}
   exclamationMarkAnimator: {fileID: 5202116023481576998}
-  playerInteraction: {fileID: 0}
 --- !u!61 &5236288146336097874
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -573,7 +601,7 @@ GameObject:
   - component: {fileID: 1531603052237721396}
   - component: {fileID: 6270556006301145319}
   - component: {fileID: 5202116023481576998}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ExclamationMark
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -671,7 +699,7 @@ GameObject:
   - component: {fileID: 6640459063528317088}
   - component: {fileID: 6786604367626992938}
   - component: {fileID: 8241369698348125457}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: LoveMark
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -768,7 +796,7 @@ GameObject:
   - component: {fileID: 3149060569314136255}
   - component: {fileID: 5467560447386670939}
   - component: {fileID: 6596074226724910902}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MainSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
