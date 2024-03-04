@@ -136,28 +136,37 @@ MonoBehaviour:
     _price: 0
     _spritePath: 
   - _id: 10030001
-    _name: "\uBE48\uBCD1 \uD3EC\uC158"
-    _description: "\uD3EC\uC158\uC744 \uB2F4\uB294 \uB370 \uC4F0\uB294 \uBCD1."
+    _name: "\uC791\uC740 \uBCD1"
+    _description: "\uC561\uCCB4\uB97C \uB2F4\uB294 \uB370 \uC4F0\uB294 \uC791\uC740
+      \uBCD1."
     _type: 1
     _stack: 1
-    _maxstack: 99
-    _price: 50
+    _maxstack: 20
+    _price: 20
     _spritePath: 
   - _id: 10030002
-    _name: "\uC0AC\uD0D5 \uD3EC\uC7A5\uC9C0"
-    _description: "\uC0AC\uD0D5\uC744 \uD3EC\uC7A5\uD560 \uB54C \uC4F0\uB294 \uD3EC\uC7A5\uC9C0."
+    _name: "\uD070 \uBCD1"
+    _description: "\uC561\uCCB4\uB97C \uB2F4\uB294 \uB370 \uC4F0\uB294 \uD070 \uBCD1."
     _type: 1
     _stack: 1
-    _maxstack: 99
-    _price: 50
+    _maxstack: 20
+    _price: 30
     _spritePath: 
   - _id: 10030003
     _name: "\uC7BC \uBCD1"
     _description: "\uC7BC\uC744 \uB2F4\uB294 \uB370 \uC4F0\uB294 \uBCD1."
     _type: 1
     _stack: 1
-    _maxstack: 99
+    _maxstack: 20
     _price: 50
+    _spritePath: 
+  - _id: 10030004
+    _name: "\uC0AC\uD0D5 \uD3EC\uC7A5\uC9C0"
+    _description: "\uC0AC\uD0D5\uC744 \uD3EC\uC7A5\uD560 \uB54C \uC4F0\uB294 \uD3EC\uC7A5\uC9C0."
+    _type: 1
+    _stack: 1
+    _maxstack: 20
+    _price: 10
     _spritePath: 
   - _id: 20010001
     _name: "\uC5D0\uBA54\uB784\uB4DC \uC5D0\uC13C\uC2A4"

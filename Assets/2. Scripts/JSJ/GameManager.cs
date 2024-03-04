@@ -7,16 +7,18 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
+    public static int PlayerGold = 500;
+
+
+    [Header("Time")]
     public TMP_Text TimeText;
-    public GameObject Image;
+    public GameObject DarkImage;
 
-    [HideInInspector] public int Gold = 500;
-
-    private float time;
     private float realTime = 1;//실제시간몇초당 10분
+    private float time;
     private int gameTime = 360;
 
-    private bool isSleep = false;//자는버튼
+    public static bool isNight = false;//자는버튼
 
     private void Awake()
     {
@@ -35,13 +37,13 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (isSleep == true)
+        if (isNight == true)
         {
             time = 0;
             gameTime = 360;
-            isSleep = false;
-            TimeCheck();
+            isNight = false;
             AlphaReset();
+            TimeCheck();
         }
         else
             TimeCheck();
@@ -73,16 +75,16 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void TimeTextChange()
+    public void TimeTextChange(bool isDay = false)
     {
         string text;
 
         if (gameTime >= 1440)
-            text = "오전 ";
+            text = "오전  ";
         else if (gameTime >= 720)
-            text = "오후 ";
+            text = "오후  ";
         else
-            text = "오전 ";
+            text = "오전  ";
 
         string hour;
         hour = (gameTime / 60).ToString("D2");
@@ -93,8 +95,10 @@ public class GameManager : MonoBehaviour
         string minute;
         minute = (gameTime % 60).ToString("D2");
 
-
         TimeText.text = text + hour + " : " + minute;
+
+        if (isDay == true)
+            TimeText.text = "오전  06 : 00";
     }
 
     public void AlphaChange()
@@ -105,21 +109,21 @@ public class GameManager : MonoBehaviour
         if (gameTime <= 1140)
             return;
 
-        if (Image.GetComponent<SpriteRenderer>().color.a >= 0.78)
+        if (DarkImage.GetComponent<SpriteRenderer>().color.a >= 0.78)
             return;
 
-        Image.GetComponent<SpriteRenderer>().color += color;
+        DarkImage.GetComponent<SpriteRenderer>().color += color;
     }
     public void AlphaReset()
     {
         Color color = new Color(0, 0, 0);
 
-        color.r = Image.GetComponent<SpriteRenderer>().color.r;
-        color.g = Image.GetComponent<SpriteRenderer>().color.g;
-        color.b = Image.GetComponent<SpriteRenderer>().color.b;
+        color.r = DarkImage.GetComponent<SpriteRenderer>().color.r;
+        color.g = DarkImage.GetComponent<SpriteRenderer>().color.g;
+        color.b = DarkImage.GetComponent<SpriteRenderer>().color.b;
         color.a = 0;
 
-        Image.GetComponent<SpriteRenderer>().color = color;
+        DarkImage.GetComponent<SpriteRenderer>().color = color;
     }
 
 
