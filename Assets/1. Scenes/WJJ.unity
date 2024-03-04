@@ -4170,8 +4170,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.45659995, y: -0.71994996, z: 0}
-    m_Extent: {x: 3.595, y: 3.5685499, z: 0}
+    m_Center: {x: -0.45889997, y: -0.72615004, z: 0}
+    m_Extent: {x: 3.5871, y: 3.57695, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -4349,6 +4349,7 @@ GameObject:
   - component: {fileID: 223309606}
   - component: {fileID: 223309605}
   - component: {fileID: 223309604}
+  - component: {fileID: 223309607}
   m_Layer: 0
   m_Name: Sound
   m_TagString: Untagged
@@ -4368,14 +4369,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56085ef8d28f84526b07b6e83918a32d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musicVolume: 0.2
-  musicClip:
-  - {fileID: 8300000, guid: 87890a66193394e3cb7d6284cc6b4344, type: 3}
+  musicVolume: 0.1
+  sfxVolume: 0.5
+  musicClips:
+  - {fileID: 8300000, guid: f5c51a531df93cd4b9575890e0cb3746, type: 3}
   - {fileID: 8300000, guid: d615064c1ce3152479df93edff3abd11, type: 3}
-  - {fileID: 8300000, guid: d615064c1ce3152479df93edff3abd11, type: 3}
-  - {fileID: 8300000, guid: d615064c1ce3152479df93edff3abd11, type: 3}
-  - {fileID: 8300000, guid: d615064c1ce3152479df93edff3abd11, type: 3}
-  - {fileID: 8300000, guid: d615064c1ce3152479df93edff3abd11, type: 3}
+  sfxClips:
+  - {fileID: 8300000, guid: c3265d7ce1e01e84eb68549b738c6216, type: 3}
+  - {fileID: 8300000, guid: 7433a43036ce0af4fb29d8c731c0dcc8, type: 3}
+  - {fileID: 8300000, guid: aa8c2c9b2eb216249a9154775bf44d23, type: 3}
+  - {fileID: 8300000, guid: 4d3eb693eaa77bd49ba3cb0c76a84945, type: 3}
+  - {fileID: 8300000, guid: 8276776957fc4ed4f88a5cb02f05f5b3, type: 3}
+  - {fileID: 8300000, guid: a2698e62f7b0e0c428b4e7685ce9a4b3, type: 3}
+  - {fileID: 8300000, guid: bb21d72336b149a45b1d8e8ec50a5d81, type: 3}
+  - {fileID: 8300000, guid: 60e6c6985147551478261d9161a325f7, type: 3}
+  - {fileID: 8300000, guid: 1acbc80a8ed704f4da667093e3dbb389, type: 3}
+  - {fileID: 8300000, guid: 31e52cb7f220e5b4cad77fe50be45c82, type: 3}
 --- !u!82 &223309605
 AudioSource:
   m_ObjectHideFlags: 0
@@ -4487,6 +4496,102 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &223309607
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 223309603}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &224545468
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17428,8 +17533,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.44984984, y: -0.7242999, z: 0}
-    m_Extent: {x: 5.5904503, y: 5.5747, z: 0}
+    m_Center: {x: -0.45414996, y: -0.71815014, z: 0}
+    m_Extent: {x: 5.5918503, y: 5.57025, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -19149,8 +19254,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.43659973, y: -0.82439995, z: 0}
-    m_Extent: {x: 9.9809, y: 9.158, z: 0}
+    m_Center: {x: -0.44105005, y: -0.8201499, z: 0}
+    m_Extent: {x: 9.97945, y: 9.16275, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -35485,6 +35590,7 @@ MonoBehaviour:
   - {fileID: -315216372, guid: f26635b854c84d24a8d8cd1cd414d691, type: 3}
   - {fileID: -1793523525, guid: f26635b854c84d24a8d8cd1cd414d691, type: 3}
   - {fileID: 652334726, guid: 4d49215c0ce29234c94d09c02e85561e, type: 3}
+  - {fileID: -1979268847, guid: eadc9a934bc8ada4bba4a8f45ebc3b9c, type: 3}
   itemEffectDuration: 2
   itemEffectDistance: 4
   itemText: {fileID: 232355789}
@@ -39341,8 +39447,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.25395, y: -0.66115, z: 0}
-    m_Extent: {x: 3.9426498, y: 3.68755, z: 0}
+    m_Center: {x: -0.24864995, y: -0.65725005, z: 0}
+    m_Extent: {x: 3.9419498, y: 3.6858501, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
