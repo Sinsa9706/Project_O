@@ -10,6 +10,7 @@ TagManager:
   - Monster
   - Bed
   - WorkTable
+  - Light
   layers:
   - Default
   - TransparentFX
