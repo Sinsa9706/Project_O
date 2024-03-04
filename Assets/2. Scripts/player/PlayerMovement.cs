@@ -1,4 +1,4 @@
-using Unity.Burst.CompilerServices;
+ï»¿using Unity.Burst.CompilerServices;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -6,13 +6,13 @@ public class PlayerMovement : MonoBehaviour
 {
     public Vector2 inputVec;
     public float speed = 5;
-    public float boostedSpeed = 10; // Shift Å°¸¦ ´©¸£°í ÀÖÀ» ¶§ÀÇ ¼Óµµ
+    public float boostedSpeed = 10; // Shift í‚¤ë¥¼ ëˆ„ë¥´ê³  ìˆì„ ë•Œì˜ ì†ë„
     public bool menuOpen = false;
     public Animator animator;
     private Camera _camera;
 
     Rigidbody2D rb;
-    bool isBoosting = false; // Shift Å°¸¦ ´©¸£°í ÀÖ´ÂÁö ¿©ºÎ
+    bool isBoosting = false; // Shift í‚¤ë¥¼ ëˆ„ë¥´ê³  ìˆëŠ”ì§€ ì—¬ë¶€
 
     private void Awake()
     {
@@ -22,7 +22,7 @@ public class PlayerMovement : MonoBehaviour
     }
     private void Update()
     {
-        // Shift Å°¸¦ ´©¸£°í ÀÖ´ÂÁö ¿©ºÎ °¨Áö
+        // Shift í‚¤ë¥¼ ëˆ„ë¥´ê³  ìˆëŠ”ì§€ ì—¬ë¶€ ê°ì§€
         if (Keyboard.current.shiftKey.isPressed)
         {
             isBoosting = true;
@@ -49,7 +49,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Move()
     {
-        // Shift Å°¸¦ ´©¸£°í ÀÖÀ¸¸é boostedSpeed¸¦, ¾Æ´Ï¸é ±âº» speed¸¦ »ç¿ë
+        // Shift í‚¤ë¥¼ ëˆ„ë¥´ê³  ìˆìœ¼ë©´ boostedSpeedë¥¼, ì•„ë‹ˆë©´ ê¸°ë³¸ speedë¥¼ ì‚¬ìš©
         float currentSpeed = isBoosting ? boostedSpeed : speed; 
         Vector2 nextVec = inputVec.normalized * currentSpeed * Time.fixedDeltaTime;
         rb.MovePosition(rb.position + nextVec);
