@@ -1,48 +1,48 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class MobSpawnManager : MonoBehaviour
 {
-    public GameObject[] monsterPrefabs; // ½ºÆùÇÒ ¸ó½ºÅÍ ÇÁ¸®ÆÕ Á¾·ù ¹è¿­ ( ÀÎ½ºÆåÅÍ¿¡¼­ ¼³Á¤ )
-    public BoxCollider2D spawnArea; // Äİ¶óÀÌ´õ ¹üÀ§°¡ ¸ó½ºÅÍ ½ºÆù ¹üÀ§ ( ÀÎ½ºÆåÅÍ¿¡¼­ Äİ¶óÀÌ´õ ¹üÀ§·Î ¼³Á¤ )
-    public int spawnCount = 5; // ½ºÆùÇÒ ¸ó½ºÅÍ ¼ıÀÚ ( ÀÎ½ºÆåÅÍ¿¡¼­ ¼³Á¤ )
+    public GameObject[] monsterPrefabs; // ìŠ¤í°í•  ëª¬ìŠ¤í„° í”„ë¦¬íŒ¹ ì¢…ë¥˜ ë°°ì—´ ( ì¸ìŠ¤í™í„°ì—ì„œ ì„¤ì • )
+    public BoxCollider2D spawnArea; // ì½œë¼ì´ë” ë²”ìœ„ê°€ ëª¬ìŠ¤í„° ìŠ¤í° ë²”ìœ„ ( ì¸ìŠ¤í™í„°ì—ì„œ ì½œë¼ì´ë” ë²”ìœ„ë¡œ ì„¤ì • )
+    public int spawnCount = 5; // ìŠ¤í°í•  ëª¬ìŠ¤í„° ìˆ«ì ( ì¸ìŠ¤í™í„°ì—ì„œ ì„¤ì • )
     
     private List<GameObject> spawnedMonsters = new List<GameObject>();
-    // ¸ó½ºÅÍ ÃßÀû ¸®½ºÆ® : °¢°¢ÀÇ ½ºÆù¿ë ¿ÀºêÁ§Æ®¿¡¼­ ½ºÆùµÈ ¸ó½ºÅÍ °´Ã¼¸¦ ÃßÀûÇØ¼­ (¾ÆÄ§¿¡) ÆÄ±«ÇÏ±â À§ÇÑ ¸®½ºÆ®
+    // ëª¬ìŠ¤í„° ì¶”ì  ë¦¬ìŠ¤íŠ¸ : ê°ê°ì˜ ìŠ¤í°ìš© ì˜¤ë¸Œì íŠ¸ì—ì„œ ìŠ¤í°ëœ ëª¬ìŠ¤í„° ê°ì²´ë¥¼ ì¶”ì í•´ì„œ (ì•„ì¹¨ì—) íŒŒê´´í•˜ê¸° ìœ„í•œ ë¦¬ìŠ¤íŠ¸
 
     private void Start()
     {
-        spawnArea = GetComponent<BoxCollider2D>(); // ½ºÅ©¸³Æ®°¡ ºÎÂøµÈ °ÔÀÓ ¿ÀºêÁ§Æ®¿¡¼­ BoxCollider2D ÄÄÆ÷³ÍÆ® ½»»è
-        SpawnMonsters(); // ½ÃÀÛ ÇÒ ¶§ ½ºÆù
+        spawnArea = GetComponent<BoxCollider2D>(); // ìŠ¤í¬ë¦½íŠ¸ê°€ ë¶€ì°©ëœ ê²Œì„ ì˜¤ë¸Œì íŠ¸ì—ì„œ BoxCollider2D ì»´í¬ë„ŒíŠ¸ ìŠ¥ì‚­
+        SpawnMonsters(); // ì‹œì‘ í•  ë•Œ ìŠ¤í°
     }
 
     public void SpawnMonsters()
     {
-        ClearMonsters(); // ±âÁ¸ ¸ó½ºÅÍ »èÁ¦
+        ClearMonsters(); // ê¸°ì¡´ ëª¬ìŠ¤í„° ì‚­ì œ
 
         for (int i = 0; i < spawnCount; i++)
         {
-            // ½ºÆù ¹üÀ§ ³»¿¡¼­ ·£´ıÇÑ ½ºÆù À§Ä¡¿¡¼­ ½ºÆù
+            // ìŠ¤í° ë²”ìœ„ ë‚´ì—ì„œ ëœë¤í•œ ìŠ¤í° ìœ„ì¹˜ì—ì„œ ìŠ¤í°
             Vector2 spawnPos = new Vector2(
                 Random.Range(spawnArea.bounds.min.x, spawnArea.bounds.max.x),
                 Random.Range(spawnArea.bounds.min.y, spawnArea.bounds.max.y)
             );
 
-            // ¸ó½ºÅÍ ÇÁ¸®ÆÕ ¹è¿­¿¡¼­ ·£´ıÇÏ°Ô ÇÏ³ª¸¦ ¼±ÅÃÇÏ¿© ÀÎ½ºÅÏ½ºÈ­
+            // ëª¬ìŠ¤í„° í”„ë¦¬íŒ¹ ë°°ì—´ì—ì„œ ëœë¤í•˜ê²Œ í•˜ë‚˜ë¥¼ ì„ íƒí•˜ì—¬ ì¸ìŠ¤í„´ìŠ¤í™”
             GameObject monsterPrefab = monsterPrefabs[Random.Range(0, monsterPrefabs.Length)];
             GameObject spawnedMonster = Instantiate(monsterPrefab, spawnPos, Quaternion.identity);
-            spawnedMonsters.Add(spawnedMonster); // »ı¼ºµÈ ¸ó½ºÅÍ¸¦ ÃßÀû¿ë ¸®½ºÆ®¿¡ Ãß°¡
+            spawnedMonsters.Add(spawnedMonster); // ìƒì„±ëœ ëª¬ìŠ¤í„°ë¥¼ ì¶”ì ìš© ë¦¬ìŠ¤íŠ¸ì— ì¶”ê°€
         }
     }
 
     public void ClearMonsters()
     {
-        // ¸®½ºÆ®¿¡ ÀÖ´Â ¸ğµç ¸ó½ºÅÍ¸¦ ¼øÈ¸ÇØ¼­ ÆÄ-±«
+        // ë¦¬ìŠ¤íŠ¸ì— ìˆëŠ” ëª¨ë“  ëª¬ìŠ¤í„°ë¥¼ ìˆœíšŒí•´ì„œ íŒŒ-ê´´
         foreach (var monster in spawnedMonsters)
         {
             Destroy(monster);
         }
-        spawnedMonsters.Clear(); // ¸ó½ºÅÍ ÃßÀû ¸®½ºÆ® Å¬¸®¾î
+        spawnedMonsters.Clear(); // ëª¬ìŠ¤í„° ì¶”ì  ë¦¬ìŠ¤íŠ¸ í´ë¦¬ì–´
     }
 }
