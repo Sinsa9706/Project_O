@@ -81,13 +81,11 @@ public class Inventory : MonoBehaviour
         {
             inventoryWindow.SetActive(false);
             onCloseInventory?.Invoke();
-            // ���콺 Ŀ�� ������
         }
         else
         {
             inventoryWindow.SetActive(true);
             onOpenInventory?.Invoke();
-            // ���콺 Ŀ�� ������
         }
     }
 
@@ -96,11 +94,8 @@ public class Inventory : MonoBehaviour
         return inventoryWindow.activeInHierarchy;
     }
 
-    // �������� ��� �޼���
-    // ���͸� ��ȣ�ۿ� ���� ��, ���� ������ �� �޼��带 ����ϸ� �κ��丮�� �������� ������.
     public void AddItem(int id)
     {
-        // 1. ContainsKey�� haveitem�� ã�°� �ƴ϶� slots�� ������ �������� �����ϴ��� ã�ƾ� ��. ã���� �� ������ quantity�� ����� �ٵ� max�� ������, ��ȯ ���� ��ŭ ������ �߰� ����
         for (int i = 0; i < slots.Length; i++)
         {
             if (slots[i].item == Database.Item.Get(id))
@@ -130,7 +125,13 @@ public class Inventory : MonoBehaviour
 
     public void RemoveItem(int id)
     {
-        HaveItem.Remove(id);
+        for(int i = 0; i < slots.Length; i++)
+        {
+            if (slots[i].item.Id == Database.Item.Get(id).Id)
+            {
+                slots[i].quantity--;
+            }
+        }
     }
 
     private void RemoveSelectedItem()
