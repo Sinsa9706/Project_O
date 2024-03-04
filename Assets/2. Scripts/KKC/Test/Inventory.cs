@@ -128,7 +128,6 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    // 아이템이 사라지는 메서드 (사용했을 때)
     public void RemoveItem(int id)
     {
         HaveItem.Remove(id);
