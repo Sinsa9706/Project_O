@@ -25,7 +25,9 @@ public class NPC : MonoBehaviour
     public GameObject NoGoldUI;
 
     [Header("Box UI Object")]
+    public GameObject Box;
     public List<TMP_Text> ItemCount;
+    private Box _Box; 
 
     private bool isDarkCoroutineEnd = false;
     private bool isDayStart = false;
@@ -34,6 +36,7 @@ public class NPC : MonoBehaviour
     private void Awake()
     {
         _UIManager = UIManagerObj.GetComponent<UIManager>();
+        _Box = Box.GetComponent<Box>();
     }
 
     private void Start()
@@ -93,6 +96,7 @@ public class NPC : MonoBehaviour
     {
         Debug.Log("BoxOpen");
         _UIManager.UIOn(BoxUI);
+        _Box.AllChangeHaveCountText();
         Time.timeScale = 0.0f;
     }
 

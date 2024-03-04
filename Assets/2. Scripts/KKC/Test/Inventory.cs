@@ -53,6 +53,11 @@ public class Inventory : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        
+    }
+
     private void Init()
     {
         inventoryWindow.SetActive(false);
@@ -154,12 +159,17 @@ public class Inventory : MonoBehaviour
         return null;
     }
 
-    void UpdateUI()
+    public void UpdateUI()
     {
         for (int i = 0; i < slots.Length; i++)
         {
             if (slots[i].item != null)
+            {
                 uiSlots[i].Set(slots[i]);
+
+                if (slots[i].quantity <= 0)
+                    uiSlots[i].Clear();
+            }
             else
                 uiSlots[i].Clear();
         }

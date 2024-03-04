@@ -83,6 +83,20 @@ public class Box : MonoBehaviour
         return slot;
     }
 
+    public void AllChangeHaveCountText()
+    {
+        ItemSlot slot;
+
+        for (int i = 0; i < Items.Count; i++)
+        {
+            slot = FindInventory(i);
+            if (slot != null)
+            {
+                HaveCountText[i].text = "보유수량 : " + slot.quantity.ToString();
+            }
+        }
+    }
+
     public void ChangeHaveCountText(int index)
     {
         ItemSlot slot = FindInventory(index);
@@ -91,6 +105,7 @@ public class Box : MonoBehaviour
         {
             HaveCountText[index].text = "보유수량 : " + slot.quantity.ToString();
         }
+
     }
 
     public void MinusInventory(int index)
@@ -107,5 +122,5 @@ public class Box : MonoBehaviour
                 _NPC.BoxCountChange(index);
             }
         }
-    }    
+    }
 }
