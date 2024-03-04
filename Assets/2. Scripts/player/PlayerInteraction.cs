@@ -149,7 +149,7 @@ public class PlayerInteraction : MonoBehaviour
                     Debug.Log("Item4 추가 10020002");
                     // 인벤토리에 유사-꼬부기 등껍질 추가 
                     break;
-                case bool _ when interactedMob.mobType.Contains("FlySalamander"):
+                case bool _ when interactedMob.mobType.Contains("Salamander"):
                     Inventory.Instance.AddItem(10020001);
                     Debug.Log("Item5 추가 10020001");
                     // 인벤토리에 날도롱뇽 날개 추가 로직
@@ -159,12 +159,12 @@ public class PlayerInteraction : MonoBehaviour
                     Debug.Log("Item6 추가 10020003");
                     // 인벤토리에 여치 더듬이 추가 로직
                     break;
-                case bool _ when interactedMob.mobType.Contains("FireLizard"):
+                case bool _ when interactedMob.mobType.Contains("Lizard"):
                     Inventory.Instance.AddItem(10020004);
                     Debug.Log("Item7 추가 10020004");
                     // 인벤토리에 불도마뱀 꼬리 추가 로직
                     break;
-                case bool _ when interactedMob.mobType.StartsWith("EatingFlower"):
+                case bool _ when interactedMob.mobType.StartsWith("Man-Eating"):
                     Inventory.Instance.AddItem(10010003);
                     Debug.Log("Item8 추가 10010003");
                     // 인벤토리에 식인꽃 꽃잎 추가 로직
