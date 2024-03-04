@@ -215,4 +215,12 @@ public class NPC : MonoBehaviour
         ShopPlayerGoldText.text = GameManager.PlayerGold.ToString();
         InvenPlayerGoldText.text = GameManager.PlayerGold.ToString();
     }
+
+    public void BoxCountChange(int index)
+    {
+        int temp = int.Parse(ItemCount[index].text);
+        temp++;
+
+        ItemCount[index].text = temp.ToString();
+    }
 }

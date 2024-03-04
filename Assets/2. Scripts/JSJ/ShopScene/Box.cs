@@ -3,17 +3,17 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Box : MonoBehaviour
 {
     [Header("Box Item")]
     public List<ItemData> Items = new List<ItemData>();
+    public List<TMP_Text> HaveCountText = new List<TMP_Text>();
 
     private NPC _NPC;
 
     public Dictionary<string, TMP_Text> FindText = new();
-
-    private int clickItemId;
 
 
     private void Awake()
@@ -69,8 +69,43 @@ public class Box : MonoBehaviour
     //    }    
     //}
 
-    private void MinusInventory()
+    private ItemSlot FindInventory(int index)
     {
-        Inventory.Instance.RemoveItem(clickItemId);
+        int id = Items[index].Id;
+
+        ItemSlot slot = Inventory.Instance.ItemCheck(id);
+
+        if (slot != null)
+            Debug.Log("널아님");
+        else
+            Debug.Log("널임");
+
+        return slot;
     }
+
+    public void ChangeHaveCountText(int index)
+    {
+        ItemSlot slot = FindInventory(index);
+
+        if (slot != null)
+        {
+            HaveCountText[index].text = "보유수량 : " + slot.quantity.ToString();
+        }
+    }
+
+    public void MinusInventory(int index)
+    {
+        ItemSlot slot = FindInventory(index);
+
+        if (slot != null)
+        {
+            int temp = slot.quantity;
+
+            if (temp > 0)
+            {
+                slot.quantity--;
+                _NPC.BoxCountChange(index);
+            }
+        }
+    }    
 }
