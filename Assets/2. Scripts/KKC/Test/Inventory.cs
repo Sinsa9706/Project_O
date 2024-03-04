@@ -68,12 +68,9 @@ public class Inventory : MonoBehaviour
         ClearSelectItemWindow();
     }
 
-    public void OnInventoryButton(InputAction.CallbackContext callbackContext)
+    public void OnInventory()
     {
-        if (callbackContext.phase == InputActionPhase.Started)
-        {
             Toggle();
-        }
     }
 
     public void Toggle()
