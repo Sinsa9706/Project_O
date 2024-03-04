@@ -217,7 +217,7 @@ public class PlayerInteraction : MonoBehaviour
                     Inventory.Instance.AddItem(10020005);
                     ShowItemText("'코기의 분비물(?)' 을 얻었다!");
                     itemImage.GetComponent<Image>().sprite = itemImageArray[0];
-                    Debug.Log("Item1 추가 10020005");
+                    MainSoundManager.instance.PlaySFX(3);
                     // 인벤토리에 코기 분비물 추가
                     break;
 
@@ -225,7 +225,7 @@ public class PlayerInteraction : MonoBehaviour
                     ShowItemText("'마른 버섯' 을 얻었다!");
                     Inventory.Instance.AddItem(10010006);
                     itemImage.GetComponent<Image>().sprite = itemImageArray[1];
-                    Debug.Log("Item2 추가 10010006");
+                    MainSoundManager.instance.PlaySFX(3);
                     // 인벤토리에 마른 버섯 추가
                     break;
 
@@ -233,7 +233,7 @@ public class PlayerInteraction : MonoBehaviour
                     ShowItemText("'커비의 별가루' 를 얻었다!");
                     itemImage.GetComponent<Image>().sprite = itemImageArray[2];
                     Inventory.Instance.AddItem(10020006);
-                    Debug.Log("Item3 추가 10020006");
+                    MainSoundManager.instance.PlaySFX(3);
                     // 인벤토리에 커비의 별가루 추가
                     break;
 
@@ -241,7 +241,7 @@ public class PlayerInteraction : MonoBehaviour
                     ShowItemText("'유사-꼬부기의 등껍질' 을 얻었다!");
                     itemImage.GetComponent<Image>().sprite = itemImageArray[3];
                     Inventory.Instance.AddItem(10020002);
-                    Debug.Log("Item4 추가 10020002");
+                    MainSoundManager.instance.PlaySFX(3);
                     // 인벤토리에 유사-꼬부기 등껍질 추가 
                     break;
 
@@ -249,7 +249,7 @@ public class PlayerInteraction : MonoBehaviour
                     ShowItemText("'날도롱뇽의 꼬리' 를 얻었다!");
                     itemImage.GetComponent<Image>().sprite = itemImageArray[4];
                     Inventory.Instance.AddItem(10020001);
-                    Debug.Log("Item5 추가 10020001");
+                    MainSoundManager.instance.PlaySFX(3);
                     // 인벤토리에 날도롱뇽 날개 추가 로직
                     break;
 
@@ -257,7 +257,7 @@ public class PlayerInteraction : MonoBehaviour
                     ShowItemText("'여치의 더듬이' 를 얻었다!");
                     itemImage.GetComponent<Image>().sprite = itemImageArray[5];
                     Inventory.Instance.AddItem(10020003);
-                    Debug.Log("Item6 추가 10020003");
+                    MainSoundManager.instance.PlaySFX(3);
                     // 인벤토리에 여치 더듬이 추가 로직
                     break;
 
@@ -265,7 +265,7 @@ public class PlayerInteraction : MonoBehaviour
                     ShowItemText("'불 도롱뇽의 꼬리' 를 얻었다!");
                     itemImage.GetComponent<Image>().sprite = itemImageArray[6];
                     Inventory.Instance.AddItem(10020004);
-                    Debug.Log("Item7 추가 10020004");
+                    MainSoundManager.instance.PlaySFX(3);
                     // 인벤토리에 불도마뱀 꼬리 추가 로직
                     break;
 
@@ -273,7 +273,7 @@ public class PlayerInteraction : MonoBehaviour
                     ShowItemText("'식인꽃 꽃잎' 을 얻었다!");
                     itemImage.GetComponent<Image>().sprite = itemImageArray[7];
                     Inventory.Instance.AddItem(10010003);
-                    Debug.Log("Item8 추가 10010003");
+                    MainSoundManager.instance.PlaySFX(3);
                     // 인벤토리에 식인꽃 꽃잎 추가 로직
                     break;
 
@@ -281,23 +281,35 @@ public class PlayerInteraction : MonoBehaviour
                     ShowItemText("'사탕' 을 얻었다!");
                     itemImage.GetComponent<Image>().sprite = itemImageArray[8];
                     Inventory.Instance.AddItem(10010002);
-                    Debug.Log("Item9 추가 10010002");
+                    MainSoundManager.instance.PlaySFX(3);
                     // 인벤토리에 사탕 추가 로직
                     break;
 
                 case bool _ when interactedMob.mobType.StartsWith("Grape"):
-                    ShowItemText("'오스틴 산 포도' 를 얻었다, 아이고~ 사장님 ");
-                    itemImage.GetComponent<Image>().sprite = itemImageArray[9];
                     Inventory.Instance.AddItem(10010005);
-                    Debug.Log("Item10 추가 10010005");
-                    // 인벤토리에 오스틴-포도 추가 로직
+
+                    float randomValue = UnityEngine.Random.Range(0f, 1f); // 2가지의 랜덤 분기
+
+                    if (randomValue < 0.5f)
+                    {
+                        ShowItemText("'오스틴 산 포도' 를 얻었다.");
+                    itemImage.GetComponent<Image>().sprite = itemImageArray[9];
+                    MainSoundManager.instance.PlaySFX(3);
+                    }
+                    else
+                    {
+                        // 두 번째 로직 : 이스터 에그
+                        ShowItemText("사장님이 포도를 주셨다 아이고~ ");
+                        itemImage.GetComponent<Image>().sprite = itemImageArray[12];
+                        MainSoundManager.instance.PlaySFX(7);
+                    }
                     break;
 
                 case bool _ when interactedMob.mobType.Contains("Herb"):
                     ShowItemText("'야자 허브 잎' 을 얻었다!");
                     itemImage.GetComponent<Image>().sprite = itemImageArray[10];
                     Inventory.Instance.AddItem(10010004);
-                    Debug.Log("Item11 추가 10010004");
+                    MainSoundManager.instance.PlaySFX(3);
                     // 인벤토리에 야자 허브 추가 로직
                     break;
 
@@ -305,7 +317,7 @@ public class PlayerInteraction : MonoBehaviour
                     ShowItemText("'백일홍 꽃' 을 얻었다!");
                     itemImage.GetComponent<Image>().sprite = itemImageArray[11];
                     Inventory.Instance.AddItem(10010001);
-                    Debug.Log("Item12 : 추가 10010001");
+                    MainSoundManager.instance.PlaySFX(3);
                     // 인벤토리에 백일홍 꽃잎 추가 로직
                     break;
 
