@@ -14,6 +14,9 @@ public class GameManager : MonoBehaviour
     public TMP_Text TimeText;
     public GameObject DarkImage;
 
+    [Header("Player")]
+    public TMP_Text PlayerGoldText;
+
     private float realTime = 1;//실제시간몇초당 10분
     private float time;
     private int gameTime = 360;
@@ -32,8 +35,6 @@ public class GameManager : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
-
-
 
     private void Update()
     {
@@ -59,7 +60,6 @@ public class GameManager : MonoBehaviour
         }
 
     }
-
 
     public void TimeCheck()
     {
@@ -126,9 +126,6 @@ public class GameManager : MonoBehaviour
         DarkImage.GetComponent<SpriteRenderer>().color = color;
     }
 
-
-
-    //0~255 /200 25.5 = 0.1
     public bool IsMorning() // 오전 7시부터 아침, 아침 되면 몬스터 리스폰
     {
         return gameTime >= 420 && gameTime < 430;
