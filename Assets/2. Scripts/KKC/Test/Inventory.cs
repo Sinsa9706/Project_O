@@ -75,7 +75,8 @@ public class Inventory : MonoBehaviour
 
     public void OnInventory()
     {
-            Toggle();
+        Toggle();
+
     }
 
     public void Toggle()
@@ -83,11 +84,13 @@ public class Inventory : MonoBehaviour
         if (inventoryWindow.activeInHierarchy)
         {
             inventoryWindow.SetActive(false);
+            MainSoundManager.instance.PlaySFX(5);
             onCloseInventory?.Invoke();
         }
         else
         {
             inventoryWindow.SetActive(true);
+            MainSoundManager.instance.PlaySFX(5);
             onOpenInventory?.Invoke();
         }
     }

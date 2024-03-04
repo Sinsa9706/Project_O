@@ -78,7 +78,6 @@ public class ColliderMark : MonoBehaviour
         if (collision.CompareTag("Player") && questionMark != null)
         {
             questionMark.enabled = true; // 물음표 이미지 활성화
-            MainSoundManager.instance.PlaySFX(0);
             if (questionMarkAnimator != null)
             {
                 // Animator 컴포넌트를 사용하여 애니메이션을 제어

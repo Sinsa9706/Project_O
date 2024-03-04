@@ -132,6 +132,7 @@ public class PlayerInteraction : MonoBehaviour
     // SendMessage를 위한 매개변수 없는 메서드 추가
     public void OnInteraction()
     {
+        MainSoundManager.instance.PlaySFX(0);
         // 상호작용 가능한 몬스터가 있을 때만 상호작용 시작
         if (interactableMobs.Count > 0)
         {
