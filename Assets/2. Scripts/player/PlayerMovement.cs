@@ -47,10 +47,10 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void OnClick()
-    {
-        MainSoundManager.instance.PlaySFX(8);
-    }
+    //private void OnClick()
+    //{
+    //    MainSoundManager.instance.PlaySFX(8);
+    //}
 
     private void Move()
     {

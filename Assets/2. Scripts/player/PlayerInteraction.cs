@@ -74,56 +74,59 @@ public class PlayerInteraction : MonoBehaviour
     {
         textMoveTimer += Time.deltaTime;
 
-        if (textMoveTimer <= textMoveDuration)
+        if (textMoveTimer <= textMoveDuration) // 텍스트 이동 타이머가 지속되는 동안
         {
-            float yOffset = textMoveDistance * (textMoveTimer / textMoveDuration);
-            itemText.rectTransform.anchoredPosition = new Vector2(0f, yOffset);
-            float alpha = 1.0f - (textMoveTimer / textMoveDuration);
-            itemText.color = new Color(1f, 1f, 1f, alpha);
+            float yOffset = textMoveDistance * (textMoveTimer / textMoveDuration); // 텍스트 이동 거리 계산
+            itemText.rectTransform.anchoredPosition = new Vector2(0f, yOffset); // 텍스트 위치 조정
+            float alpha = 1.0f - (textMoveTimer / textMoveDuration); // 텍스트 투명도 계산
+            itemText.color = new Color(1f, 1f, 1f, alpha); // 텍스트 투명도 적용
         }
-        else
+        else // 텍스트 이동 타이머가 종료된 경우
         {
-            // 효과 종료 후 초기화
-            itemText.gameObject.SetActive(false);
-            textMoveTimer = 0.0f;
-            isGetText = false;
+            
+            itemText.gameObject.SetActive(false); 
+            textMoveTimer = 0.0f; 
+            isGetText = false; 
         }
     }
 
+    // 아이템 획득 시 아이템 이미지 이펙트 업데이트
     private void UpdateItemEffect()
     {
         itemEffectTimer += Time.deltaTime;
 
-        if(itemEffectTimer <= itemEffectDuration)
+        if (itemEffectTimer <= itemEffectDuration) // 아이템 이펙트 타이머가 지속되는 동안
         {
-            float yOffset = itemEffectDuration * (itemEffectTimer / itemEffectDuration);
-            itemImage.GetComponent<RectTransform>().anchoredPosition = new Vector2(0f, yOffset);
-            float alpha = 1.0f - (itemEffectTimer / itemEffectDuration);
-            itemImage.GetComponent<Image>().color = new Color(1f, 1f, 1f, alpha);
+            float yOffset = itemEffectDuration * (itemEffectTimer / itemEffectDuration); // 아이템 이동 거리 계산
+            itemImage.GetComponent<RectTransform>().anchoredPosition = new Vector2(0f, yOffset); // 아이템 이미지 위치 조정
+            float alpha = 1.0f - (itemEffectTimer / itemEffectDuration); // 아이템 투명도 계산
+            itemImage.GetComponent<Image>().color = new Color(1f, 1f, 1f, alpha); // 아이템 투명도 적용
         }
-        else
+        else // 아이템 이펙트 타이머가 종료된 경우
         {
             // 효과 종료 후 초기화
-            itemImage.SetActive(false);
-            itemEffectTimer = 0.0f;
-            isGetItem = false;
+            itemImage.SetActive(false); // 아이템 이미지 비활성화
+            itemEffectTimer = 0.0f; // 타이머 초기화
+            isGetItem = false; // 아이템 획득 플래그 초기화
         }
     }
 
+    // 아이템 이미지 표시
     public void ShowGetItem(int itemType)
     {
-        itemImage.GetComponent<Image>().sprite = itemImageArray[itemType];
-        itemImage.SetActive(true);
-        isGetItem = true;
-        itemEffectTimer = 0.0f;
+        itemImage.GetComponent<Image>().sprite = itemImageArray[itemType]; // 아이템 이미지 설정
+        itemImage.SetActive(true); 
+        isGetItem = true; 
+        itemEffectTimer = 0.0f; // 아이템 이펙트 타이머 초기화
     }
 
+    // 아이템 획득 시 텍스트 표시
     public void ShowItemText(string itemName)
     {
-        itemText.text = itemName; 
+        itemText.text = itemName; // 아이템 텍스트 설정
         itemText.gameObject.SetActive(true); 
         isGetText = true; 
-        textMoveTimer = 0.0f; 
+        textMoveTimer = 0.0f; // 텍스트 이펙트 타이머 초기화
     }
 
 
