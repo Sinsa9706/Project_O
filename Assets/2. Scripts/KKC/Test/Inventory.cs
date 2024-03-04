@@ -34,7 +34,6 @@ public class Inventory : MonoBehaviour
     public UnityEvent onCloseInventory;
 
     public static Inventory Instance = null;
-    private Dictionary<int, ItemData> HaveItem = new();
 
     private void Awake()
     {
@@ -137,11 +136,6 @@ public class Inventory : MonoBehaviour
                 slots[i].quantity--;
             }
         }
-    }
-
-    private void RemoveSelectedItem()
-    {
-
     }
 
     public ItemSlot GetItem(int i)

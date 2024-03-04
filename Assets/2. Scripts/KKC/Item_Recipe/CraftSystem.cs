@@ -43,6 +43,22 @@ public class CraftSystem : MonoBehaviour
         Instance = this;
     }
 
+    public void UpdateRecipeSlotUI(int id)
+    {
+        RecipeDB recipeDB = new RecipeDB();
+        Dictionary<int, RecipeData> _recipes = recipeDB.Get();
+
+        for(int i = 0; i < recipeSlots.Length; i++)
+        {
+            if (recipeSlots[i] == null)
+            {
+
+            }
+
+        }
+
+    }
+
     public void TotalItem(int id)
     {
         int total = 0;
