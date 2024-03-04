@@ -200,5 +200,6 @@ public class NPC : MonoBehaviour
     public void PlayerGoldUpdate()
     {
         PlayerGoldText.text = GameManager.PlayerGold.ToString();
+        GameManager.Instance.PlayerGoldText.text = GameManager.PlayerGold.ToString();
     }
 }

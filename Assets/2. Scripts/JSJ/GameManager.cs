@@ -14,6 +14,9 @@ public class GameManager : MonoBehaviour
     public TMP_Text TimeText;
     public GameObject DarkImage;
 
+    [Header("Player")]
+    public TMP_Text PlayerGoldText;
+
     private float realTime = 1;//실제시간몇초당 10분
     private float time;
     private int gameTime = 360;
