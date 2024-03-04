@@ -6,7 +6,6 @@ using System.Diagnostics;
 
 public class UIManager : MonoBehaviour
 {
-    [HideInInspector]
     public static int Count;
 
     //ON OFF Change
@@ -27,6 +26,10 @@ public class UIManager : MonoBehaviour
     {
         ui.SetActive(false);
         Time.timeScale = 1.0f;
+    }
+    public void UIOffStopTime(GameObject ui)
+    {
+        ui.SetActive(false);
     }
 
     //CountController

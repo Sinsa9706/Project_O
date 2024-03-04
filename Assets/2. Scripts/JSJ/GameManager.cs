@@ -9,8 +9,13 @@ public class GameManager : MonoBehaviour
 
     public static int PlayerGold = 500;
 
+
+    [Header("Time")]
     public TMP_Text TimeText;
-    public GameObject Image;
+    public GameObject DarkImage;
+
+    [Header("Player")]
+    public TMP_Text PlayerGoldText;
 
     private float realTime = 1;//실제시간몇초당 10분
     private float time;
@@ -43,6 +48,17 @@ public class GameManager : MonoBehaviour
         }
         else
             TimeCheck();
+
+        // 모든 MobSpawnManager에 대해 몬스터를 리스폰
+        if (IsMorning())
+        {
+            foreach (var spawnManager in FindObjectsOfType<MobSpawnManager>())
+            // MobSpawnManager 스크립트가 달려있는 모든 오브젝트를 찾아서 각각 개체에 반복문 수행  
+            {
+                spawnManager.SpawnMonsters();
+            }
+        }
+
     }
 
     public void TimeCheck()
@@ -93,22 +109,26 @@ public class GameManager : MonoBehaviour
         if (gameTime <= 1140)
             return;
 
-        if (Image.GetComponent<SpriteRenderer>().color.a >= 0.78)
+        if (DarkImage.GetComponent<SpriteRenderer>().color.a >= 0.78)
             return;
 
-        Image.GetComponent<SpriteRenderer>().color += color;
+        DarkImage.GetComponent<SpriteRenderer>().color += color;
     }
     public void AlphaReset()
     {
         Color color = new Color(0, 0, 0);
 
-        color.r = Image.GetComponent<SpriteRenderer>().color.r;
-        color.g = Image.GetComponent<SpriteRenderer>().color.g;
-        color.b = Image.GetComponent<SpriteRenderer>().color.b;
+        color.r = DarkImage.GetComponent<SpriteRenderer>().color.r;
+        color.g = DarkImage.GetComponent<SpriteRenderer>().color.g;
+        color.b = DarkImage.GetComponent<SpriteRenderer>().color.b;
         color.a = 0;
 
-        Image.GetComponent<SpriteRenderer>().color = color;
+        DarkImage.GetComponent<SpriteRenderer>().color = color;
     }
 
-    //0~255 /200 25.5 = 0.1
+    public bool IsMorning() // 오전 7시부터 아침, 아침 되면 몬스터 리스폰
+    {
+        return gameTime >= 420 && gameTime < 430;
+    }
+
 }

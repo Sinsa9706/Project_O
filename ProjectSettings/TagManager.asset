@@ -7,7 +7,9 @@ TagManager:
   - Shop
   - Box
   - Quest
+  - Monster
   - Bed
+  - WorkTable
   layers:
   - Default
   - TransparentFX

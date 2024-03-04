@@ -16,7 +16,7 @@ public class ColliderMark : MonoBehaviour
     public Image exclamationMark; // 느낌표 이미지
     public Animator exclamationMarkAnimator; // 느낌표 애니메이터
 
-    public PlayerInteraction playerInteraction; // 플레이어 상호작용 스크립트 참조
+    //private PlayerInteraction playerInteraction; // 플레이어 상호작용 스크립트 참조
 
 
 
@@ -36,7 +36,7 @@ public class ColliderMark : MonoBehaviour
         {
             loveMark.enabled = false; // 러브 이미지 숨김
         }
-        playerInteraction.onInteraction.AddListener(ActiveLoveMark); // 이벤트 리스너 추가
+        //playerInteraction.onInteraction.AddListener(ActiveLoveMark); // 이벤트 리스너 추가
 
     }
     public void ActiveLoveMark() // Love 마크 

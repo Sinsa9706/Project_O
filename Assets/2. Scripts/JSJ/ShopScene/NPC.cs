@@ -17,6 +17,7 @@ public class NPC : MonoBehaviour
     public GameObject QuestUI;
     public GameObject SleepUI;
     public GameObject NightUI;
+    public GameObject MakeUI;
 
     [Header("Shop UI Object")]
     public TMP_Text PlayerGoldText;
@@ -42,13 +43,13 @@ public class NPC : MonoBehaviour
     private void Update()
     {
         if (isDarkCoroutineEnd == true)
-        { 
+        {
             StopCoroutine("DarkUI");
             isDarkCoroutineEnd = false;
             Time.timeScale = 1;
             Invoke("NightSetting", 2);
         }
-        if(isDayStart == true)
+        if (isDayStart == true)
         {
             StartCoroutine("LightUI");
             Time.timeScale = 0;
@@ -76,6 +77,8 @@ public class NPC : MonoBehaviour
             QuestOpen();
         if (Trigger.isSleep == true)
             SleepOpen();
+        if (Trigger.inMake == true)
+            MakeUIOpen();
     }
 
     private void ShopOpen()
@@ -99,6 +102,22 @@ public class NPC : MonoBehaviour
         Time.timeScale = 0.0f;
     }
 
+    private void SleepOpen()
+    {
+        Debug.Log("SleepOpen");
+        _UIManager.UIOn(SleepUI);
+        Time.timeScale = 0.0f;
+
+        StartCoroutine("DarkUI");
+    }
+
+    private void MakeUIOpen()
+    {
+        Debug.Log("MakeUIOpen");
+        _UIManager.UIOn(MakeUI);
+        Time.timeScale = 0.0f;
+
+    }
     IEnumerator DarkUI()
     {
         while (!(SleepUI.GetComponent<Image>().color.a >= 1))
@@ -125,7 +144,7 @@ public class NPC : MonoBehaviour
             isLightCoroutineEnd = false;
 
             Color color = SleepUI.GetComponent<Image>().color;
-            color.a = color.a - 0.002f;
+            color.a = color.a - 0.005f;
             SleepUI.GetComponent<Image>().color = color;
 
             if (SleepUI.GetComponent<Image>().color.a <= 0)
@@ -135,15 +154,6 @@ public class NPC : MonoBehaviour
 
             yield return null;
         } 
-    }
-
-    private void SleepOpen()
-    {
-        Debug.Log("SleepOpen");
-        _UIManager.UIOn(SleepUI);
-        Time.timeScale = 0.0f;
-
-        StartCoroutine("DarkUI");
     }
 
     private void NightSetting()
@@ -182,7 +192,7 @@ public class NPC : MonoBehaviour
 
     public void PriceText(TMP_Text priceText)
     {
-        int price = 50 * UIManager.Count;//50은 인벤
+        int price = Shop.ItemGold * UIManager.Count;//50은 인벤
         priceText.text = price.ToString();
     }
 
@@ -200,5 +210,6 @@ public class NPC : MonoBehaviour
     public void PlayerGoldUpdate()
     {
         PlayerGoldText.text = GameManager.PlayerGold.ToString();
+        GameManager.Instance.PlayerGoldText.text = GameManager.PlayerGold.ToString();
     }
 }
