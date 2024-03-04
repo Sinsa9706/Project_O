@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
@@ -8,73 +8,73 @@ public class MobMovement : MonoBehaviour
 {
     private float speed = 3.0f;
     private float RunSpeed = 5.0f; 
-    private Vector3 startPos; // ¸ó½ºÅÍ°¡ Ã³À½ »ı¼ºµÈ À§Ä¡
-    private Vector3 randomPos; // ¸ó½ºÅÍ°¡ ·£´ıÇÏ°Ô ÀÌµ¿ÇÒ À§Ä¡
-    public float mobRadius = 10f; // ¸ó½ºÅÍ°¡ ÀÌµ¿ÇÒ ¼ö ÀÖ´Â ÃÖ´ë ¹üÀ§
+    private Vector3 startPos; // ëª¬ìŠ¤í„°ê°€ ì²˜ìŒ ìƒì„±ëœ ìœ„ì¹˜
+    private Vector3 randomPos; // ëª¬ìŠ¤í„°ê°€ ëœë¤í•˜ê²Œ ì´ë™í•  ìœ„ì¹˜
+    public float mobRadius = 10f; // ëª¬ìŠ¤í„°ê°€ ì´ë™í•  ìˆ˜ ìˆëŠ” ìµœëŒ€ ë²”ìœ„
 
-    private Animator animator; // ¸÷¿¡ ¿¬°áµÈ ¾Ö´Ï¸ŞÀÌÅÍ  ÄÄÆ÷³ÍÆ®
-    private bool isWalking = false; // ¸ó½ºÅÍ°¡ ÇöÀç °È°í ÀÖ´ÂÁö ¿©ºÎ, ±âº»Àº Á¤Áö »óÅÂ(false)
-    public bool isDead = false; // ¸÷ÀÌ Á×¾ú´ÂÁö ¿©ºÎ¸¦ ÃßÀûÇÏ´Â º¯¼ö
-    private MobInteraction mobInteraction; // MobInteraction ÄÄÆ÷³ÍÆ® ÂüÁ¶
+    private Animator animator; // ëª¹ì— ì—°ê²°ëœ ì• ë‹ˆë©”ì´í„°  ì»´í¬ë„ŒíŠ¸
+    private bool isWalking = false; // ëª¬ìŠ¤í„°ê°€ í˜„ì¬ ê±·ê³  ìˆëŠ”ì§€ ì—¬ë¶€, ê¸°ë³¸ì€ ì •ì§€ ìƒíƒœ(false)
+    public bool isDead = false; // ëª¹ì´ ì£½ì—ˆëŠ”ì§€ ì—¬ë¶€ë¥¼ ì¶”ì í•˜ëŠ” ë³€ìˆ˜
+    private MobInteraction mobInteraction; // MobInteraction ì»´í¬ë„ŒíŠ¸ ì°¸ì¡°
 
 
 
 
     void Start()
     {
-        animator = GetComponentInChildren<Animator>(); // Animator ÄÄÆ÷³ÍÆ®¸¦ ÀÚ½Ä ¿ÀºêÁ§Æ®¿¡¼­ Ã£À½
+        animator = GetComponentInChildren<Animator>(); // Animator ì»´í¬ë„ŒíŠ¸ë¥¼ ìì‹ ì˜¤ë¸Œì íŠ¸ì—ì„œ ì°¾ìŒ
         mobInteraction = GetComponent<MobInteraction>();
         if (mobInteraction == null)
         {
-            Debug.LogError("MobInteraction ÄÄÆ÷³ÍÆ® ¾øÀ½");
+            Debug.LogError("MobInteraction ì»´í¬ë„ŒíŠ¸ ì—†ìŒ");
             return;
         }
        
-        startPos = transform.position; // ÃÊ±â À§Ä¡ ¼³Á¤
+        startPos = transform.position; // ì´ˆê¸° ìœ„ì¹˜ ì„¤ì •
         StartCoroutine(Roaming());
     }
 
-    IEnumerator Roaming() // ¸÷ ¹èÈ¸
+    IEnumerator Roaming() // ëª¹ ë°°íšŒ
     {
         while (true)
         {
-            if (isDead) // Á×À½ »óÅÂÀÎ °æ¿ì ·çÇÁ ÁßÁö
+            if (isDead) // ì£½ìŒ ìƒíƒœì¸ ê²½ìš° ë£¨í”„ ì¤‘ì§€
                 yield break;
 
             if (mobInteraction.mobType.Contains("Flower") || mobInteraction.mobType.Contains("Grape") ||
                 mobInteraction.mobType.Contains("Herb") || mobInteraction.mobType.Contains("Tree") 
-                || mobInteraction.mobType.Contains("Man-Eating"))// ½Ä¹° ¸ó½ºÅÍ´Â ÀÌµ¿ ·ÎÁ÷ ¼öÇàÇÏÁö ¾ÊÀ½
+                || mobInteraction.mobType.Contains("Man-Eating"))// ì‹ë¬¼ ëª¬ìŠ¤í„°ëŠ” ì´ë™ ë¡œì§ ìˆ˜í–‰í•˜ì§€ ì•ŠìŒ
             {
                 yield break;
             }
 
-            if (!isWalking) // ¸ØÃã »óÅÂ
+            if (!isWalking) // ë©ˆì¶¤ ìƒíƒœ
             {
-                // ÀÌµ¿ÇÒ »õ·Î¿î ¸ñÀûÁö ·£´ı ¼³Á¤
+                // ì´ë™í•  ìƒˆë¡œìš´ ëª©ì ì§€ ëœë¤ ì„¤ì •
                 randomPos = startPos + (Vector3)(UnityEngine.Random.insideUnitCircle * mobRadius);
-                isWalking = true; // °È´Â »óÅÂ·Î ¼³Á¤
-                animator.SetBool("IsWalking", true); // ¾Ö´Ï¸ŞÀÌÅÍ¿¡ °È´Â »óÅÂÀÓÀ» ¾Ë¸²
+                isWalking = true; // ê±·ëŠ” ìƒíƒœë¡œ ì„¤ì •
+                animator.SetBool("IsWalking", true); // ì• ë‹ˆë©”ì´í„°ì— ê±·ëŠ” ìƒíƒœì„ì„ ì•Œë¦¼
             }
 
-            if (isWalking) // °È´Â »óÅÂ
+            if (isWalking) // ê±·ëŠ” ìƒíƒœ
             {
-                // ¸ó½ºÅÍ¸¦ ¸ñÀûÁö ÂÊÀ¸·Î ÀÌµ¿
+                // ëª¬ìŠ¤í„°ë¥¼ ëª©ì ì§€ ìª½ìœ¼ë¡œ ì´ë™
                 MoveTowards(randomPos);
             }
-            if (Vector3.Distance(transform.position, randomPos) <= 0.1f) // ¸ñÀûÁö¿¡ µµ´ŞÇß´Ù¸é
+            if (Vector3.Distance(transform.position, randomPos) <= 0.1f) // ëª©ì ì§€ì— ë„ë‹¬í–ˆë‹¤ë©´
             {
-                isWalking = false; // ¸ØÃã »óÅÂ·Î ¼³Á¤
-                animator.SetBool("IsWalking", false); // ¾Ö´Ï¸ŞÀÌÅÍ¿¡ ¸ØÃã »óÅÂÀÓÀ» ¾Ë¸²
+                isWalking = false; // ë©ˆì¶¤ ìƒíƒœë¡œ ì„¤ì •
+                animator.SetBool("IsWalking", false); // ì• ë‹ˆë©”ì´í„°ì— ë©ˆì¶¤ ìƒíƒœì„ì„ ì•Œë¦¼
 
                 if (gameObject.name.StartsWith("Mob_Corgi") || gameObject.name.StartsWith("Mob_Mushroom") || gameObject.name.StartsWith("Mob_Kirby")) 
-                    // ¿ÀºêÁ§Æ® ÀÌ¸§ÀÌ À§·Î ½ÃÀÛÇÑ´Ù¸é
+                    // ì˜¤ë¸Œì íŠ¸ ì´ë¦„ì´ ìœ„ë¡œ ì‹œì‘í•œë‹¤ë©´
                 {
-                    animator.SetBool("IsSearching", true); // Å½»ö ¾Ö´Ï¸ŞÀÌ¼Ç È°¼ºÈ­
-                    yield return new WaitForSeconds(2f); // Å½»öÇÏ´Â µ¿¾È ´ë±â
-                    animator.SetBool("IsSearching", false); // Å½»ö ¾Ö´Ï¸ŞÀÌ¼Ç ºñÈ°¼ºÈ­
+                    animator.SetBool("IsSearching", true); // íƒìƒ‰ ì• ë‹ˆë©”ì´ì…˜ í™œì„±í™”
+                    yield return new WaitForSeconds(2f); // íƒìƒ‰í•˜ëŠ” ë™ì•ˆ ëŒ€ê¸°
+                    animator.SetBool("IsSearching", false); // íƒìƒ‰ ì• ë‹ˆë©”ì´ì…˜ ë¹„í™œì„±í™”
                 }
 
-                // ·£´ıÇÑ ½Ã°£ µ¿¾È ´ë±â
+                // ëœë¤í•œ ì‹œê°„ ë™ì•ˆ ëŒ€ê¸°
                 yield return new WaitForSeconds(UnityEngine.Random.Range(3f, 5f));
             }
             else
@@ -84,34 +84,34 @@ public class MobMovement : MonoBehaviour
         }
     }
 
-    void MoveTowards(Vector3 target) // ÀÏ¹İÀûÀÎ
+    void MoveTowards(Vector3 target) // ì¼ë°˜ì ì¸
     {
-        if (isDead) return; // Á×Àº »óÅÂ¸é ÀÌµ¿ ·ÎÁ÷À» ¼öÇàÇÏÁö ¾ÊÀ½
+        if (isDead) return; // ì£½ì€ ìƒíƒœë©´ ì´ë™ ë¡œì§ì„ ìˆ˜í–‰í•˜ì§€ ì•ŠìŒ
 
-        // 1. ¸ñÀûÁö ¹æÇâÀ¸·Î ¸ó½ºÅÍ¸¦ ÀÌµ¿
+        // 1. ëª©ì ì§€ ë°©í–¥ìœ¼ë¡œ ëª¬ìŠ¤í„°ë¥¼ ì´ë™
         var direction = (target - transform.position).normalized;
-        transform.position += direction * speed * Time.deltaTime; //   ¸ó½ºÅÍÀÇ À§Ä¡¸¦ ¾÷µ¥ÀÌÆ®
+        transform.position += direction * speed * Time.deltaTime; //   ëª¬ìŠ¤í„°ì˜ ìœ„ì¹˜ë¥¼ ì—…ë°ì´íŠ¸
 
 
-        // 2. ÀÌµ¿ ¹æÇâ¿¡ µû¸¥ ½ºÇÁ¶óÀÌÆ® ¹æÇâ ÀüÈ¯ : ÇÏÀ§ ·»´õ·¯ÀÇ xÃàÀ» flip 
+        // 2. ì´ë™ ë°©í–¥ì— ë”°ë¥¸ ìŠ¤í”„ë¼ì´íŠ¸ ë°©í–¥ ì „í™˜ : í•˜ìœ„ ë Œë”ëŸ¬ì˜ xì¶•ì„ flip 
         SpriteRenderer spriteRenderer = GetComponentInChildren<SpriteRenderer>();
 
-        if (direction.x > 0)  // position x°¡ ¾ç¼ö, ¿À¸¥ÂÊ ÀÌµ¿ ½Ã
+        if (direction.x > 0)  // position xê°€ ì–‘ìˆ˜, ì˜¤ë¥¸ìª½ ì´ë™ ì‹œ
         {
             spriteRenderer.flipX = false;
         }
-        else if (direction.x < 0) // position x°¡ À½¼ö, ¿ŞÂÊ ÀÌµ¿ ½Ã
+        else if (direction.x < 0) // position xê°€ ìŒìˆ˜, ì™¼ìª½ ì´ë™ ì‹œ
         {
             spriteRenderer.flipX = true;
         }
 
     }
 
-    public void StartSurprisedMovement() // ³î¶õ »óÅÂÀÇ ÀÌµ¿
+    public void StartSurprisedMovement() // ë†€ë€ ìƒíƒœì˜ ì´ë™
     {
-        if (!isWalking && !isDead) // °È°í ÀÖÁö ¾ÊÀ½ + ¾È Á×¾úÀ» ¶§
+        if (!isWalking && !isDead) // ê±·ê³  ìˆì§€ ì•ŠìŒ + ì•ˆ ì£½ì—ˆì„ ë•Œ
         {
-            // startPos¸¦ Áß½ÉÀ¸·Î roamRadius ³»¿¡¼­ ·£´ıÇÑ ¸ñÀûÁö ¼³Á¤
+            // startPosë¥¼ ì¤‘ì‹¬ìœ¼ë¡œ roamRadius ë‚´ì—ì„œ ëœë¤í•œ ëª©ì ì§€ ì„¤ì •
             Vector3 randomPos = startPos + new Vector3(
             UnityEngine.Random.Range(-mobRadius, mobRadius), 
             UnityEngine.Random.Range(-mobRadius, mobRadius), 
@@ -119,12 +119,12 @@ public class MobMovement : MonoBehaviour
         );
 
             isWalking = true;
-            animator.SetBool("IsSurprised", true); // ³î¶õ »óÅÂ ¾Ö´Ï¸ŞÀÌ¼Ç È°¼ºÈ­
+            animator.SetBool("IsSurprised", true); // ë†€ë€ ìƒíƒœ ì• ë‹ˆë©”ì´ì…˜ í™œì„±í™”
 
-            // ¸ñÀûÁö·Î ÀÌµ¿ ½ÃÀÛ, ÀÌµ¿ÀÌ ¿Ï·áµÇ¸é Äİ¹é ÇÔ¼ö¸¦ È£Ãâ
+            // ëª©ì ì§€ë¡œ ì´ë™ ì‹œì‘, ì´ë™ì´ ì™„ë£Œë˜ë©´ ì½œë°± í•¨ìˆ˜ë¥¼ í˜¸ì¶œ
             StartCoroutine(MoveToPosition(randomPos, () =>
             {
-                // ÀÌµ¿ÀÌ ³¡³µÀ» ¶§ Äİ¹é
+                // ì´ë™ì´ ëë‚¬ì„ ë•Œ ì½œë°±
                 animator.SetBool("IsSurprised", false);
                 isWalking = false;
             }));
@@ -135,13 +135,13 @@ public class MobMovement : MonoBehaviour
     {
         while (Vector3.Distance(transform.position, target) > 0.1f)
         {
-            // ¹æÇâ °è»ê ¹× ÀÌµ¿
+            // ë°©í–¥ ê³„ì‚° ë° ì´ë™
             Vector3 direction = (target - transform.position).normalized;
             transform.position += direction * RunSpeed * Time.deltaTime;
 
-            // ½ºÇÁ¶óÀÌÆ®ÀÇ ¹æÇâÀ» ÀÌµ¿ ¹æÇâ¿¡ ¸ÂÃß¾î µÚÁıÀ½
+            // ìŠ¤í”„ë¼ì´íŠ¸ì˜ ë°©í–¥ì„ ì´ë™ ë°©í–¥ì— ë§ì¶”ì–´ ë’¤ì§‘ìŒ
             SpriteRenderer spriteRenderer = GetComponentInChildren<SpriteRenderer>();
-            spriteRenderer.flipX = direction.x < 0; // ¿ŞÂÊ °¥ ¶§ ÇÃ¸³
+            spriteRenderer.flipX = direction.x < 0; // ì™¼ìª½ ê°ˆ ë•Œ í”Œë¦½
 
             yield return null;
         }

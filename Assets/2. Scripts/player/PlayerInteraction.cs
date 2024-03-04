@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -8,27 +8,26 @@ using UnityEngine.UI;
 public class PlayerInteraction : MonoBehaviour
 {
 
-    [SerializeField] private Slider interactionSlider; // »óÈ£ÀÛ¿ë ½½¶óÀÌ´õ ÂüÁ¶
-    private Coroutine interactionCoroutine; // »óÈ£ÀÛ¿ë ÄÚ·çÆ¾ ÂüÁ¶
+    [SerializeField] private Slider interactionSlider; // ìƒí˜¸ì‘ìš© ìŠ¬ë¼ì´ë” ì°¸ì¡°
+    private Coroutine interactionCoroutine; // ìƒí˜¸ì‘ìš© ì½”ë£¨í‹´ ì°¸ì¡°
 
-    private List<MobInteraction> interactableMobs = new List<MobInteraction>();  // »óÈ£ÀÛ¿ë ¸ó½ºÅÍ ¸®½ºÆ®, ÀÓ½Ã
+    private List<MobInteraction> interactableMobs = new List<MobInteraction>();  // ìƒí˜¸ì‘ìš© ëª¬ìŠ¤í„° ë¦¬ìŠ¤íŠ¸, ì„ì‹œ
 
-   
     public UnityEvent onInteraction = new UnityEvent();
 
-    private bool isInteracting = false;  // »óÈ£ÀÛ¿ë ÁßÀÎÁö ¿©ºÎ
-    private bool isPressingInteractKey = false; // »óÈ£ÀÛ¿ë Å°¸¦ ´©¸£°í ÀÖ´ÂÁö ¿©ºÎ
+    private bool isInteracting = false;  // ìƒí˜¸ì‘ìš© ì¤‘ì¸ì§€ ì—¬ë¶€
+    private bool isPressingInteractKey = false; // ìƒí˜¸ì‘ìš© í‚¤ë¥¼ ëˆ„ë¥´ê³  ìˆëŠ”ì§€ ì—¬ë¶€
 
 
 
     void Start()
     {
-        interactionSlider.gameObject.SetActive(false); // ½½¶óÀÌ´õ ¼û±â±â
+        interactionSlider.gameObject.SetActive(false); // ìŠ¬ë¼ì´ë” ìˆ¨ê¸°ê¸°
     }
 
     void Update()
     {
-        // Input È®ÀÎ (Input System)
+        // Input í™•ì¸ (Input System)
         isPressingInteractKey = Keyboard.current.zKey.isPressed;
 
         if (isPressingInteractKey && !isInteracting && interactableMobs.Count > 0)
@@ -42,24 +41,24 @@ public class PlayerInteraction : MonoBehaviour
     }
 
 
-    // SendMessage¸¦ À§ÇÑ ¸Å°³º¯¼ö ¾ø´Â ¸Ş¼­µå Ãß°¡
+    // SendMessageë¥¼ ìœ„í•œ ë§¤ê°œë³€ìˆ˜ ì—†ëŠ” ë©”ì„œë“œ ì¶”ê°€
     public void OnInteraction()
     {
-        // »óÈ£ÀÛ¿ë °¡´ÉÇÑ ¸ó½ºÅÍ°¡ ÀÖÀ» ¶§¸¸ »óÈ£ÀÛ¿ë ½ÃÀÛ
+        // ìƒí˜¸ì‘ìš© ê°€ëŠ¥í•œ ëª¬ìŠ¤í„°ê°€ ìˆì„ ë•Œë§Œ ìƒí˜¸ì‘ìš© ì‹œì‘
         if (interactableMobs.Count > 0)
         {
             interactionSlider.gameObject.SetActive(true);
-            interactionCoroutine = StartCoroutine(FillSliderOverTime(1.0f, interactableMobs[0])); // ÄÚ·çÆ¾ ½ÃÀÛ, ÃæÀü½Ã°£ 1ÃÊ
+            interactionCoroutine = StartCoroutine(FillSliderOverTime(1.0f, interactableMobs[0])); // ì½”ë£¨í‹´ ì‹œì‘, ì¶©ì „ì‹œê°„ 1ì´ˆ
         }
     }
     public void StartInteraction(MobInteraction interactedMob)
     {
-        // »óÈ£ÀÛ¿ë °¡´ÉÇÑ ¸ó½ºÅÍ°¡ ÀÖÀ» ¶§¸¸ »óÈ£ÀÛ¿ë ½ÃÀÛ
+        // ìƒí˜¸ì‘ìš© ê°€ëŠ¥í•œ ëª¬ìŠ¤í„°ê°€ ìˆì„ ë•Œë§Œ ìƒí˜¸ì‘ìš© ì‹œì‘
         if (!isInteracting && interactableMobs.Contains(interactedMob))
         {
-            isInteracting = true; // »óÈ£ÀÛ¿ë ½ÃÀÛ
+            isInteracting = true; // ìƒí˜¸ì‘ìš© ì‹œì‘
             interactionSlider.gameObject.SetActive(true);
-            // ÇöÀç »óÈ£ÀÛ¿ëÇÏ´Â MobInteraction ÀÎ½ºÅÏ½º¸¦ ÄÚ·çÆ¾¿¡ Àü´Ş
+            // í˜„ì¬ ìƒí˜¸ì‘ìš©í•˜ëŠ” MobInteraction ì¸ìŠ¤í„´ìŠ¤ë¥¼ ì½”ë£¨í‹´ì— ì „ë‹¬
             interactionCoroutine = StartCoroutine(FillSliderOverTime(1.0f, interactedMob));
         }
     }
@@ -80,7 +79,7 @@ public class PlayerInteraction : MonoBehaviour
             if (interactionCoroutine != null)
             {
                 StopCoroutine(interactionCoroutine);
-                interactionSlider.value = 0; // ½½¶óÀÌ´õ ¸®¼Â
+                interactionSlider.value = 0; // ìŠ¬ë¼ì´ë” ë¦¬ì…‹
                 interactionSlider.gameObject.SetActive(false);
             }
             interactableMobs.Remove(mob);
@@ -91,43 +90,43 @@ public class PlayerInteraction : MonoBehaviour
     private IEnumerator FillSliderOverTime(float duration, MobInteraction interactedMob)
     {
         float time = 0;
-        while (time < duration && isInteracting) // isInteractingµµ Ã¼Å©ÇÏ¿© Å°¸¦ ¶¼¸é Áß´Ü
+        while (time < duration && isInteracting) // isInteractingë„ ì²´í¬í•˜ì—¬ í‚¤ë¥¼ ë–¼ë©´ ì¤‘ë‹¨
         {
-            if (isPressingInteractKey) // Å°¸¦ ´©¸£°í ÀÖ´ÂÁö È®ÀÎ
+            if (isPressingInteractKey) // í‚¤ë¥¼ ëˆ„ë¥´ê³  ìˆëŠ”ì§€ í™•ì¸
             {
                 time += Time.deltaTime;
                 interactionSlider.value = time / duration;
             }
             else
             {
-                // Å°¸¦ ¶¿ °æ¿ì, ½½¶óÀÌ´õ ÁßÁö ¹× ÃÊ±âÈ­
+                // í‚¤ë¥¼ ë—„ ê²½ìš°, ìŠ¬ë¼ì´ë” ì¤‘ì§€ ë° ì´ˆê¸°í™”
                 StopInteraction();
-                yield break; // ÄÚ·çÆ¾ Á¾·á
+                yield break; // ì½”ë£¨í‹´ ì¢…ë£Œ
             }
             yield return null;
         }
                     
-        if (isInteracting) // »óÈ£ÀÛ¿ëÀÌ ¿©ÀüÈ÷ ÁøÇà ÁßÀÎ °æ¿ì ¿Ï·á Ã³¸®
+        if (isInteracting) // ìƒí˜¸ì‘ìš©ì´ ì—¬ì „íˆ ì§„í–‰ ì¤‘ì¸ ê²½ìš° ì™„ë£Œ ì²˜ë¦¬
         {
 
 
-            // »óÈ£ÀÛ¿ë ¿Ï·á ½Ã, Æ¯Á¤ ¸ó½ºÅÍ¿¡ ´ëÇØ¼­¸¸ ÀÌº¥Æ®¸¦ ¹ß»ı
+            // ìƒí˜¸ì‘ìš© ì™„ë£Œ ì‹œ, íŠ¹ì • ëª¬ìŠ¤í„°ì— ëŒ€í•´ì„œë§Œ ì´ë²¤íŠ¸ë¥¼ ë°œìƒ
             if (interactedMob != null)
             {
                 interactedMob.HandleInteractionComplete();
             }
-            Debug.Log("ÃæÀü ¿Ï·á, ¾ÆÀÌÅÛ È¹µæ ÀÌ¹ÌÁö, ÀÎº¥Åä¸® È¹µæ ±¸Çö ¿¹Á¤");
-            //onInteraction.Invoke(); // »óÈ£ÀÛ¿ë ¿Ï·á ÀÌº¥Æ® È£Ãâ
+            Debug.Log("ì¶©ì „ ì™„ë£Œ, ì•„ì´í…œ íšë“ ì´ë¯¸ì§€, ì¸ë²¤í† ë¦¬ íšë“ êµ¬í˜„ ì˜ˆì •");
+            //onInteraction.Invoke(); // ìƒí˜¸ì‘ìš© ì™„ë£Œ ì´ë²¤íŠ¸ í˜¸ì¶œ
 
 
-            // »óÈ£ÀÛ¿ë ¿Ï·á ÈÄ Z Å° ÀÔ·Â ÃÊ±âÈ­
+            // ìƒí˜¸ì‘ìš© ì™„ë£Œ í›„ Z í‚¤ ì…ë ¥ ì´ˆê¸°í™”
             isPressingInteractKey = false;
             isInteracting = false;
-            interactionSlider.gameObject.SetActive(false);  // ÃæÀü ¿Ï·á½Ã ½½¶óÀÌ´õ ¼û±è
-            interactionSlider.value = 0;  // ½½¶óÀÌ´õ °ª ÃÊ±âÈ­
+            interactionSlider.gameObject.SetActive(false);  // ì¶©ì „ ì™„ë£Œì‹œ ìŠ¬ë¼ì´ë” ìˆ¨ê¹€
+            interactionSlider.value = 0;  // ìŠ¬ë¼ì´ë” ê°’ ì´ˆê¸°í™”
         }
-        // TODO: ¾ÆÀÌÅÛ È¹µæ ÀÌ¹ÌÁö Ç¥½Ã ·ÎÁ÷
-        // TODO: ÀÎº¥Åä¸® ¾ÆÀÌÅÛ Ãß°¡ ·ÎÁ÷
+        // TODO: ì•„ì´í…œ íšë“ ì´ë¯¸ì§€ í‘œì‹œ ë¡œì§
+        // TODO: ì¸ë²¤í† ë¦¬ ì•„ì´í…œ ì¶”ê°€ ë¡œì§
     }
 
     private void StopInteraction()
@@ -139,7 +138,7 @@ public class PlayerInteraction : MonoBehaviour
         }
         interactionSlider.gameObject.SetActive(false);
         interactionSlider.value = 0;
-        isInteracting = false; // »óÈ£ÀÛ¿ë Á¾·á
+        isInteracting = false; // ìƒí˜¸ì‘ìš© ì¢…ë£Œ
     }
 
 
@@ -151,11 +150,11 @@ public class PlayerInteraction : MonoBehaviour
 
 
 
-    //public void CanInteract(MobInteraction mob, bool canInteract)  // Unity Event¾×¼Ç ¿ë
+    //public void CanInteract(MobInteraction mob, bool canInteract)  // Unity Eventì•¡ì…˜ ìš©
     //{
     //    if (canInteract)
     //    {
-    //        // TODO: ÃßÈÄ ¸ó½ºÅÍ Á¾·ù Ãß°¡
+    //        // TODO: ì¶”í›„ ëª¬ìŠ¤í„° ì¢…ë¥˜ ì¶”ê°€
     //        if (!interactableMobs.Contains(mob))
     //        {
     //            interactableMobs.Add(mob);
@@ -167,21 +166,21 @@ public class PlayerInteraction : MonoBehaviour
     //    }
     //}
 
-    //public void OnInteraction(InputAction.CallbackContext context) // Unity ÀÌº¥Æ®¾×¼Ç ¿ë
+    //public void OnInteraction(InputAction.CallbackContext context) // Unity ì´ë²¤íŠ¸ì•¡ì…˜ ìš©
     //{
-    //    // »óÈ£ÀÛ¿ë °¡´ÉÇÑ ¸ó½ºÅÍ°¡ ÀÖÀ» ¶§¸¸ »óÈ£ÀÛ¿ë ½ÃÀÛ
+    //    // ìƒí˜¸ì‘ìš© ê°€ëŠ¥í•œ ëª¬ìŠ¤í„°ê°€ ìˆì„ ë•Œë§Œ ìƒí˜¸ì‘ìš© ì‹œì‘
     //    if (interactableMobs.Count > 0)
     //    {
     //        if (context.started)
     //        {
     //            interactionSlider.gameObject.SetActive(true);
-    //            interactionCoroutine = StartCoroutine(FillSliderOverTime(1.0f)); // ÄÚ·çÆ¾ ½ÃÀÛ, ÃæÀü½Ã°£ 1ÃÊ
+    //            interactionCoroutine = StartCoroutine(FillSliderOverTime(1.0f)); // ì½”ë£¨í‹´ ì‹œì‘, ì¶©ì „ì‹œê°„ 1ì´ˆ
     //        }
     //        else if (context.canceled)
     //        {
     //            interactionSlider.gameObject.SetActive(false);
-    //            StopCoroutine(interactionCoroutine); // ÄÚ·çÆ¾ ÁßÁö
-    //            interactionSlider.value = 0; // ½½¶óÀÌ´õ °ª ÃÊ±âÈ­
+    //            StopCoroutine(interactionCoroutine); // ì½”ë£¨í‹´ ì¤‘ì§€
+    //            interactionSlider.value = 0; // ìŠ¬ë¼ì´ë” ê°’ ì´ˆê¸°í™”
     //        }
     //    }
     //}
