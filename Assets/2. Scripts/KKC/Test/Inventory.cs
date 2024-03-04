@@ -52,6 +52,11 @@ public class Inventory : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        
+    }
+
     private void Init()
     {
         inventoryWindow.SetActive(false);
@@ -69,7 +74,8 @@ public class Inventory : MonoBehaviour
 
     public void OnInventory()
     {
-            Toggle();
+        Toggle();
+
     }
 
     public void Toggle()
@@ -77,11 +83,13 @@ public class Inventory : MonoBehaviour
         if (inventoryWindow.activeInHierarchy)
         {
             inventoryWindow.SetActive(false);
+            MainSoundManager.instance.PlaySFX(5);
             onCloseInventory?.Invoke();
         }
         else
         {
             inventoryWindow.SetActive(true);
+            MainSoundManager.instance.PlaySFX(5);
             onOpenInventory?.Invoke();
         }
     }
@@ -136,12 +144,29 @@ public class Inventory : MonoBehaviour
         return slots[i];
     }
 
-    void UpdateUI()
+    public ItemSlot ItemCheck(int id)
+    {
+        for (int i = 0; i < slots.Length; ++i)
+        {
+            if (slots[i].item == Database.Item.Get(id))
+            {
+                return slots[i];
+            }
+        }
+        return null;
+    }
+
+    public void UpdateUI()
     {
         for (int i = 0; i < slots.Length; i++)
         {
             if (slots[i].item != null)
+            {
                 uiSlots[i].Set(slots[i]);
+
+                if (slots[i].quantity <= 0)
+                    uiSlots[i].Clear();
+            }
             else
                 uiSlots[i].Clear();
         }

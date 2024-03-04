@@ -4,37 +4,67 @@ using UnityEngine;
 
 public class MainSoundManager : MonoBehaviour
 {
-    public static SoundManager instance;
-    // SoundManagerì˜ ì¸ìŠ¤í„´ìŠ¤ë¥¼ ë‹¤ë¥¸ ìŠ¤í¬ë¦½íŠ¸ì—ì„œ ì‰½ê²Œ ì ‘ê·¼í•  ìˆ˜ ìˆë„ë¡ í•˜ëŠ” ì •ì  ë³€ìˆ˜
+    public static MainSoundManager instance;
 
-    [SerializeField][Range(0f, 1f)] private float musicVolume;
-    // íš¨ê³¼ìŒ ë³¼ë¥¨ ë° í”¼ì¹˜ ë³€ë™, ë°°ê²½ ìŒì•… ë³¼ë¥¨ì„ ì¡°ì ˆí•˜ê¸° ìœ„í•œ ë³€ìˆ˜ë“¤
+    [SerializeField][Range(0f, 1f)] private float musicVolume = 0.2f; // BGM º¼·ı
+    [SerializeField][Range(0f, 1f)] private float sfxVolume = 0.5f; // SFX (È¿°úÀ½) º¼·ı
 
-    private AudioSource musicAudioSource;
-    // ë°°ê²½ ìŒì•…ì„ ì¬ìƒí•˜ê¸° ìœ„í•œ AudioSource ë° í˜„ì¬ ì¬ìƒ ì¤‘ì¸ ë°°ê²½ ìŒì•… í´ë¦½
+    private AudioSource musicAudioSource; // ¹è°æÀ½¾Ç¿ë AudioSource
+    private AudioSource sfxAudioSource; // È¿°úÀ½¿ë AudioSource
 
-    public List<AudioClip> musicClip = new();
+    public List<AudioClip> musicClips; // BGM Å¬¸³ ¸®½ºÆ®
+    public List<AudioClip> sfxClips; // SFX Å¬¸³ ¸®½ºÆ®
 
     private void Awake()
-    { // ìŠ¤í¬ë¦½íŠ¸ê°€ í™œì„±í™”ë  ë•Œ í˜¸ì¶œë˜ëŠ” Awake ë©”ì„œë“œ
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else if (instance != this)
+        {
+            Destroy(gameObject);
+        }
 
-        musicAudioSource = GetComponent<AudioSource>();
+        // ÇÊ¿äÇÑ ÄÄÆ÷³ÍÆ®µé ÃÊ±âÈ­
+
+        // BGM¿ë AudioSource ¼³Á¤
+        musicAudioSource = gameObject.AddComponent<AudioSource>();
         musicAudioSource.volume = musicVolume;
         musicAudioSource.loop = true;
-        // í•„ìš”í•œ ì»´í¬ë„ŒíŠ¸ë“¤ì„ ì´ˆê¸°í™”
+
+        // SFX¿ë AudioSource ¼³Á¤ ( loop ¾ÈÇÔ )
+        sfxAudioSource = gameObject.AddComponent<AudioSource>();
+        sfxAudioSource.volume = sfxVolume; // SFX º¼·ı ¼³Á¤
 
     }
 
-    public void Soundplay(int getint)
+    // ³· À½¾ÇÀÌ Àç»ıµÇ°í ÀÖ´ÂÁö
+    public bool IsPlayingDayMusic()
     {
-        musicAudioSource.clip = musicClip[getint];
+        return musicAudioSource.clip == musicClips[0] && musicAudioSource.isPlaying;
+    }
+
+    // ¹ã À½¾ÇÀÌ Àç»ıµÇ°í ÀÖ´ÂÁö
+    public bool IsPlayingNightMusic()
+    {
+        return musicAudioSource.clip == musicClips[1] && musicAudioSource.isPlaying;
+    }
+
+    public void PlayMusic(int index)
+    {
+        musicAudioSource.clip = musicClips[index];
         musicAudioSource.Play();
     }
 
+    public void PlaySFX(int index)
+    {
+        sfxAudioSource.PlayOneShot(sfxClips[index], sfxVolume);
+    }
+
     private void Start()
-    { // ìŠ¤í¬ë¦½íŠ¸ê°€ ì‹œì‘ë  ë•Œ í˜¸ì¶œë˜ëŠ” Start ë©”ì„œë“œ
-        Soundplay(0);
-        //ì•„ì¹¨
+    {
+        PlayMusic(0); // ³· BGM Àç»ı
     }
 
 }

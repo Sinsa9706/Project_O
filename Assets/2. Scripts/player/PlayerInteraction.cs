@@ -74,56 +74,59 @@ public class PlayerInteraction : MonoBehaviour
     {
         textMoveTimer += Time.deltaTime;
 
-        if (textMoveTimer <= textMoveDuration)
+        if (textMoveTimer <= textMoveDuration) // 텍스트 이동 타이머가 지속되는 동안
         {
-            float yOffset = textMoveDistance * (textMoveTimer / textMoveDuration);
-            itemText.rectTransform.anchoredPosition = new Vector2(0f, yOffset);
-            float alpha = 1.0f - (textMoveTimer / textMoveDuration);
-            itemText.color = new Color(1f, 1f, 1f, alpha);
+            float yOffset = textMoveDistance * (textMoveTimer / textMoveDuration); // 텍스트 이동 거리 계산
+            itemText.rectTransform.anchoredPosition = new Vector2(0f, yOffset); // 텍스트 위치 조정
+            float alpha = 1.0f - (textMoveTimer / textMoveDuration); // 텍스트 투명도 계산
+            itemText.color = new Color(1f, 1f, 1f, alpha); // 텍스트 투명도 적용
         }
-        else
+        else // 텍스트 이동 타이머가 종료된 경우
         {
-            // 효과 종료 후 초기화
-            itemText.gameObject.SetActive(false);
-            textMoveTimer = 0.0f;
-            isGetText = false;
+            
+            itemText.gameObject.SetActive(false); 
+            textMoveTimer = 0.0f; 
+            isGetText = false; 
         }
     }
 
+    // 아이템 획득 시 아이템 이미지 이펙트 업데이트
     private void UpdateItemEffect()
     {
         itemEffectTimer += Time.deltaTime;
 
-        if(itemEffectTimer <= itemEffectDuration)
+        if (itemEffectTimer <= itemEffectDuration) // 아이템 이펙트 타이머가 지속되는 동안
         {
-            float yOffset = itemEffectDuration * (itemEffectTimer / itemEffectDuration);
-            itemImage.GetComponent<RectTransform>().anchoredPosition = new Vector2(0f, yOffset);
-            float alpha = 1.0f - (itemEffectTimer / itemEffectDuration);
-            itemImage.GetComponent<Image>().color = new Color(1f, 1f, 1f, alpha);
+            float yOffset = itemEffectDuration * (itemEffectTimer / itemEffectDuration); // 아이템 이동 거리 계산
+            itemImage.GetComponent<RectTransform>().anchoredPosition = new Vector2(0f, yOffset); // 아이템 이미지 위치 조정
+            float alpha = 1.0f - (itemEffectTimer / itemEffectDuration); // 아이템 투명도 계산
+            itemImage.GetComponent<Image>().color = new Color(1f, 1f, 1f, alpha); // 아이템 투명도 적용
         }
-        else
+        else // 아이템 이펙트 타이머가 종료된 경우
         {
             // 효과 종료 후 초기화
-            itemImage.SetActive(false);
-            itemEffectTimer = 0.0f;
-            isGetItem = false;
+            itemImage.SetActive(false); // 아이템 이미지 비활성화
+            itemEffectTimer = 0.0f; // 타이머 초기화
+            isGetItem = false; // 아이템 획득 플래그 초기화
         }
     }
 
+    // 아이템 이미지 표시
     public void ShowGetItem(int itemType)
     {
-        itemImage.GetComponent<Image>().sprite = itemImageArray[itemType];
-        itemImage.SetActive(true);
-        isGetItem = true;
-        itemEffectTimer = 0.0f;
+        itemImage.GetComponent<Image>().sprite = itemImageArray[itemType]; // 아이템 이미지 설정
+        itemImage.SetActive(true); 
+        isGetItem = true; 
+        itemEffectTimer = 0.0f; // 아이템 이펙트 타이머 초기화
     }
 
+    // 아이템 획득 시 텍스트 표시
     public void ShowItemText(string itemName)
     {
-        itemText.text = itemName; 
+        itemText.text = itemName; // 아이템 텍스트 설정
         itemText.gameObject.SetActive(true); 
         isGetText = true; 
-        textMoveTimer = 0.0f; 
+        textMoveTimer = 0.0f; // 텍스트 이펙트 타이머 초기화
     }
 
 
@@ -132,6 +135,7 @@ public class PlayerInteraction : MonoBehaviour
     // SendMessage를 위한 매개변수 없는 메서드 추가
     public void OnInteraction()
     {
+        MainSoundManager.instance.PlaySFX(0);
         // 상호작용 가능한 몬스터가 있을 때만 상호작용 시작
         if (interactableMobs.Count > 0)
         {
@@ -217,7 +221,7 @@ public class PlayerInteraction : MonoBehaviour
                     Inventory.Instance.AddItem(10020005);
                     ShowItemText("'코기의 분비물(?)' 을 얻었다!");
                     itemImage.GetComponent<Image>().sprite = itemImageArray[0];
-                    Debug.Log("Item1 추가 10020005");
+                    MainSoundManager.instance.PlaySFX(3);
                     // 인벤토리에 코기 분비물 추가
                     break;
 
@@ -225,7 +229,7 @@ public class PlayerInteraction : MonoBehaviour
                     ShowItemText("'마른 버섯' 을 얻었다!");
                     Inventory.Instance.AddItem(10010006);
                     itemImage.GetComponent<Image>().sprite = itemImageArray[1];
-                    Debug.Log("Item2 추가 10010006");
+                    MainSoundManager.instance.PlaySFX(3);
                     // 인벤토리에 마른 버섯 추가
                     break;
 
@@ -233,7 +237,7 @@ public class PlayerInteraction : MonoBehaviour
                     ShowItemText("'커비의 별가루' 를 얻었다!");
                     itemImage.GetComponent<Image>().sprite = itemImageArray[2];
                     Inventory.Instance.AddItem(10020006);
-                    Debug.Log("Item3 추가 10020006");
+                    MainSoundManager.instance.PlaySFX(3);
                     // 인벤토리에 커비의 별가루 추가
                     break;
 
@@ -241,7 +245,7 @@ public class PlayerInteraction : MonoBehaviour
                     ShowItemText("'유사-꼬부기의 등껍질' 을 얻었다!");
                     itemImage.GetComponent<Image>().sprite = itemImageArray[3];
                     Inventory.Instance.AddItem(10020002);
-                    Debug.Log("Item4 추가 10020002");
+                    MainSoundManager.instance.PlaySFX(3);
                     // 인벤토리에 유사-꼬부기 등껍질 추가 
                     break;
 
@@ -249,7 +253,7 @@ public class PlayerInteraction : MonoBehaviour
                     ShowItemText("'날도롱뇽의 꼬리' 를 얻었다!");
                     itemImage.GetComponent<Image>().sprite = itemImageArray[4];
                     Inventory.Instance.AddItem(10020001);
-                    Debug.Log("Item5 추가 10020001");
+                    MainSoundManager.instance.PlaySFX(3);
                     // 인벤토리에 날도롱뇽 날개 추가 로직
                     break;
 
@@ -257,7 +261,7 @@ public class PlayerInteraction : MonoBehaviour
                     ShowItemText("'여치의 더듬이' 를 얻었다!");
                     itemImage.GetComponent<Image>().sprite = itemImageArray[5];
                     Inventory.Instance.AddItem(10020003);
-                    Debug.Log("Item6 추가 10020003");
+                    MainSoundManager.instance.PlaySFX(3);
                     // 인벤토리에 여치 더듬이 추가 로직
                     break;
 
@@ -265,7 +269,7 @@ public class PlayerInteraction : MonoBehaviour
                     ShowItemText("'불 도롱뇽의 꼬리' 를 얻었다!");
                     itemImage.GetComponent<Image>().sprite = itemImageArray[6];
                     Inventory.Instance.AddItem(10020004);
-                    Debug.Log("Item7 추가 10020004");
+                    MainSoundManager.instance.PlaySFX(3);
                     // 인벤토리에 불도마뱀 꼬리 추가 로직
                     break;
 
@@ -273,7 +277,7 @@ public class PlayerInteraction : MonoBehaviour
                     ShowItemText("'식인꽃 꽃잎' 을 얻었다!");
                     itemImage.GetComponent<Image>().sprite = itemImageArray[7];
                     Inventory.Instance.AddItem(10010003);
-                    Debug.Log("Item8 추가 10010003");
+                    MainSoundManager.instance.PlaySFX(3);
                     // 인벤토리에 식인꽃 꽃잎 추가 로직
                     break;
 
@@ -281,23 +285,35 @@ public class PlayerInteraction : MonoBehaviour
                     ShowItemText("'사탕' 을 얻었다!");
                     itemImage.GetComponent<Image>().sprite = itemImageArray[8];
                     Inventory.Instance.AddItem(10010002);
-                    Debug.Log("Item9 추가 10010002");
+                    MainSoundManager.instance.PlaySFX(3);
                     // 인벤토리에 사탕 추가 로직
                     break;
 
                 case bool _ when interactedMob.mobType.StartsWith("Grape"):
-                    ShowItemText("'오스틴 산 포도' 를 얻었다, 아이고~ 사장님 ");
-                    itemImage.GetComponent<Image>().sprite = itemImageArray[9];
                     Inventory.Instance.AddItem(10010005);
-                    Debug.Log("Item10 추가 10010005");
-                    // 인벤토리에 오스틴-포도 추가 로직
+
+                    float randomValue = UnityEngine.Random.Range(0f, 1f); // 2가지의 랜덤 분기
+
+                    if (randomValue < 0.5f)
+                    {
+                        ShowItemText("'오스틴 산 포도' 를 얻었다.");
+                    itemImage.GetComponent<Image>().sprite = itemImageArray[9];
+                    MainSoundManager.instance.PlaySFX(3);
+                    }
+                    else
+                    {
+                        // 두 번째 로직 : 이스터 에그
+                        ShowItemText("사장님이 포도를 주셨다 아이고~ ");
+                        itemImage.GetComponent<Image>().sprite = itemImageArray[12];
+                        MainSoundManager.instance.PlaySFX(7);
+                    }
                     break;
 
                 case bool _ when interactedMob.mobType.Contains("Herb"):
                     ShowItemText("'야자 허브 잎' 을 얻었다!");
                     itemImage.GetComponent<Image>().sprite = itemImageArray[10];
                     Inventory.Instance.AddItem(10010004);
-                    Debug.Log("Item11 추가 10010004");
+                    MainSoundManager.instance.PlaySFX(3);
                     // 인벤토리에 야자 허브 추가 로직
                     break;
 
@@ -305,7 +321,7 @@ public class PlayerInteraction : MonoBehaviour
                     ShowItemText("'백일홍 꽃' 을 얻었다!");
                     itemImage.GetComponent<Image>().sprite = itemImageArray[11];
                     Inventory.Instance.AddItem(10010001);
-                    Debug.Log("Item12 : 추가 10010001");
+                    MainSoundManager.instance.PlaySFX(3);
                     // 인벤토리에 백일홍 꽃잎 추가 로직
                     break;
 

@@ -7,6 +7,7 @@ using UnityEngine.Rendering.Universal;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
+
     public Light2D globalLight; // Light2D 컴포넌트 참조
     public Color dayColor = Color.white; // 낮 색
     public Color nightColor = new Color(30 / 255f, 130 / 255f, 255 / 255f); // 밤 색
@@ -62,6 +63,16 @@ public class GameManager : MonoBehaviour
                 spawnManager.SpawnMonsters();
             }
         }
+
+        if (IsMorning() && !MainSoundManager.instance.IsPlayingDayMusic())
+        {
+            MainSoundManager.instance.PlayMusic(0); // 낮 음악 재생
+        }
+        else if (IsNight() && !MainSoundManager.instance.IsPlayingNightMusic())
+        {
+            MainSoundManager.instance.PlayMusic(1); // 밤 음악 재생
+        }
+
         UpdateLightingTransition();
     }
 

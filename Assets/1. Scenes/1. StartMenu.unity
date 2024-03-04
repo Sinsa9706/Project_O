@@ -184,7 +184,7 @@ MonoBehaviour:
   m_text: "\uB9F9\uAF41\uC774"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2292b228ef174cc4184a41232808c503, type: 2}
-  m_sharedMaterial: {fileID: -3861401565684989705, guid: 2292b228ef174cc4184a41232808c503, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 2262c10df9300be45a866a8fef4fb52a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -16463,7 +16463,7 @@ MonoBehaviour:
   m_text: "\uC544\uC774\uACE0 4\uC7A5\uB2D8"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2292b228ef174cc4184a41232808c503, type: 2}
-  m_sharedMaterial: {fileID: -3861401565684989705, guid: 2292b228ef174cc4184a41232808c503, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 2262c10df9300be45a866a8fef4fb52a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -22057,7 +22057,7 @@ MonoBehaviour:
   m_text: "\uC6B0\uC870\uAE402\uC5FC"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2292b228ef174cc4184a41232808c503, type: 2}
-  m_sharedMaterial: {fileID: -3861401565684989705, guid: 2292b228ef174cc4184a41232808c503, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 2262c10df9300be45a866a8fef4fb52a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -32546,7 +32546,7 @@ MonoBehaviour:
   m_text: Magic Cafe
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2292b228ef174cc4184a41232808c503, type: 2}
-  m_sharedMaterial: {fileID: -3861401565684989705, guid: 2292b228ef174cc4184a41232808c503, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 2262c10df9300be45a866a8fef4fb52a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -33620,7 +33620,7 @@ MonoBehaviour:
   m_text: ~ Little Secret In The Woods ~
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1f09b53d523c17b48b07b7d825f8ab53, type: 2}
-  m_sharedMaterial: {fileID: -4829206994062699760, guid: 1f09b53d523c17b48b07b7d825f8ab53, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: b419c5aab9c9e144a9dc5b90583e1a56, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
