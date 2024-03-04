@@ -47,6 +47,11 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    private void OnClick()
+    {
+        MainSoundManager.instance.PlaySFX(8);
+    }
+
     private void Move()
     {
         // Shift 키를 누르고 있으면 boostedSpeed를, 아니면 기본 speed를 사용
