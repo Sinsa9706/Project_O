@@ -37,7 +37,7 @@ Transform:
   - {fileID: 551728595779285027}
   - {fileID: 730943681698424588}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &6870638511882265399
 BoxCollider2D:
@@ -527,9 +527,10 @@ GameObject:
   m_Component:
   - component: {fileID: 730943681698424588}
   - component: {fileID: 8414811951671063241}
+  - component: {fileID: 435577125086885912}
   m_Layer: 0
   m_Name: Light Tree
-  m_TagString: Untagged
+  m_TagString: Light
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -583,8 +584,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.44665003, y: -0.7322, z: 0}
-    m_Extent: {x: 3.59195, y: 3.5719, z: 0}
+    m_Center: {x: -0.45439994, y: -0.73029995, z: 0}
+    m_Extent: {x: 3.5956998, y: 3.5693998, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -599,6 +600,18 @@ MonoBehaviour:
   - {x: 0.120884895, y: -1.2939968, z: 0}
   - {x: 0.13832188, y: -0.16651821, z: 0}
   - {x: -1.0193617, y: -0.15461445, z: 0}
+--- !u!114 &435577125086885912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5186505285062738617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 079bb815eb0a8e042ad8e07879e24e7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6129780469006882978
 GameObject:
   m_ObjectHideFlags: 0

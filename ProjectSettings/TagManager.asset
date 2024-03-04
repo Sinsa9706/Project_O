@@ -8,6 +8,9 @@ TagManager:
   - Box
   - Quest
   - Monster
+  - Bed
+  - WorkTable
+  - Light
   layers:
   - Default
   - TransparentFX
