@@ -27,6 +27,10 @@ public class UIManager : MonoBehaviour
         ui.SetActive(false);
         Time.timeScale = 1.0f;
     }
+    public void UIOffStopTime(GameObject ui)
+    {
+        ui.SetActive(false);
+    }
 
     //CountController
     public void CountPlus(TMP_Text text)
