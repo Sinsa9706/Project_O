@@ -153,7 +153,7 @@ public class NPC : MonoBehaviour
             }
 
             yield return null;
-        } 
+        }
     }
 
     private void NightSetting()
@@ -205,6 +205,8 @@ public class NPC : MonoBehaviour
         }
 
         GameManager.PlayerGold -= int.Parse(priceText.text);
+
+        PlayerGoldUpdate();
     }
 
     public void PlayerGoldUpdate()
