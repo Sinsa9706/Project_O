@@ -7,7 +7,7 @@ TagManager:
   - Shop
   - Box
   - Quest
-  - Bed
+  - Monster
   layers:
   - Default
   - TransparentFX
