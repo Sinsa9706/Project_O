@@ -143,6 +143,18 @@ public class Inventory : MonoBehaviour
         return slots[i];
     }
 
+    public ItemSlot ItemCheck(int id)
+    {
+        for (int i = 0; i < slots.Length; ++i)
+        {
+            if (slots[i].item == Database.Item.Get(id))
+            {
+                return slots[i];
+            }
+        }
+        return null;
+    }
+
     void UpdateUI()
     {
         for (int i = 0; i < slots.Length; i++)
