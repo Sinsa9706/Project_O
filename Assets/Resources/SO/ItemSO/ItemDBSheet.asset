@@ -31,7 +31,7 @@ MonoBehaviour:
     _stack: 1
     _maxstack: 20
     _price: 0
-    _spritePath: 
+    _spritePath: Items/CandyTree_Item
   - _id: 10010003
     _name: "\uC2DD\uC778\uAF43 \uAF43\uC78E"
     _description: "\uBD89\uC740 \uBE5B\uC774 \uB098\uB294 \uAF43\uC78E. \uBB34\uC5B8\uAC00
@@ -40,7 +40,7 @@ MonoBehaviour:
     _stack: 1
     _maxstack: 20
     _price: 0
-    _spritePath: 
+    _spritePath: Items/Man-EatingFlower_Item
   - _id: 10010004
     _name: "\uC57C\uC790 \uD5C8\uBE0C \uC78E"
     _description: "\uC57D\uCD08\uB85C \uB110\uB9AC \uC54C\uB824\uC9C4 \uC57C\uC790
@@ -50,7 +50,7 @@ MonoBehaviour:
     _stack: 1
     _maxstack: 20
     _price: 0
-    _spritePath: 
+    _spritePath: Items/Herb_Item
   - _id: 10010005
     _name: "\uC624\uC2A4\uD2F4\uC0B0 \uD3EC\uB3C4"
     _description: "\uD48D\uBD80\uD55C \uB2F9\uB3C4\uC640 \uC801\uB2F9\uD55C \uC0B0\uBBF8\uB85C
@@ -63,7 +63,7 @@ MonoBehaviour:
     _stack: 1
     _maxstack: 20
     _price: 0
-    _spritePath: 
+    _spritePath: Items/Grape_Item
   - _id: 10010006
     _name: "\uB9C8\uB978 \uBC84\uC12F"
     _description: "\uC774\uACF3 \uC800\uACF3\uC5D0 \uC4F0\uC774\uB294 \uB9C8\uB978
@@ -72,7 +72,7 @@ MonoBehaviour:
     _stack: 1
     _maxstack: 20
     _price: 0
-    _spritePath: 
+    _spritePath: Items/Mushroom_Item
   - _id: 10020001
     _name: "\uB0A0\uB3C4\uB871\uB1FD\uC758 \uB0A0\uAC1C"
     _description: "\uAC00\uBCCD\uACE0 \uD0C4\uB825\uC788\uB294 \uB0A0\uB3C4\uB871\uB1FD\uC758
@@ -82,7 +82,7 @@ MonoBehaviour:
     _stack: 1
     _maxstack: 20
     _price: 0
-    _spritePath: 
+    _spritePath: Items/FlySalamander_Item
   - _id: 10020002
     _name: "\uC720\uC0AC \uAF2C\uBD80\uAE30\uC758 \uB4F1\uAECD\uC9C8"
     _description: "\uAC00\uB8E8\uB85C \uB0B4\uBA74 \uBBFC\uD2B8\uB9DB\uC774 \uB09C\uB2E4.
@@ -93,7 +93,7 @@ MonoBehaviour:
     _stack: 1
     _maxstack: 20
     _price: 0
-    _spritePath: 
+    _spritePath: Items/Turtle_Item
   - _id: 10020003
     _name: "\uC5EC\uCE58\uC758 \uB354\uB4EC\uC774"
     _description: "\uAFC8\uD2C0\uAC70\uB9AC\uB294 \uC5EC\uCE58\uC758 \uB354\uB4EC\uC774.
@@ -103,7 +103,7 @@ MonoBehaviour:
     _stack: 1
     _maxstack: 20
     _price: 0
-    _spritePath: 
+    _spritePath: Items/Grasshopper_Item
   - _id: 10020004
     _name: "\uBD88\uB3C4\uB9C8\uBC40\uC758 \uAF2C\uB9AC"
     _description: "\uD1A1 \uC3D8\uB294 \uB9E4\uC6B4 \uB9DB\uC774 \uBCC4\uBBF8\uC778
@@ -113,7 +113,7 @@ MonoBehaviour:
     _stack: 1
     _maxstack: 20
     _price: 0
-    _spritePath: 
+    _spritePath: Items/Firelizard_Item
   - _id: 10020005
     _name: "\uCF54\uAE30\uC758 \uBD84\uBE44\uBB3C"
     _description: "\uAE30\uBB18\uD55C \uD5A5\uAE30\uAC00 \uB098\uB294 \uCF54\uAE30\uC758
@@ -123,7 +123,7 @@ MonoBehaviour:
     _stack: 1
     _maxstack: 20
     _price: 0
-    _spritePath: 
+    _spritePath: Items/Corgi_Item
   - _id: 10020006
     _name: "\uCEE4\uBE44\uC758 \uBCC4\uAC00\uB8E8"
     _description: "\uCEE4\uBE44\uC758 \uBAB8\uC5D0\uC11C \uB098\uC624\uB294 \uBC18\uC9DD\uC774\uB294
@@ -134,7 +134,7 @@ MonoBehaviour:
     _stack: 1
     _maxstack: 20
     _price: 0
-    _spritePath: 
+    _spritePath: Items/Kirby_Item
   - _id: 10030001
     _name: "\uC791\uC740 \uBCD1"
     _description: "\uC561\uCCB4\uB97C \uB2F4\uB294 \uB370 \uC4F0\uB294 \uC791\uC740
@@ -143,7 +143,7 @@ MonoBehaviour:
     _stack: 1
     _maxstack: 20
     _price: 20
-    _spritePath: 
+    _spritePath: Items/LittleGlass_Item
   - _id: 10030002
     _name: "\uD070 \uBCD1"
     _description: "\uC561\uCCB4\uB97C \uB2F4\uB294 \uB370 \uC4F0\uB294 \uD070 \uBCD1."
@@ -151,7 +151,7 @@ MonoBehaviour:
     _stack: 1
     _maxstack: 20
     _price: 30
-    _spritePath: 
+    _spritePath: Items/BigGlass_Item
   - _id: 10030003
     _name: "\uC7BC \uBCD1"
     _description: "\uC7BC\uC744 \uB2F4\uB294 \uB370 \uC4F0\uB294 \uBCD1."
@@ -159,7 +159,7 @@ MonoBehaviour:
     _stack: 1
     _maxstack: 20
     _price: 50
-    _spritePath: 
+    _spritePath: Items/JamGlass_Item
   - _id: 10030004
     _name: "\uC0AC\uD0D5 \uD3EC\uC7A5\uC9C0"
     _description: "\uC0AC\uD0D5\uC744 \uD3EC\uC7A5\uD560 \uB54C \uC4F0\uB294 \uD3EC\uC7A5\uC9C0."
@@ -167,7 +167,7 @@ MonoBehaviour:
     _stack: 1
     _maxstack: 20
     _price: 10
-    _spritePath: 
+    _spritePath: Items/CandyWrap_Item
   - _id: 20010001
     _name: "\uC5D0\uBA54\uB784\uB4DC \uC5D0\uC13C\uC2A4"
     _description: "\uC5D0\uBA54\uB784\uB4DC \uBE5B\uC758 \uC5D0\uC13C\uC2A4. \uD5A5\uAE0B\uD55C
@@ -177,7 +177,7 @@ MonoBehaviour:
     _stack: 1
     _maxstack: 20
     _price: 100
-    _spritePath: 
+    _spritePath: CombineItems/Emerald_Potion
   - _id: 20010002
     _name: "\uB8E8\uBE44 \uBB3C\uC57D"
     _description: "\uB8E8\uBE44 \uC0C9\uC758 \uBB3C\uC57D. \uB9E4\uCF64\uD558\uBA74\uC11C
@@ -187,7 +187,7 @@ MonoBehaviour:
     _stack: 1
     _maxstack: 20
     _price: 200
-    _spritePath: 
+    _spritePath: CombineItems/Ruby_Potion
   - _id: 20010003
     _name: "\uBCC4\uAC00\uB8E8 \uCE94\uB514"
     _description: "\uBC24\uD558\uB298\uC758 \uBCC4\uC744 \uB530\uC628 \uB4EF\uD55C
@@ -198,7 +198,7 @@ MonoBehaviour:
     _stack: 1
     _maxstack: 20
     _price: 300
-    _spritePath: 
+    _spritePath: CombineItems/Star_Candy
   - _id: 20010004
     _name: "\uD551\uD06C \uD504\uB85C\uD2F4 \uC250\uC774\uD06C"
     _description: "\uD5EC\uC2A4\uC778\uB4E4\uC744 \uC704\uD55C \uBD84\uD64D\uBE5B\uC758
@@ -208,7 +208,7 @@ MonoBehaviour:
     _stack: 1
     _maxstack: 20
     _price: 400
-    _spritePath: 
+    _spritePath: CombineItems/Pink_Protain_Shake
   - _id: 20010005
     _name: "\uC624\uC2A4\uD2F4-\uCF54\uAE30 \uD3EC\uB3C4\uC7BC"
     _description: "\uC824\uB9AC\uAC19\uC740 \uB290\uB08C\uC758 \uD3EC\uB3C4\uC7BC.
@@ -219,7 +219,7 @@ MonoBehaviour:
     _stack: 1
     _maxstack: 20
     _price: 500
-    _spritePath: 
+    _spritePath: CombineItems/Ostin-Corgi_Jam
   - _id: 20010006
     _name: "\uBBFC\uD2B8 \uC2A4\uD1A1"
     _description: "\uBBFC\uD2B8\uC758 \uD5A5\uC774 \uB098\uB294 \uD5A5\uC2E0\uB8CC.
@@ -229,4 +229,4 @@ MonoBehaviour:
     _stack: 1
     _maxstack: 20
     _price: 600
-    _spritePath: 
+    _spritePath: CombineItems/Mint_Stock
