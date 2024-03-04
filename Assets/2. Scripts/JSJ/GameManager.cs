@@ -31,6 +31,8 @@ public class GameManager : MonoBehaviour
         }
     }
 
+
+
     private void Update()
     {
         if (isSleep == true)
@@ -48,12 +50,14 @@ public class GameManager : MonoBehaviour
         if (IsMorning())
         {
             foreach (var spawnManager in FindObjectsOfType<MobSpawnManager>())
+            // MobSpawnManager 스크립트가 달려있는 모든 오브젝트를 찾아서 각각 개체에 반복문 수행  
             {
                 spawnManager.SpawnMonsters();
             }
         }
 
     }
+
 
     public void TimeCheck()
     {
@@ -119,11 +123,11 @@ public class GameManager : MonoBehaviour
     }
 
 
-    //0~255 /200 25.5 = 0.1
 
-    public bool IsMorning() // 오전 7시부터 아침, 몬스터 리스폰 용
+    //0~255 /200 25.5 = 0.1
+    public bool IsMorning() // 오전 7시부터 아침, 아침 되면 몬스터 리스폰
     {
-       
         return gameTime >= 420 && gameTime < 430;
     }
+
 }
