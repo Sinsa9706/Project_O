@@ -37,7 +37,7 @@ Transform:
   - {fileID: 551728595779285027}
   - {fileID: 730943681698424588}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &6870638511882265399
 BoxCollider2D:
@@ -252,10 +252,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "[ Z ] \uC0C1\uD638\uC791\uC6A9"
+  m_text: "<size=(1.1)> <b>\uC0AC\uD0D5 \uB098\uBB34</b></size>\n[ Z ] \uC0C1\uD638\uC791\uC6A9"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2292b228ef174cc4184a41232808c503, type: 2}
-  m_sharedMaterial: {fileID: -3861401565684989705, guid: 2292b228ef174cc4184a41232808c503, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 05a26d7fffeaab24b83c072021eb102f, type: 2}
+  m_sharedMaterial: {fileID: 1126923993906396422, guid: 05a26d7fffeaab24b83c072021eb102f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -290,10 +290,10 @@ MonoBehaviour:
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
-  m_wordSpacing: 0
+  m_wordSpacing: 5
   m_lineSpacing: 0
   m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
+  m_paragraphSpacing: 25
   m_charWidthMaxAdj: 0
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
@@ -584,8 +584,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.45439994, y: -0.73029995, z: 0}
-    m_Extent: {x: 3.5956998, y: 3.5693998, z: 0}
+    m_Center: {x: -0.44924986, y: -0.7303499, z: 0}
+    m_Extent: {x: 3.59205, y: 3.5679498, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -678,7 +678,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 8
+  m_SortingOrder: 9
   m_TargetDisplay: 0
 --- !u!114 &797829146645083711
 MonoBehaviour:

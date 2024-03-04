@@ -4,28 +4,28 @@ using UnityEngine;
 
 public class MobInteraction : MonoBehaviour
 {
-    public string mobType; // 몬스터 유형 식별
-    public bool CanInteractWithPlayer { get; private set; } // 플레이어와의 상호작용 가능 여부를 추적합니다.
-    public ColliderMark colliderMark; // 이 몬스터에 할당된 ColliderMark 컴포넌트의 참조
+    public string mobType; // 몬스???�형 ?�별
+    public bool CanInteractWithPlayer { get; private set; } // ?�레?�어?�???�호?�용 가???��?�?추적?�니??
+    public ColliderMark colliderMark; // ??몬스?�에 ?�당??ColliderMark 컴포?�트??참조
     private PlayerInteraction playerInteraction;
-    private MobMovement mobMovement; // MobMovement스크립트 참조
+    private MobMovement mobMovement; // MobMovement?�크립트 참조
 
-    public GameObject uiText; // 상호작용 시 표시되는 UI 텍스트 오브젝트
+    public GameObject uiText; // ?�호?�용 ???�시?�는 UI ?�스???�브?�트
 
-    public Animator animator; // Dead 애니메이션 처리를 위한 Animator 컴포넌트 참조
+    public Animator animator; // Dead ?�니메이??처리�??�한 Animator 컴포?�트 참조
 
     private void Start()
     {
         uiText.SetActive(false);
         playerInteraction = FindObjectOfType<PlayerInteraction>();
-        mobMovement = GetComponent<MobMovement>(); // MobMovement 컴포넌트를 할당
+        mobMovement = GetComponent<MobMovement>(); // MobMovement 컴포?�트�??�당
         if (playerInteraction != null)
         {
             playerInteraction.onInteraction.AddListener(HandleInteractionComplete);
         }
         else
         {
-            Debug.LogError("PlayerInteractiond 컴포넌트 없음.");
+            Debug.LogError("PlayerInteractiond 컴포?�트 ?�음.");
         }
     }
     private void OnDestroy()
@@ -34,7 +34,7 @@ public class MobInteraction : MonoBehaviour
         playerInteraction.onInteraction.RemoveListener(HandleInteractionComplete);
     }
 
-    public void HandleInteractionComplete()  // 상호작용이 완료되었을 때 호출
+    public void HandleInteractionComplete()  // ?�호?�용???�료?�었?????�출
 
 
     {
@@ -52,18 +52,18 @@ public class MobInteraction : MonoBehaviour
             }
             else if (mobType.Contains("Flower") || mobType.Contains("Grape") || mobType.Contains("Herb") || mobType.Contains("Tree"))
             {
-                //식물 관련 로직
+                //?�물 관??로직
             }
             else
             {
                 
-                colliderMark.ActiveExclamationMark(); // 나머지 몬스터는 놀람 마크를 활성화하고 놀람 상태로 이동을 시작
+                colliderMark.ActiveExclamationMark(); // ?�머지 몬스?�는 ?�??마크�??�성?�하�??�???�태�??�동???�작
                 mobMovement.StartSurprisedMovement(); 
             }
         }
     }
 
-    private IEnumerator HandleDeath() //  죽음 처리를 위한 코루틴
+    private IEnumerator HandleDeath() //  죽음 처리�??�한 코루??
     {
         animator.SetBool("IsDead", true); 
         float fadeDuration = 1f; 
@@ -85,10 +85,10 @@ public class MobInteraction : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            uiText.SetActive(true);// 플레이어가 근접하면 UI 텍스트를 활성화
-            CanInteractWithPlayer = true; // 상호작용 가능 상태
+            uiText.SetActive(true);// ?�레?�어가 근접?�면 UI ?�스?��? ?�성??
+            CanInteractWithPlayer = true; // ?�호?�용 가???�태
 
-            // 플레이어에게 상호작용 가능하다고 알림
+            // ?�레?�어?�게 ?�호?�용 가?�하?�고 ?�림
             collision.GetComponent<PlayerInteraction>().CanInteract(this, true);
 
         }

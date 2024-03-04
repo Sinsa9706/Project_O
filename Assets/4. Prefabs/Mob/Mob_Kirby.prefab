@@ -66,7 +66,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 8
+  m_SortingOrder: 9
   m_TargetDisplay: 0
 --- !u!114 &6319898123447790745
 MonoBehaviour:
@@ -608,7 +608,7 @@ Transform:
   - {fileID: 2072695631300901893}
   - {fileID: 5086859540066475811}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4870782435937622869
 MonoBehaviour:
@@ -823,10 +823,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "[ Z ] \uC0C1\uD638\uC791\uC6A9"
+  m_text: "<size=(1.1)> <b>\uCEE4  \uBE44</b></size>\n[ Z ] \uC0C1\uD638\uC791\uC6A9"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2292b228ef174cc4184a41232808c503, type: 2}
-  m_sharedMaterial: {fileID: -3861401565684989705, guid: 2292b228ef174cc4184a41232808c503, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 05a26d7fffeaab24b83c072021eb102f, type: 2}
+  m_sharedMaterial: {fileID: 1126923993906396422, guid: 05a26d7fffeaab24b83c072021eb102f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -861,10 +861,10 @@ MonoBehaviour:
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
-  m_wordSpacing: 0
+  m_wordSpacing: 5
   m_lineSpacing: 0
   m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
+  m_paragraphSpacing: 25
   m_charWidthMaxAdj: 0
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
@@ -959,8 +959,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.45379996, y: -0.72819996, z: 0}
-    m_Extent: {x: 3.5888999, y: 3.5744, z: 0}
+    m_Center: {x: -0.45885003, y: -0.72714984, z: 0}
+    m_Extent: {x: 3.5903502, y: 3.5774498, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
