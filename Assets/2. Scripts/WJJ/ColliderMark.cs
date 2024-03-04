@@ -49,6 +49,7 @@ public class ColliderMark : MonoBehaviour
             {
                 loveMarkAnimator.Rebind(); // 애니메이터 초기화
                 loveMarkAnimator.Play("Love", -1, 0f); // 해당 애니메이션 재생
+                MainSoundManager.instance.PlaySFX(2);
             }
             StartCoroutine(DeactivateImage(loveMark, loveMarkAnimator, 2.0f)); // 2초후 비활성화
         }
@@ -64,6 +65,7 @@ public class ColliderMark : MonoBehaviour
             {
                 exclamationMarkAnimator.Rebind(); // 애니메이터 초기화
                 exclamationMarkAnimator.Play("Exclamation", -1, 0f); // 해당 애니메이션 재생
+                MainSoundManager.instance.PlaySFX(1);
             }
             StartCoroutine(DeactivateImage(exclamationMark, exclamationMarkAnimator, 2.0f)); // 2초후 비활성화
         }
@@ -76,7 +78,7 @@ public class ColliderMark : MonoBehaviour
         if (collision.CompareTag("Player") && questionMark != null)
         {
             questionMark.enabled = true; // 물음표 이미지 활성화
-
+            MainSoundManager.instance.PlaySFX(0);
             if (questionMarkAnimator != null)
             {
                 // Animator 컴포넌트를 사용하여 애니메이션을 제어
