@@ -139,7 +139,7 @@ public class NPC : MonoBehaviour
                 isDarkCoroutineEnd = true;
             }
 
-            yield return null;
+            yield return new WaitForSecondsRealtime(0.001f);
         }
     }
 
@@ -158,7 +158,7 @@ public class NPC : MonoBehaviour
                 isLightCoroutineEnd = true;
             }
 
-            yield return null;
+            yield return new WaitForSecondsRealtime(0.001f);
         }
     }
 
