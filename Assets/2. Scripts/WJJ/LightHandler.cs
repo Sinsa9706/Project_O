@@ -1,4 +1,4 @@
-using System.Collections;
+Ôªøusing System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
@@ -7,7 +7,7 @@ public class LightHandler : MonoBehaviour
 {
     void Update()
     {
-        if (GameManager.Instance.IsNight()) // π„¿œ ∂ß
+        if (GameManager.Instance.IsNight()) // Î∞§Ïùº Îïå
         {
             foreach (var light in FindObjectsOfType<Light2D>())
             {
@@ -17,7 +17,7 @@ public class LightHandler : MonoBehaviour
                 }
             }
         }
-        else // ≥∑¿œ ∂ß
+        else // ÎÇÆÏùº Îïå
         {
             foreach (var light in FindObjectsOfType<Light2D>())
             {
