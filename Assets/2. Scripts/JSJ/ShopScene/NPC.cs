@@ -31,7 +31,7 @@ public class NPC : MonoBehaviour
 
     private void Awake()
     {
-        _UIManager = UIManagerObj.GetComponent<UIManager>();
+        _UIManager = UIManagerObj.GetComponent<UIManager>();        
     }
 
     private void Start()
@@ -182,7 +182,7 @@ public class NPC : MonoBehaviour
 
     public void PriceText(TMP_Text priceText)
     {
-        int price = 50 * UIManager.Count;//50은 인벤
+        int price = Shop.ItemGold * UIManager.Count;//50은 인벤
         priceText.text = price.ToString();
     }
 

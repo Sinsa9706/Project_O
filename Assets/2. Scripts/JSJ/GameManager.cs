@@ -9,8 +9,10 @@ public class GameManager : MonoBehaviour
 
     public static int PlayerGold = 500;
 
+
+    [Header("Time")]
     public TMP_Text TimeText;
-    public GameObject Image;
+    public GameObject DarkImage;
 
     private float realTime = 1;//실제시간몇초당 10분
     private float time;
@@ -93,22 +95,24 @@ public class GameManager : MonoBehaviour
         if (gameTime <= 1140)
             return;
 
-        if (Image.GetComponent<SpriteRenderer>().color.a >= 0.78)
+        if (DarkImage.GetComponent<SpriteRenderer>().color.a >= 0.78)
             return;
 
-        Image.GetComponent<SpriteRenderer>().color += color;
+        DarkImage.GetComponent<SpriteRenderer>().color += color;
     }
     public void AlphaReset()
     {
         Color color = new Color(0, 0, 0);
 
-        color.r = Image.GetComponent<SpriteRenderer>().color.r;
-        color.g = Image.GetComponent<SpriteRenderer>().color.g;
-        color.b = Image.GetComponent<SpriteRenderer>().color.b;
+        color.r = DarkImage.GetComponent<SpriteRenderer>().color.r;
+        color.g = DarkImage.GetComponent<SpriteRenderer>().color.g;
+        color.b = DarkImage.GetComponent<SpriteRenderer>().color.b;
         color.a = 0;
 
-        Image.GetComponent<SpriteRenderer>().color = color;
+        DarkImage.GetComponent<SpriteRenderer>().color = color;
     }
 
-    //0~255 /200 25.5 = 0.1
+
+
+    
 }

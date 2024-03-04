@@ -6,7 +6,6 @@ using System.Diagnostics;
 
 public class UIManager : MonoBehaviour
 {
-    [HideInInspector]
     public static int Count;
 
     //ON OFF Change

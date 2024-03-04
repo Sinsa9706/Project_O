@@ -22,8 +22,8 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    // ¾ÆÀÌÅÛÀ» ¾ò´Â ¸Þ¼­µå
-    // ¸ó½ºÅÍ¸¦ »óÈ£ÀÛ¿ë ÇßÀ» ¶§, ´ÙÀ½ ¼ø¼­¿¡ ÀÌ ¸Þ¼­µå¸¦ »ç¿ëÇÏ¸é ÀÎº¥Åä¸®¿¡ ¾ÆÀÌÅÛÀÌ µé¾î°¡Áø´Ù.
+    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½
+    // ï¿½ï¿½ï¿½Í¸ï¿½ ï¿½ï¿½È£ï¿½Û¿ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½å¸¦ ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½ ï¿½Îºï¿½ï¿½ä¸®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½î°¡ï¿½ï¿½ï¿½ï¿½.
     public void AddItem(int id)
     {
         if (HaveItem.ContainsKey(id))
@@ -31,13 +31,13 @@ public class Inventory : MonoBehaviour
             ItemData itemData = HaveItem[id];
             itemData.Stack++;
             return;
-            // Slot¿¡¼­ MaxStack È°¿ëÇØ¼­ 20°³¾¿ ¼ÒºÐ½ÃÅ°±â
+            // Slotï¿½ï¿½ï¿½ï¿½ MaxStack È°ï¿½ï¿½ï¿½Ø¼ï¿½ 20ï¿½ï¿½ï¿½ï¿½ ï¿½ÒºÐ½ï¿½Å°ï¿½ï¿½
         }
         ItemData findItemData = Database.Item.Get(id);
         HaveItem.Add(id, findItemData);
     }
 
-    // ¾ÆÀÌÅÛÀÌ »ç¶óÁö´Â ¸Þ¼­µå (»ç¿ëÇßÀ» ¶§)
+    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½ (ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½)
     public void RemoveItem(int id)
     {
         HaveItem.Remove(id);
