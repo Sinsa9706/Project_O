@@ -46,28 +46,28 @@ public class Box : MonoBehaviour
         Items.Add(Database.Item.Get(20010005));
         Items.Add(Database.Item.Get(20010006));
     }
-    public void GetName(GameObject myObject)//인벤버튼에 연결
-    {
-        string name = myObject.name;
-        //clickItemId = 
-        PlusItemCount(name);
-        MinusInventory();
-    }
-
-    private void PlusItemCount(string name)
-    {
-        if (FindText.TryGetValue(name, out var text))
-        {
-            int temp = int.Parse(FindText[name].text);
-            temp++;
-            FindText[name].text = temp.ToString();
-        }
-        else
-        {
-            Debug.Log("해당 키 없음");
-            return;
-        }    
-    }
+    //public void GetName(GameObject myObject)//인벤버튼에 연결
+    //{
+    //    string name = myObject.name;
+    //    //clickItemId = 
+    //    PlusItemCount(name);
+    //    MinusInventory();
+    //}
+    //
+    //private void PlusItemCount(string name)
+    //{
+    //    if (FindText.TryGetValue(name, out var text))
+    //    {
+    //        int temp = int.Parse(FindText[name].text);
+    //        temp++;
+    //        FindText[name].text = temp.ToString();
+    //    }
+    //    else
+    //    {
+    //        Debug.Log("해당 키 없음");
+    //        return;
+    //    }    
+    //}
 
     private void MinusInventory()
     {
