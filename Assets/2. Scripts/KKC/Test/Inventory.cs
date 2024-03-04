@@ -116,7 +116,6 @@ public class Inventory : MonoBehaviour
             emptySlot.quantity = 1;
             UpdateUI();
             Debug.Log("b" + id);
-
         }
         //AddItem수정확인용
     }
@@ -181,11 +180,8 @@ public class Inventory : MonoBehaviour
             selectedItemPrice.text = selectedItem.item.Price == 0 ? "-" : selectedItem.item.Price.ToString();
             selectedItemDescription.text = selectedItem.item.Desciption;
 
-            //for(int i = 0; i < selectedItem.item.)
-
             itemInfo.SetActive(true);
         }
-
     }
 
     private void ClearSelectItemWindow()

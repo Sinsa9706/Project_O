@@ -1,8 +1,10 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.Progress;
 
-public class RecipeDB : MonoBehaviour
+public class RecipeDB
 {
     private Dictionary<int, RecipeData> _recipes = new();
 
@@ -24,7 +26,24 @@ public class RecipeDB : MonoBehaviour
                 _recipes[recipe.Id] = recipe;
             else
                 _recipes.Add(recipe.Id, recipe);
-
         }
+    }
+
+    public Dictionary<int, RecipeData> Get()
+    {
+        return _recipes;
+    }
+
+    public RecipeData Get(int id)
+    {
+        if (_recipes.ContainsKey(id))
+            return _recipes[id];
+
+        return null;
+    }
+
+    public IEnumerator DbEnumerator()
+    {
+        return _recipes.GetEnumerator();
     }
 }
