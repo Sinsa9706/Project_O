@@ -3302,7 +3302,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d23eca076f01084090dd75f52e62b91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UIManagerObj: {fileID: 0}
+  UIManagerObj: {fileID: 9140737970517744043}
   ShopUI: {fileID: 1249129482626149291}
   BoxUI: {fileID: 2175800243941359527}
   QuestUI: {fileID: 7332225604064158958}
@@ -9592,7 +9592,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d23eca076f01084090dd75f52e62b91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UIManagerObj: {fileID: 0}
+  UIManagerObj: {fileID: 9140737970517744043}
   ShopUI: {fileID: 1249129482626149291}
   BoxUI: {fileID: 2175800243941359527}
   QuestUI: {fileID: 7332225604064158958}
@@ -18264,7 +18264,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d23eca076f01084090dd75f52e62b91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UIManagerObj: {fileID: 0}
+  UIManagerObj: {fileID: 9140737970517744043}
   ShopUI: {fileID: 1249129482626149291}
   BoxUI: {fileID: 2175800243941359527}
   QuestUI: {fileID: 7332225604064158958}
@@ -23048,7 +23048,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d23eca076f01084090dd75f52e62b91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UIManagerObj: {fileID: 0}
+  UIManagerObj: {fileID: 9140737970517744043}
   ShopUI: {fileID: 1249129482626149291}
   BoxUI: {fileID: 2175800243941359527}
   QuestUI: {fileID: 7332225604064158958}
@@ -27041,7 +27041,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d23eca076f01084090dd75f52e62b91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UIManagerObj: {fileID: 0}
+  UIManagerObj: {fileID: 9140737970517744043}
   ShopUI: {fileID: 1249129482626149291}
   BoxUI: {fileID: 2175800243941359527}
   QuestUI: {fileID: 7332225604064158958}
