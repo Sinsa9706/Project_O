@@ -61,7 +61,6 @@ public class Shop : MonoBehaviour
         for(int i = 0; i < UIManager.Count; ++i)
         {
             Inventory.Instance.AddItem(clickItemId);
-
         }
     }
 }

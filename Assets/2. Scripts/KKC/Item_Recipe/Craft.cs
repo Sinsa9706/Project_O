@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class Craft : MonoBehaviour
 {
-
+    private Dictionary<int, Database> Recipe = new();
 }

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
@@ -52,9 +53,6 @@ public class Inventory : MonoBehaviour
         }
     }
 
-
-
-
     private void Init()
     {
         inventoryWindow.SetActive(false);
@@ -77,20 +75,18 @@ public class Inventory : MonoBehaviour
             Toggle();
         }
     }
-    
+
     public void Toggle()
     {
         if (inventoryWindow.activeInHierarchy)
         {
             inventoryWindow.SetActive(false);
             onCloseInventory?.Invoke();
-            // ���콺 Ŀ�� ������
         }
         else
         {
             inventoryWindow.SetActive(true);
             onOpenInventory?.Invoke();
-            // ���콺 Ŀ�� ������
         }
     }
 
@@ -99,11 +95,8 @@ public class Inventory : MonoBehaviour
         return inventoryWindow.activeInHierarchy;
     }
 
-    // �������� ��� �޼���
-    // ���͸� ��ȣ�ۿ� ���� ��, ���� ������ �� �޼��带 ����ϸ� �κ��丮�� �������� ������.
     public void AddItem(int id)
     {
-        // 1. ContainsKey�� haveitem�� ã�°� �ƴ϶� slots�� ������ �������� �����ϴ��� ã�ƾ� ��. ã���� �� ������ quantity�� ����� �ٵ� max�� ������, ��ȯ ���� ��ŭ ������ �߰� ����
         for (int i = 0; i < slots.Length; i++)
         {
             if (slots[i].item == Database.Item.Get(id))
@@ -117,23 +110,28 @@ public class Inventory : MonoBehaviour
                 }
             }
         }
-            ItemSlot emptySlot = GetEmptySlot();
 
-            if (emptySlot != null)
-            {
-                emptySlot.item = Database.Item.Get(id);
-                emptySlot.quantity = 1;
-                UpdateUI();
-                Debug.Log("b" + id);
-                
-            }
-            
-        
+        ItemSlot emptySlot = GetEmptySlot();
+
+        if (emptySlot != null)
+        {
+            emptySlot.item = Database.Item.Get(id);
+            emptySlot.quantity = 1;
+            UpdateUI();
+            Debug.Log("b" + id);
+
+        }
     }
 
     public void RemoveItem(int id)
     {
-        HaveItem.Remove(id);
+        for (int i = 0; i < slots.Length; i++)
+        {
+            if (slots[i].item.Id == Database.Item.Get(id).Id)
+            {
+                slots[i].quantity--;
+            }
+        }
     }
 
     private void RemoveSelectedItem()
@@ -169,32 +167,27 @@ public class Inventory : MonoBehaviour
         return null;
     }
 
-    ItemData GetItemStack(int id)
-    {
-        for (int i = 0; i < slots.Length; i++)
-        {
-            if (slots[i].item == HaveItem[id] && slots[i].quantity <= HaveItem[id].MaxStack)
-                return slots[i].item;
-        }
-
-        return null;
-    }
-
     public void SelectItem(int index)
     {
         if (slots[index].item == null)
+        {
+            itemInfo.SetActive(false);
             return;
+        }
+        else
+        {
+            selectedItem = slots[index];
+            selectedItemIndex = index;
 
-        selectedItem = slots[index];
-        selectedItemIndex = index;
+            selectedItemName.text = selectedItem.item.Name;
+            selectedItemPrice.text = selectedItem.item.Price == 0 ? "-" : selectedItem.item.Price.ToString();
+            selectedItemDescription.text = selectedItem.item.Desciption;
 
-        selectedItemName.text = selectedItem.item.Name;
-        selectedItemPrice.text = selectedItem.item.Price == 0 ? "-" : selectedItem.item.Price.ToString();
-        selectedItemDescription.text = selectedItem.item.Desciption;
+            //for(int i = 0; i < selectedItem.item.)
 
-        //for(int i = 0; i < selectedItem.item.)
+            itemInfo.SetActive(true);
+        }
 
-        itemInfo.SetActive(true);
     }
 
     private void ClearSelectItemWindow()
