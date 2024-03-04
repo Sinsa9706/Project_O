@@ -20,7 +20,8 @@ public class NPC : MonoBehaviour
     public GameObject MakeUI;
 
     [Header("Shop UI Object")]
-    public TMP_Text PlayerGoldText;
+    public TMP_Text ShopPlayerGoldText;
+    public TMP_Text InvenPlayerGoldText;
     public GameObject NoGoldUI;
 
     [Header("Box UI Object")]
@@ -211,7 +212,7 @@ public class NPC : MonoBehaviour
 
     public void PlayerGoldUpdate()
     {
-        PlayerGoldText.text = GameManager.PlayerGold.ToString();
-        GameManager.Instance.PlayerGoldText.text = GameManager.PlayerGold.ToString();
+        ShopPlayerGoldText.text = GameManager.PlayerGold.ToString();
+        InvenPlayerGoldText.text = GameManager.PlayerGold.ToString();
     }
 }
