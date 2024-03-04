@@ -118,6 +118,7 @@ public class Inventory : MonoBehaviour
             Debug.Log("b" + id);
 
         }
+        //AddItem수정확인용
     }
 
     public void RemoveItem(int id)
