@@ -22054,7 +22054,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC6B0\uC870\uAE402\uC5FC"
+  m_text: "\uC6B0\uC870\uAE402\uC5FC Let's Go!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2292b228ef174cc4184a41232808c503, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 2262c10df9300be45a866a8fef4fb52a, type: 2}
