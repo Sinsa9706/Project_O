@@ -22,6 +22,10 @@ public class WorkTable : MonoBehaviour
     public List<TMP_Text> UseItemName;
     public List<TMP_Text> UseItemCountText;
 
+    [Header("UI Manager")]
+    public GameObject UIManagerObj;
+    private UIManager _UIManager;
+
     [Header("Finish")]
     public GameObject FinishUI;
 
@@ -31,11 +35,11 @@ public class WorkTable : MonoBehaviour
     private int _sourceId2;
     private int _sourceId3;
 
-    private UIManager _UIManager;
+
 
     private void Awake()
     {
-        _UIManager = this.gameObject.GetComponent<UIManager>();
+        _UIManager = UIManagerObj.GetComponent<UIManager>();
     }
 
     private void Start()
@@ -137,23 +141,23 @@ public class WorkTable : MonoBehaviour
     {
         ItemSlot slot = Inventory.Instance.ItemCheck(_sourceId1);
         if (slot != null)
-            UseItemCountText[0].text = "1 /" + slot.quantity;
+            UseItemCountText[0].text = slot.quantity + " / 1";
         else
-            UseItemCountText[0].text = "1 /0";
+            UseItemCountText[0].text = "0 / 1";
 
 
         slot = Inventory.Instance.ItemCheck(_sourceId2);
         if (slot != null)
-            UseItemCountText[1].text = "1 /" + slot.quantity;
+            UseItemCountText[1].text = slot.quantity + " / 1";
         else
-            UseItemCountText[1].text = "1 /0";
+            UseItemCountText[1].text = "0 / 1";
 
 
         slot = Inventory.Instance.ItemCheck(_sourceId3);
         if (slot != null)
-            UseItemCountText[2].text = "1 /" + slot.quantity;
+            UseItemCountText[2].text = slot.quantity + " / 1";
         else
-            UseItemCountText[2].text = "1 /0";
+            UseItemCountText[2].text = "0 / 1";
     }
 
     public void MakeClick()
@@ -179,15 +183,16 @@ public class WorkTable : MonoBehaviour
         slot.quantity--;
 
         Inventory.Instance.AddItem(SelectItems[_selectItemIndex].Id);
+        MakeFinish();
+
         Inventory.Instance.UpdateUI();
         WorkTableUIUpdate();
 
-        MakeFinish();
     }
 
     private void MakeFinish()
     {
-
+        _UIManager.UIOn(FinishUI);
     }
     //[Header("WorkTable Item")]
     //public List<ItemData> SelectItems = new List<ItemData>();
