@@ -39,6 +39,7 @@ public class PlayerMovement : MonoBehaviour
         StartAnimation();
     }
 
+
     private void OnMove(InputValue value)
     {
         if (!menuOpen)
