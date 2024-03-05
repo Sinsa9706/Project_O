@@ -1,4 +1,4 @@
-# Project_O
+# Magic Cafe ~ 숲속의 작은 비밀~
 Unity 게임 개발 팀 프로젝트
 
 ## 프로젝트 소개
