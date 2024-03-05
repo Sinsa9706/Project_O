@@ -1891,8 +1891,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.24950004, y: -0.64725006, z: 0}
-    m_Extent: {x: 3.9521, y: 3.68885, z: 0}
+    m_Center: {x: -0.24619997, y: -0.64690006, z: 0}
+    m_Extent: {x: 3.9390998, y: 3.6899, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -2242,8 +2242,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.43505, y: -0.8201499, z: 0}
-    m_Extent: {x: 9.97495, y: 9.153549, z: 0}
+    m_Center: {x: -0.44694996, y: -0.8094001, z: 0}
+    m_Extent: {x: 9.97475, y: 9.158899, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -5962,10 +5962,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC544\uC774\uD15C\uC744 \uC5BB\uC5C8\uB2E4!"
+  m_text: "\uC5FC\uACE0\uC6B4 vs \uB9F9\uAF41\uC774"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2292b228ef174cc4184a41232808c503, type: 2}
-  m_sharedMaterial: {fileID: -3861401565684989705, guid: 2292b228ef174cc4184a41232808c503, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 79b1a61a7ab317b4dafddaca80eb330c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -6244,8 +6244,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.4519, y: -0.7272501, z: 0}
-    m_Extent: {x: 3.5871, y: 3.56395, z: 0}
+    m_Center: {x: -0.4518001, y: -0.72730005, z: 0}
+    m_Extent: {x: 3.5922, y: 3.5699, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -26935,8 +26935,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.45305014, y: -0.73064995, z: 0}
-    m_Extent: {x: 5.59415, y: 5.56625, z: 0}
+    m_Center: {x: -0.45160007, y: -0.7249, z: 0}
+    m_Extent: {x: 5.5868, y: 5.5759, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
