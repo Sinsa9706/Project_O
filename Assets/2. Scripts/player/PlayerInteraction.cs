@@ -225,7 +225,7 @@ public class PlayerInteraction : MonoBehaviour
                     // 인벤토리에 코기 분비물 추가
                     break;
 
-                case bool _ when interactedMob.mobType.StartsWith("Mushroom"):
+                case bool _ when interactedMob.mobType.Contains("Mushroom"):
                     ShowItemText("'마른 버섯' 을 얻었다!");
                     Inventory.Instance.AddItem(10010006);
                     itemImage.GetComponent<Image>().sprite = itemImageArray[1];
@@ -241,7 +241,7 @@ public class PlayerInteraction : MonoBehaviour
                     // 인벤토리에 커비의 별가루 추가
                     break;
 
-                case bool _ when interactedMob.mobType.StartsWith("Turtle"):
+                case bool _ when interactedMob.mobType.Contains("Turtle"):
                     ShowItemText("'유사-꼬부기의 등껍질' 을 얻었다!");
                     itemImage.GetComponent<Image>().sprite = itemImageArray[3];
                     Inventory.Instance.AddItem(10020002);
@@ -257,7 +257,7 @@ public class PlayerInteraction : MonoBehaviour
                     // 인벤토리에 날도롱뇽 날개 추가 로직
                     break;
 
-                case bool _ when interactedMob.mobType.StartsWith("Grasshopper"):
+                case bool _ when interactedMob.mobType.Contains("Grasshopper"):
                     ShowItemText("'여치의 더듬이' 를 얻었다!");
                     itemImage.GetComponent<Image>().sprite = itemImageArray[5];
                     Inventory.Instance.AddItem(10020003);
@@ -273,7 +273,7 @@ public class PlayerInteraction : MonoBehaviour
                     // 인벤토리에 불도마뱀 꼬리 추가 로직
                     break;
 
-                case bool _ when interactedMob.mobType.StartsWith("Man-Eating"):
+                case bool _ when interactedMob.mobType.Contains("Man-Eating"):
                     ShowItemText("'식인꽃 꽃잎' 을 얻었다!");
                     itemImage.GetComponent<Image>().sprite = itemImageArray[7];
                     Inventory.Instance.AddItem(10010003);
@@ -289,7 +289,7 @@ public class PlayerInteraction : MonoBehaviour
                     // 인벤토리에 사탕 추가 로직
                     break;
 
-                case bool _ when interactedMob.mobType.StartsWith("Grape"):
+                case bool _ when interactedMob.mobType.Contains("Grape"):
                     Inventory.Instance.AddItem(10010005);
 
                     float randomValue = UnityEngine.Random.Range(0f, 1f); // 2가지의 랜덤 분기
